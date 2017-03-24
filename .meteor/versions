@@ -1,9 +1,5 @@
 accounts-base@1.2.4
-accounts-facebook@1.0.7
-accounts-google@1.0.7
-accounts-oauth@1.1.10
 accounts-password@1.1.6
-accounts-twitter@1.0.7
 accounts-ui@1.1.7
 accounts-ui-unstyled@1.1.10
 alanning:roles@1.2.15
@@ -64,12 +60,10 @@ ecmascript@0.4.1
 ecmascript-runtime@0.2.8
 ejson@1.0.9
 email@1.0.10
-facebook@1.2.4
 fastclick@1.0.9
 favorites@0.0.4
 fortawesome:fontawesome@4.5.0
 geojson-utils@1.0.6
-google@1.1.9
 handlebars@1.0.5
 hot-code-push@1.0.2
 html-tools@1.0.7
@@ -127,9 +121,6 @@ natestrauser:animate-css@3.5.1
 notifications@0.0.7
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.41
-oauth@1.1.8
-oauth1@1.1.7
-oauth2@1.1.7
 observe-sequence@1.0.9
 ordered-dict@1.0.5
 percolate:momentum@0.7.2
@@ -163,7 +154,6 @@ timmyg:wow@1.0.1
 tracker@1.0.11
 tsega:skrollr@0.0.2
 twbs:bootstrap@3.3.6
-twitter@1.1.7
 ui@1.0.9
 underscore@1.0.6
 url@1.0.7

@@ -1,7 +1,7 @@
 # See https://github.com/meteor-useraccounts/core/blob/master/Guide.md
 
 AccountsTemplates.configure
-  
+
   # Behaviour
   confirmPassword: false
   enablePasswordChange: true
@@ -9,14 +9,16 @@ AccountsTemplates.configure
   overrideLoginErrors: true
   sendVerificationEmail: false
   lowercaseUsername: false
-  
+
   # Appearance
+  hideSignUpLink: true
   showAddRemoveServices: true
-  showForgotPasswordLink: true
+  # showForgotPasswordLink: true
+  showForgotPasswordLink: false
   showLabels: true
   showPlaceholders: true
   showResendVerificationEmailLink: false
-  
+
   # Client-side Validation
   continuousValidation: false
   negativeFeedback: false
@@ -24,14 +26,14 @@ AccountsTemplates.configure
   positiveValidation: false
   positiveFeedback: true
   showValidating: true
-  
+
   # Privacy Policy and Terms of Use
-  privacyUrl: Config.privacyUrl || null
-  termsUrl: Config.termsUrl || null
-  
+  # privacyUrl: Config.privacyUrl || null
+  # termsUrl: Config.termsUrl || null
+
   # Redirects
   homeRoutePath: Config.dashboardRoute || null
-  
+
   # Hooks
   onLogoutHook: ->
     console.log 'logout'
@@ -41,4 +43,14 @@ AccountsTemplates.configure
 
 AccountsTemplates.configureRoute 'signIn'
 AccountsTemplates.configureRoute 'signUp'
-AccountsTemplates.configureRoute 'forgotPwd'
+# AccountsTemplates.configureRoute 'forgotPwd'
+
+AccountsTemplates.addFields([
+  {
+      _id: "username",
+      type: "text",
+      displayName: "username",
+      required: true,
+      minLength: 5,
+  }
+]);

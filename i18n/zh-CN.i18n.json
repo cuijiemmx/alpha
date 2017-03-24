@@ -4,7 +4,7 @@
 	"configName": "我的应用",
 	"configTitle": "制作Meteor App. 更快速.",
 	"configSubtitle": "畅快建立美观实用的Meteor Apps",
-	
+
 	/*Home*/
 	"getstarted": "开始",
 	"dashboard": "控制面板",
@@ -34,7 +34,7 @@
 	"signout": "登出",
 	"signup": "登入",
 	"login": "登录",
-	"login2": "登陆",
+	"login2": "登录",
 	"edit_profile": "编辑资料",
 	"notifications": "通知",
 
@@ -71,7 +71,7 @@
 	"profilePicture": "资料图片"
 
 
-	
+
 
 
 }

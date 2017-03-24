@@ -22,7 +22,7 @@
 
 	# Username - if true, users are forced to set a username
 	username: false
-	
+
 	# Localisation
 	defaultLanguage: 'zh-CN'
 	dateFormat: 'D/M/YYYY'
@@ -40,19 +40,19 @@
 	about: 'http://meteorfactory.io'
 	blog: 'http://learn.meteorfactory.io'
 
-	socialMedia:
-		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
-			icon: 'facebook'
-		twitter:
-			url: 'http://twitter.com/BenPeterJones'
-			icon: 'twitter'
-		github:
-			url: 'http://github.com/yogiben'
-			icon: 'github'
-		info:
-			url: 'http://meteorfactory.io'
-			icon: 'link'
+	# socialMedia:
+	# 	facebook:
+	# 		url: 'http://facebook.com/benjaminpeterjones'
+	# 		icon: 'facebook'
+	# 	twitter:
+	# 		url: 'http://twitter.com/BenPeterJones'
+	# 		icon: 'twitter'
+	# 	github:
+	# 		url: 'http://github.com/yogiben'
+	# 		icon: 'github'
+	# 	info:
+	# 		url: 'http://meteorfactory.io'
+	# 		icon: 'link'
 
 	#Routes
 	homeRoute: '/'
