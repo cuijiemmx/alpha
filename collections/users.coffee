@@ -9,11 +9,7 @@ Schemas.UserProfile = new SimpleSchema(
         type: 'fileUpload'
         collection: 'ProfilePictures'
 
-  firstName:
-    type: String
-    optional: true
-
-  lastName:
+  name:
     type: String
     optional: true
 
@@ -48,8 +44,7 @@ Schemas.User = new SimpleSchema(
   username:
     type: String
     regEx: /^[a-z0-9A-Z_]{3,15}$/
-    optional: true
-
+    # optional: true
 
   emails:
     type: [Object]
