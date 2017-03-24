@@ -28,7 +28,6 @@
 		# 				Meteor.users.find comment.owner, limit: 1
 		# 		}
 		# 	]
-	dashboard:
-		homeUrl: Config.homeRoute
+
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']
