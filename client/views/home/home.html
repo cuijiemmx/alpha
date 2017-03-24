@@ -2,14 +2,14 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="row">
-                <a class="navbar-brand link" href="{{pathFor 'home'}}">{{Config.name}}</a>
+                <!-- <a class="navbar-brand link" href="{{pathFor 'home'}}">{{Config.name}}</a> -->
                 <div id="main-nav" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         {{#if User}}
                         {{> userDropdown}}
                         {{else}}
                         <li>
-                            <a href="{{pathFor 'atSignIn'}}" class="link">{{_ "login2"}}</a>
+                            <a href="{{pathFor 'atSignIn'}}" class="link">{{_ "login"}}</a>
                         </li>
                         <!-- <li>
                             <a href="{{pathFor 'atSignUp'}}" class="link btn btn-hollow">{{_ "signup"}}</a>
@@ -20,7 +20,7 @@
             </div>
         </div>
     </nav>
-    <section id="intro" class="colored text-center">
+    <!-- <section id="intro" class="colored text-center">
         <div class="container">
             <div class="intro-well wow animated bounceIn">
                 <div class="row">
@@ -104,5 +104,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </template>

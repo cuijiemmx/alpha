@@ -2,6 +2,10 @@ Router.map ->
   @route "home",
     path: "/"
     layoutTemplate: "homeLayout"
+    onAfterAction: ->
+    	if Meteor.isClient
+    		SEO.set
+    			title: '首页'
 
   @route "dashboard",
     path: "/dashboard"

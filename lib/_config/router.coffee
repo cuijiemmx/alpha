@@ -12,21 +12,25 @@ Router.configure
       @redirect '/setUserName'
     @next()
 
+  onAfterAction: ->
+	  if Meteor.isClient
+	    window.scrollTo(0,0)
+
+	    if Router.current().route.path().split('/')[1] == 'admin'
+	      SEO.set
+	        title: '帐户管理'
+
+	    # Remove modal
+	    $bd = $('.modal-backdrop')
+	    $bd.removeClass('in')
+	    setTimeout ->
+	      $bd.remove()
+	    , 300
+
 Router.waitOn ->
   subs.subscribe 'user'
 
-onAfterAction = ->
-  if Meteor.isClient
-    window.scrollTo(0,0)
-
-    # Remove modal
-    $bd =  $('.modal-backdrop')
-    $bd.removeClass('in')
-    setTimeout ->
-      $bd.remove()
-    , 300
-
-Router.onAfterAction onAfterAction
+# Router.onAfterAction onAfterAction
 
 #To allow non-logged in users to access more routes, add it in the _config.coffee file
 publicRoutes = _.union Config.publicRoutes || [], [

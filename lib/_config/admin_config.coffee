@@ -1,5 +1,5 @@
 @AdminConfig =
-	name: Config.name
+	name: '帐户管理'
 	# collections:
 		# Posts:
 		# 	color: 'red'

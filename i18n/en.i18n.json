@@ -4,7 +4,7 @@
 	"configName": "My App",
 	"configTitle": "Make Meteor Apps. Fast.",
 	"configSubtitle": "Create beautiful and functioning Meteor apps really quick",
-	
+
 	/*Home*/
 	"getstarted": "Get Started",
 	"dashboard": "Go to dashboard",
@@ -34,7 +34,6 @@
 	"signout": "Sign out",
 	"signup": "Sign up",
 	"login": "Log in",
-	"login2": "Login",
 	"edit_profile": "Edit Profile",
 	"notifications": "Notifications",
 
@@ -71,7 +70,7 @@
 	"profilePicture": "Profile Picture"
 
 
-	
+
 
 
 }

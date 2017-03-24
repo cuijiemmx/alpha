@@ -29,12 +29,11 @@
 
 	 /*Navbar*/
 	"admin": "管理中心",
-	"profile": "资料面板",
+	"profile": "个人资料",
 	"account": "账户",
 	"signout": "登出",
 	"signup": "登入",
 	"login": "登录",
-	"login2": "登录",
 	"edit_profile": "编辑资料",
 	"notifications": "通知",
 

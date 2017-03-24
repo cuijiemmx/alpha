@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: 'My App'
+	name: '首页'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->

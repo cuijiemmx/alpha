@@ -1,9 +1,15 @@
 Router.map ->
   @route "profile",
     path: "/profile"
-      
+    onAfterAction: ->
+      SEO.set
+        title: '个人资料'
+
   @route "account",
     path: "/account"
+    onAfterAction: ->
+      SEO.set
+        title: '帐户'
 
   @route "setUserName",
     path: "/setUserName"
