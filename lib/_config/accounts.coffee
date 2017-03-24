@@ -32,7 +32,7 @@ AccountsTemplates.configure
   # termsUrl: Config.termsUrl || null
 
   # Redirects
-  homeRoutePath: Config.dashboardRoute || null
+  homeRoutePath: Config.homeRoute
 
   # Hooks
   onLogoutHook: ->

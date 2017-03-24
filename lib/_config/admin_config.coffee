@@ -29,6 +29,6 @@
 		# 		}
 		# 	]
 	dashboard:
-		homeUrl: '/dashboard'
+		homeUrl: Config.homeRoute
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']
