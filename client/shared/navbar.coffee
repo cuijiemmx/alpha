@@ -4,3 +4,9 @@ Template.navbar.events
 
   'click .sliding-menu a': () ->
     $('#sliding-menu-controller').prop 'checked', false
+
+Template.navbar.helpers
+  formatDate: ->
+    d = new Date()
+    dayList = ['天', '一', '二', '三', '四', '五', '六']
+    d.getFullYear() + '年' + d.getMonth() + '月' + d.getDate() + '日 星期' + dayList[d.getDay()]
