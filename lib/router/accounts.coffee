@@ -15,7 +15,7 @@ Router.map ->
     path: "/setUserName"
     onBeforeAction: ->
       if not Config.username or (Meteor.userId() and Meteor.user().username)
-        @redirect '/dashboard'
+        @redirect '/'
       @next()
 
   @route 'signOut',
