@@ -23,7 +23,7 @@
 	username: false
 	
 	# Localisation
-	defaultLanguage: 'en'
+	defaultLanguage: 'zh-CN'
 	dateFormat: 'D/M/YYYY'
 
 	# Meta / Extenrnal content
