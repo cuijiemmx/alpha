@@ -56,5 +56,5 @@
 
 	#Routes
 	homeRoute: '/'
-	publicRoutes: ['home']
+	# publicRoutes: ['home']
 	dashboardRoute: '/dashboard'
