@@ -28,7 +28,7 @@
 	"favorite": "常用",
 
 	 /*Navbar*/
-	"admin": "管理中心",
+	"admin": "用户管理",
 	"profile": "个人资料",
 	"account": "账户",
 	"signout": "退出",
