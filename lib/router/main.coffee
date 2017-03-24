@@ -1,7 +1,6 @@
 Router.map ->
   @route "home",
     path: "/"
-    layoutTemplate: "homeLayout"
     onAfterAction: ->
     	if Meteor.isClient
     		SEO.set
