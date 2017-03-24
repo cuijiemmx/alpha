@@ -12,7 +12,8 @@
 	logo: ->
 		'<b>' + @name + '</b>'
 	footer: ->
-		@name + ' - Copyright ' + new Date().getFullYear()
+		# @name + ' - Copyright ' + new Date().getFullYear()
+		'&copy; 武汉挽尘信息科技有限公司.'
 
 	# Emails
 	emails:
