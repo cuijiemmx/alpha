@@ -14,12 +14,12 @@
                 <div class="list-group">
                   <a class="list-group-item" href="{{pathFor 'profile'}}">{{_ "profile"}}</a>
                   <a class="list-group-item" href="{{pathFor 'account'}}">{{_ "account"}}</a>
-                  <a class="list-group-item" href="{{pathFor 'notifications'}}">
+                  <!-- <a class="list-group-item" href="{{pathFor 'notifications'}}">
                     {{#if notificationCount}}
                       <span class="badge bg-success">{{notificationCount}}</span>
                     {{/if}}
                     {{_ "notifications"}}
-                  </a>
+                  </a> -->
                   <a class="list-group-item" href="/sign-out">{{_ "signout"}}</a>
                 </div>
               {{/if}}
@@ -30,7 +30,7 @@
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             {{#if User}}
-              {{> notificationsDropdown}}
+              <!-- {{> notificationsDropdown}} -->
               {{#if isInRole 'admin'}}
                 <li><a href="{{pathFor 'adminDashboard'}}">{{_ "admin"}}</a></li>
               {{/if}}
