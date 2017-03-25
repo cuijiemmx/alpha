@@ -16,7 +16,7 @@ Router.configure
 	  if Meteor.isClient
 	    window.scrollTo(0,0)
 
-	    if Router.current().route.path().split('/')[1] == 'admin'
+	    if Router.current().route.path() and Router.current().route.path().split('/')[1] == 'admin'
 	      SEO.set
 	        title: '用户管理'
 

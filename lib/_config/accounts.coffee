@@ -45,12 +45,10 @@ AccountsTemplates.configureRoute 'signIn'
 AccountsTemplates.configureRoute 'signUp'
 # AccountsTemplates.configureRoute 'forgotPwd'
 
-AccountsTemplates.addFields([
-  {
-      _id: "username",
-      type: "text",
-      displayName: "username",
-      required: true,
-      minLength: 5,
-  }
-]);
+AccountsTemplates.addFields [
+  _id: "username",
+  type: "text",
+  displayName: "username",
+  required: true,
+  minLength: 5,
+]
