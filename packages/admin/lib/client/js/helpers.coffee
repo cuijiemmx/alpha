@@ -8,7 +8,8 @@ adminCollections = ->
 
 	collections.Users =
 		collectionObject: Meteor.users
-		icon: 'user'
+		# icon: 'user'
+		icon: ''
 		label: 'Users'
 
 	_.map collections, (obj, key) ->

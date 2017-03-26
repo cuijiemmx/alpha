@@ -82,9 +82,20 @@
 			{{/autoForm}}
 		</div>
 	</div> -->
+	<div class="box box-default">
+		<div class="box-body">
+			{{> adminAlert}}
+			{{# autoForm id="adminNewUser" schema=AdminSchemas.newUser type="method" meteormethod="adminNewUser"}}
+			{{>afQuickField name="username"}}
+			{{>afQuickField name="email"}}
+			{{>afQuickField name="password"}}
+			<button type="submit" class="btn btn-primary">Add User</button>
+			{{/autoForm}}
+		</div>
+	</div>
 </template>
 
-<template name="AdminDashboardUsersEdit">
+<!-- <template name="AdminDashboardUsersEdit">
 	<div class="box box-default">
 		<div class="box-body">
 			{{> adminAlert}}
@@ -126,6 +137,28 @@
 				<input value="{{admin_current_id}}" type="text" name="_id" omitfields="createdAtupdatedAt" required="" data-schema-key="_id" class="form-control" autocomplete="off" />
 				<span class="help-block"></span>
 			</div>
+			{{>afQuickField name="password"}}
+			<button type="submit" class="btn btn-primary btn-sm">Change Password</button>
+			{{/autoForm}}
+		</div>
+	</div>
+</template> -->
+
+<template name="AdminDashboardUsersEdit">
+	<div class="box box-default">
+		<div class="box-body">
+			{{> adminAlert}}
+			{{# autoForm id="adminUpdateUser" collection=adminGetUsers type="update" doc=admin_current_doc}}
+			{{>afQuickField name="emails.0.address"}}
+			{{>afQuickField name="emails.0.verified"}}
+			{{>afQuickField name="roles"}}
+			<button type="submit" class="btn btn-primary btn-sm">Update</button>
+			{{/autoForm}}
+
+			<hr/>
+
+			{{#autoForm id="adminChangePassword" schema=AdminSchemas.changePassword type="method" meteormethod="adminChangePassword"}}
+			<input value="{{admin_current_id}}" type="hidden" name="_id" data-schema-key="_id"/>
 			{{>afQuickField name="password"}}
 			<button type="submit" class="btn btn-primary btn-sm">Change Password</button>
 			{{/autoForm}}

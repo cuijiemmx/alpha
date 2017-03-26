@@ -4,7 +4,7 @@ Meteor.methods
 		if Roles.userIsInRole this.userId, ['admin']
 			this.unblock()
 			result = adminCollectionObject(collection).insert doc
-				
+
 			return result
 
 	adminUpdateDoc: (modifier,collection,_id)->
@@ -24,27 +24,32 @@ Meteor.methods
 				adminCollectionObject(collection).remove {_id: _id}
 
 
+	# adminNewUser: (doc) ->
+	# 	check arguments, [Match.Any]
+	# 	if Roles.userIsInRole this.userId, ['admin']
+	# 		emails = doc.email.split(',')
+	# 		_.each emails, (email)->
+	# 			user = {}
+	# 			user.email = email
+	# 			unless doc.chooseOwnPassword
+	# 				user.password = doc.password
+
+	# 			_id = Accounts.createUser user
+
+	# 			if doc.sendPassword and AdminConfig.fromEmail?
+	# 				Email.send
+	# 					to: user.email
+	# 					from: AdminConfig.fromEmail
+	# 					subject: 'Your account has been created'
+	# 					html: 'You\'ve just had an account created for ' + Meteor.absoluteUrl() + ' with password ' + doc.password
+
+	# 			if not doc.sendPassword
+	# 				Accounts.sendEnrollmentEmail _id
+
 	adminNewUser: (doc) ->
 		check arguments, [Match.Any]
 		if Roles.userIsInRole this.userId, ['admin']
-			emails = doc.email.split(',')
-			_.each emails, (email)->
-				user = {}
-				user.email = email
-				unless doc.chooseOwnPassword
-					user.password = doc.password
-
-				_id = Accounts.createUser user
-
-				if doc.sendPassword and AdminConfig.fromEmail?
-					Email.send
-						to: user.email
-						from: AdminConfig.fromEmail
-						subject: 'Your account has been created'
-						html: 'You\'ve just had an account created for ' + Meteor.absoluteUrl() + ' with password ' + doc.password
-
-				if not doc.sendPassword
-					Accounts.sendEnrollmentEmail _id
+			Accounts.createUser doc
 
 	adminUpdateUser: (modifier,_id)->
 		check arguments, [Match.Any]

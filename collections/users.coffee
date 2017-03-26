@@ -43,8 +43,8 @@ Schemas.User = new SimpleSchema(
 
   username:
     type: String
-    regEx: /^[a-z0-9A-Z_]{3,15}$/
-    # optional: true
+    min: 2
+    max: 50
 
   emails:
     type: [Object]
@@ -53,12 +53,10 @@ Schemas.User = new SimpleSchema(
   "emails.$.address":
     type: String
     regEx: SimpleSchema.RegEx.Email
+    label: 'Email'
 
   "emails.$.verified":
     type: Boolean
-
-  createdAt:
-    type: Date
 
   profile:
     type: Schemas.UserProfile
@@ -73,6 +71,11 @@ Schemas.User = new SimpleSchema(
     type: [String]
     blackbox: true
     optional: true
+    autoform:
+      type: "select-checkbox-inline",
+      options: ->
+        admin: 'Admin'
+        teacher: 'Teacher'
 )
 
 Meteor.users.attachSchema Schemas.User

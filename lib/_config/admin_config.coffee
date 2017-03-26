@@ -29,5 +29,13 @@
 		# 		}
 		# 	]
 
+	collections:
+		Roles:
+			collectionObject: Meteor.roles
+			color: 'red'
+			icon: ''
+			tableColumns: [
+				{ label: 'Name', name: 'name' }
+			]
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

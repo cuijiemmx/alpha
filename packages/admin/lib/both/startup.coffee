@@ -189,7 +189,12 @@ Meteor.startup ->
 				# TODO: use `tmpl`
 				createdCell: (node, cellData, rowData) ->
 					$(node).html(Blaze.toHTMLWithData Template.adminUsersIsAdmin, {_id: cellData})
-				width: '40px'
+				width: '60px'
+			}
+			{
+				data: 'username'
+				title: 'Username'
+				searchable: true
 			}
 			{
 				data: 'emails'
@@ -198,14 +203,14 @@ Meteor.startup ->
 					value[0].address
 				searchable: true
 			}
-			{
-				data: 'emails'
-				title: 'Mail'
-				# TODO: use `tmpl`
-				createdCell: (node, cellData, rowData) ->
-					$(node).html(Blaze.toHTMLWithData Template.adminUsersMailBtn, {emails: cellData})
-				width: '40px'
-			}
-			{ data: 'createdAt', title: 'Joined' }
+			# {
+			# 	data: 'emails'
+			# 	title: 'Mail'
+			# 	# TODO: use `tmpl`
+			# 	createdCell: (node, cellData, rowData) ->
+			# 		$(node).html(Blaze.toHTMLWithData Template.adminUsersMailBtn, {emails: cellData})
+			# 	width: '40px'
+			# }
+			# { data: 'createdAt', title: 'Joined' }
 		], adminEditDelButtons
 		dom: adminTablesDom
