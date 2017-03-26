@@ -62,3 +62,4 @@ AutoForm.hooks
 	adminChangePassword:
 		onSuccess: (operation, result, template)->
 			AdminDashboard.alertSuccess 'Password reset'
+			Router.go '/admin/Users'
