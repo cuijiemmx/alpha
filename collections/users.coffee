@@ -72,10 +72,11 @@ Schemas.User = new SimpleSchema(
     blackbox: true
     optional: true
     autoform:
-      type: "select-checkbox-inline",
+      type: "select-checkbox-inline"
       options: ->
-        admin: 'Admin'
-        teacher: 'Teacher'
+        Meteor.roles.find().map (i) ->
+      	  label: i.name
+      	  value: i.name
 )
 
 Meteor.users.attachSchema Schemas.User

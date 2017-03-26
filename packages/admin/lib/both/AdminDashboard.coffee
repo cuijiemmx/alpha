@@ -67,6 +67,16 @@ AdminDashboard.schemas.newUser = new SimpleSchema
 	# 	type: Boolean
 	# 	label: 'Send this user their password by email'
 	# 	optional: true
+	roles:
+    type: [String]
+    blackbox: true
+    optional: true
+    autoform:
+      type: "select-checkbox-inline",
+      options: ->
+        Meteor.roles.find().map (i) ->
+      	  label: i.name
+      	  value: i.name
 
 AdminDashboard.schemas.sendResetPasswordEmail = new SimpleSchema
 	_id:

@@ -89,6 +89,7 @@
 			{{>afQuickField name="username"}}
 			{{>afQuickField name="email"}}
 			{{>afQuickField name="password"}}
+			{{>afQuickField name="roles"}}
 			<button type="submit" class="btn btn-primary">Add User</button>
 			{{/autoForm}}
 		</div>
@@ -149,6 +150,7 @@
 		<div class="box-body">
 			{{> adminAlert}}
 			{{# autoForm id="adminUpdateUser" collection=adminGetUsers type="update" doc=admin_current_doc}}
+			{{>afQuickField name="username"}}
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
 			{{>afQuickField name="roles"}}
