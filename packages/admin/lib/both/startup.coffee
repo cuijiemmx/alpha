@@ -185,20 +185,26 @@ Meteor.startup ->
 		columns: _.union [
 			{
 				data: '_id'
-				title: 'Admin'
+				title: '管理员'
 				# TODO: use `tmpl`
 				createdCell: (node, cellData, rowData) ->
 					$(node).html(Blaze.toHTMLWithData Template.adminUsersIsAdmin, {_id: cellData})
 				width: '60px'
 			}
 			{
+				data: 'profile.type'
+				title: '用户类型'
+				render: (value) ->
+					{teacher: '老师', parent: '家长', student: '学生'}[value]
+			}
+			{
 				data: 'username'
-				title: 'Username'
+				title: '用户名'
 				searchable: true
 			}
 			{
 				data: 'emails'
-				title: 'Email'
+				title: '邮箱'
 				render: (value) ->
 					value[0].address
 				searchable: true

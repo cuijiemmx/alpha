@@ -85,6 +85,14 @@ UI.registerHelper 'adminGetUserSchema', ->
 
 	return schema
 
+UI.registerHelper 'adminNewUserSchema', ->
+	new SimpleSchema [
+		Meteor.users.simpleSchema(),
+		password:
+			type: String
+			label: '密码'
+	]
+
 UI.registerHelper 'adminCollectionLabel', (collection)->
 	AdminDashboard.collectionLabel(collection) if collection?
 

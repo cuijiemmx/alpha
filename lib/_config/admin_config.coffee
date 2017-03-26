@@ -28,14 +28,5 @@
 		# 				Meteor.users.find comment.owner, limit: 1
 		# 		}
 		# 	]
-
-	collections:
-		Roles:
-			collectionObject: Meteor.roles
-			color: 'red'
-			icon: ''
-			tableColumns: [
-				{ label: 'Name', name: 'name' }
-			]
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

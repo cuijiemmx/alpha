@@ -48,36 +48,6 @@ AdminDashboard =
 			path += (if s[0] == '/' then '' else '/') + s
 		path
 
-
-AdminDashboard.schemas.newUser = new SimpleSchema
-	username:
-		type: String
-	email:
-		type: String
-		label: "Email address"
-	# chooseOwnPassword:
-	# 	type: Boolean
-	# 	label: 'Let this user choose their own password with an email'
-	# 	defaultValue: true
-	password:
-		type: String
-		label: 'Password'
-		optional: true
-	# sendPassword:
-	# 	type: Boolean
-	# 	label: 'Send this user their password by email'
-	# 	optional: true
-	roles:
-    type: [String]
-    blackbox: true
-    optional: true
-    autoform:
-      type: "select-checkbox-inline",
-      options: ->
-        Meteor.roles.find().map (i) ->
-      	  label: i.name
-      	  value: i.name
-
 AdminDashboard.schemas.sendResetPasswordEmail = new SimpleSchema
 	_id:
 		type: String
@@ -87,3 +57,4 @@ AdminDashboard.schemas.changePassword = new SimpleSchema
 		type: String
 	password:
 		type: String
+		label: '新密码'

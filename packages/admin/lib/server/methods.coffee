@@ -49,7 +49,12 @@ Meteor.methods
 	adminNewUser: (doc) ->
 		check arguments, [Match.Any]
 		if Roles.userIsInRole this.userId, ['admin']
-			Accounts.createUser doc
+			user =
+				username: doc.username
+				password: doc.password
+			doc.emails and doc.emails[0] and user.email = doc.emails[0].address
+			user.profile = doc.profile
+			Accounts.createUser user
 
 	adminUpdateUser: (modifier,_id)->
 		check arguments, [Match.Any]

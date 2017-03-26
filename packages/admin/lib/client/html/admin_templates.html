@@ -85,11 +85,23 @@
 	<div class="box box-default">
 		<div class="box-body">
 			{{> adminAlert}}
-			{{# autoForm id="adminNewUser" schema=AdminSchemas.newUser type="method" meteormethod="adminNewUser"}}
+			{{# autoForm id="adminNewUser" schema=adminNewUserSchema type="method" meteormethod="adminNewUser"}}
 			{{>afQuickField name="username"}}
-			{{>afQuickField name="email"}}
 			{{>afQuickField name="password"}}
+			{{>afQuickField name="emails.0.address"}}
+			{{>afQuickField name="emails.0.verified"}}
+			{{>afQuickField name="profile.type"}}
+			{{>afQuickField name="profile.name"}}
+			{{>afQuickField name="profile.gender"}}
+			{{>afQuickField name="profile.picture"}}
+			{{>afQuickField name="profile.birthday"}}
+			{{>afQuickField name="profile.mobile"}}
+			{{#if afFieldValueIs name="profile.type" value="teacher"}}
 			{{>afQuickField name="roles"}}
+			{{/if}}
+			{{#if afFieldValueIs name="profile.type" value="student"}}
+			{{>afQuickField name="profile.parents"}}
+			{{/if}}
 			<button type="submit" class="btn btn-primary">Add User</button>
 			{{/autoForm}}
 		</div>
@@ -153,8 +165,19 @@
 			{{>afQuickField name="username"}}
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
+			{{>afQuickField name="profile.type"}}
+			{{>afQuickField name="profile.name"}}
+			{{>afQuickField name="profile.gender"}}
+			{{>afQuickField name="profile.picture"}}
+			{{>afQuickField name="profile.birthday"}}
+			{{>afQuickField name="profile.mobile"}}
+			{{#if afFieldValueIs name="profile.type" value="teacher"}}
 			{{>afQuickField name="roles"}}
-			<button type="submit" class="btn btn-primary btn-sm">Update</button>
+			{{/if}}
+			{{#if afFieldValueIs name="profile.type" value="student"}}
+			{{>afQuickField name="profile.parents"}}
+			{{/if}}
+			<button type="submit" class="btn btn-primary btn-sm">更新</button>
 			{{/autoForm}}
 
 			<hr/>
@@ -162,7 +185,7 @@
 			{{#autoForm id="adminChangePassword" schema=AdminSchemas.changePassword type="method" meteormethod="adminChangePassword"}}
 			<input value="{{admin_current_id}}" type="hidden" name="_id" data-schema-key="_id"/>
 			{{>afQuickField name="password"}}
-			<button type="submit" class="btn btn-primary btn-sm">Change Password</button>
+			<button type="submit" class="btn btn-primary btn-sm">修改密码</button>
 			{{/autoForm}}
 		</div>
 	</div>
