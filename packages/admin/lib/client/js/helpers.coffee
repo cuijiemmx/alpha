@@ -77,6 +77,9 @@ UI.registerHelper 'adminIsUserInRole', (_id,role)->
 UI.registerHelper 'adminGetUsers', ->
 	Meteor.users
 
+UI.registerHelper 'adminUserIsApp', (user) ->
+	user and user.profile and user.profile.type == 'app'
+
 UI.registerHelper 'adminGetUserSchema', ->
 	if _.has(AdminConfig, 'userSchema')
 		schema = AdminConfig.userSchema

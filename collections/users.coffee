@@ -3,7 +3,7 @@ Schemas.UserProfile = new SimpleSchema(
 	type:
   	type: String
   	label: '用户类型'
-  	allowedValues: ['teacher', 'student', 'parent']
+  	allowedValues: ['app', 'teacher', 'student', 'parent']
   	autoform:
   		options:
   			teacher: '老师'
@@ -38,6 +38,7 @@ Schemas.UserProfile = new SimpleSchema(
   gender:
   	type: String
   	label: '性别'
+  	optional: true
   	allowedValues: ['male', 'female']
   	autoform:
   		type: 'select-radio-inline'
@@ -61,16 +62,24 @@ Schemas.UserProfile = new SimpleSchema(
       if @field('profile.type').value == 'teacher'
         # inserts
         if !@operator
-          if !@isSet or @value
+          if !@isSet or !@value
           	return "required"
         # updates
         else if @isSet
-          if @operator == "$set" and @value
+          if @operator == "$set" and !@value
           	return "required"
           if @operator == "$unset"
           	return "required"
           if @operator == "$rename"
           	return "required"
+
+  startupUri:
+  	type: String
+  	optional: true
+
+  redirectUri:
+  	type: String
+  	optional: true
 )
 
 Schemas.User = new SimpleSchema
@@ -88,10 +97,12 @@ Schemas.User = new SimpleSchema
     type: String
     regEx: SimpleSchema.RegEx.Email
     label: '邮箱'
+   	optional: true
 
   "emails.$.verified":
     type: Boolean
     label: '邮箱已验证'
+    optional: true
 
   profile:
     type: Schemas.UserProfile

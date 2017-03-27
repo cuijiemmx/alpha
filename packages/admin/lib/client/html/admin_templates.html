@@ -163,14 +163,21 @@
 			{{> adminAlert}}
 			{{# autoForm id="adminUpdateUser" collection=adminGetUsers type="update" doc=admin_current_doc}}
 			{{>afQuickField name="username"}}
+			{{#unless afFieldValueIs name="profile.type" value="app"}}
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
 			{{>afQuickField name="profile.type"}}
+			{{/unless}}
 			{{>afQuickField name="profile.name"}}
+			{{#unless afFieldValueIs name="profile.type" value="app"}}
 			{{>afQuickField name="profile.gender"}}
 			{{>afQuickField name="profile.picture"}}
 			{{>afQuickField name="profile.birthday"}}
 			{{>afQuickField name="profile.mobile"}}
+			{{else}}
+			{{>afQuickField name="profile.startupUri"}}
+			{{>afQuickField name="profile.redirectUri"}}
+			{{/unless}}
 			{{#if afFieldValueIs name="profile.type" value="teacher"}}
 			{{>afQuickField name="roles"}}
 			{{/if}}
@@ -182,11 +189,13 @@
 
 			<hr/>
 
+			{{#unless adminUserIsApp admin_current_doc}}
 			{{#autoForm id="adminChangePassword" schema=AdminSchemas.changePassword type="method" meteormethod="adminChangePassword"}}
 			<input value="{{admin_current_id}}" type="hidden" name="_id" data-schema-key="_id"/>
 			{{>afQuickField name="password"}}
 			<button type="submit" class="btn btn-primary btn-sm">修改密码</button>
 			{{/autoForm}}
+			{{/unless}}
 		</div>
 	</div>
 </template>

@@ -195,7 +195,7 @@ Meteor.startup ->
 				data: 'profile.type'
 				title: '用户类型'
 				render: (value) ->
-					{teacher: '老师', parent: '家长', student: '学生'}[value]
+					{app: 'App', teacher: '老师', parent: '家长', student: '学生'}[value]
 			}
 			{
 				data: 'username'
@@ -206,7 +206,7 @@ Meteor.startup ->
 				data: 'emails'
 				title: '邮箱'
 				render: (value) ->
-					value[0].address
+					value and value[0] and value[0].address
 				searchable: true
 			}
 			# {

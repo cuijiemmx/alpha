@@ -52,7 +52,7 @@ Meteor.methods
 			user =
 				username: doc.username
 				password: doc.password
-			doc.emails and doc.emails[0] and user.email = doc.emails[0].address
+			doc.emails and doc.emails[0] and doc.emails[0].address and user.email = doc.emails[0].address
 			user.profile = doc.profile
 			Accounts.createUser user
 
