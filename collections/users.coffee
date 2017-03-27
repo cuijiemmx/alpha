@@ -72,14 +72,6 @@ Schemas.UserProfile = new SimpleSchema(
           	return "required"
           if @operator == "$rename"
           	return "required"
-
-  startupUri:
-  	type: String
-  	optional: true
-
-  redirectUri:
-  	type: String
-  	optional: true
 )
 
 Schemas.User = new SimpleSchema

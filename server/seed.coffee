@@ -1,21 +1,20 @@
 Meteor.startup ->
-	apps = JSON.parse Assets.getText('apps.json')
-	for app in apps
-		user = Accounts.findUserByUsername app.username
-		if user
-			Accounts.setPassword user._id, app.password
-			Meteor.users.update(user._id, {$set: {profile: {
-				type: 'app',
-				name: app.name,
-				startupUri: app.startupUri,
-				redirectUri: app.redirectUri
-			}}})
+	appsInfo = JSON.parse Assets.getText('apps.json')
+	for appInfo in appsInfo
+		app = Apps.findOne({clientId: appInfo.clientId})
+		if app
+			Apps.update(app._id, {$set: {
+				clientSecret:   appInfo.clientSecret
+				name:        appInfo.name,
+				startupUri:  appInfo.startupUri,
+				redirectUri: appInfo.redirectUri
+			}})
 		else
-			Accounts.createUser
-				username: app.username
-				password: app.password
+			uid = Accounts.createUser
+				username: "aid_#{appInfo.clientId}"
 				profile:
 					type: 'app'
-					name: app.name
-					startupUri: app.startupUri
-					redirectUri: app.redirectUri
+					name: appInfo.name
+			app = appInfo
+			app.user = uid
+			Apps.insert app

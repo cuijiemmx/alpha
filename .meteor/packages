@@ -70,3 +70,5 @@ standard-minifier-css
 standard-minifier-js
 pagebakers:ionicons
 mpowaga:autoform-autocomplete
+oauth2-server
+pbastowski:body-parser

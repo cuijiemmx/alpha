@@ -28,5 +28,17 @@
 		# 				Meteor.users.find comment.owner, limit: 1
 		# 		}
 		# 	]
+		#
+	collections:
+		Apps:
+			color: 'green'
+			icon: ''
+			extraFields: ['user']
+			tableColumns: [
+				{ label: 'Active', name: 'active'}
+				{ label: 'Name', name: 'name'}
+				{ label: 'Client Id', name: 'clientId'}
+				{ label: 'Client Secret', name: 'clientSecret'}
+			]
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

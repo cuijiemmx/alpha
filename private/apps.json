@@ -1,6 +1,7 @@
 [{
-  "username": "aid_testMgmt",
-  "password": "test",
+	"active": true,
+  "clientId": "testApp",
+  "clientSecret": "_T3PzclWAgyU6Jb7UaR836VoXro4aOCChhVAEoRwU54",
   "name": "测试应用",
   "startupUri": "http://updust.com",
   "redirectUri": "http://updust.com"

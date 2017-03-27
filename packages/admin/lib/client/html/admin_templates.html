@@ -167,16 +167,11 @@
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
 			{{>afQuickField name="profile.type"}}
-			{{/unless}}
 			{{>afQuickField name="profile.name"}}
-			{{#unless afFieldValueIs name="profile.type" value="app"}}
 			{{>afQuickField name="profile.gender"}}
 			{{>afQuickField name="profile.picture"}}
 			{{>afQuickField name="profile.birthday"}}
 			{{>afQuickField name="profile.mobile"}}
-			{{else}}
-			{{>afQuickField name="profile.startupUri"}}
-			{{>afQuickField name="profile.redirectUri"}}
 			{{/unless}}
 			{{#if afFieldValueIs name="profile.type" value="teacher"}}
 			{{>afQuickField name="roles"}}

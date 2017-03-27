@@ -126,9 +126,11 @@ natestrauser:animate-css@3.5.1
 notifications@0.0.7
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.41
+oauth2-server@2.0.0
 observe-sequence@1.0.9
 ordered-dict@1.0.5
 pagebakers:ionicons@2.0.1_1
+pbastowski:body-parser@0.0.4
 percolate:momentum@0.7.2
 percolate:momentum-iron-router@0.7.0
 percolate:velocityjs@1.2.1_1
