@@ -11,12 +11,10 @@ class OAuth2Server
 
 		@routes = express()
 
-		@model = new Model(@config)
+		options = @config.options
+		options.model = new Model(@config.model)
 
-		@oauth = oauthserver
-			model: @model
-			grants: ['authorization_code', 'client_credentials', 'refresh_token']
-			debug: @config.debug
+		@oauth = oauthserver options
 
 		@publishAuhorizedClients()
 		@initRoutes()
