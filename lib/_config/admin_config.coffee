@@ -40,5 +40,7 @@
 				{ label: 'Client Id', name: 'clientId'}
 				{ label: 'Client Secret', name: 'clientSecret'}
 			]
+			showEditColumn: false
+			showDelColumn: false
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']
