@@ -17,7 +17,7 @@ AdminDashboard =
 	adminRoutes: ['adminDashboard','adminDashboardUsersNew','adminDashboardUsersEdit','adminDashboardView','adminDashboardNew','adminDashboardEdit']
 	collectionLabel: (collection)->
 		if collection == 'Users'
-			'Users'
+			'用户'
 		else if collection? and typeof AdminConfig.collections[collection]?.label == 'string'
 			AdminConfig.collections[collection].label
 		else Session.get 'admin_collection_name'
