@@ -41,7 +41,6 @@ user-thumbs
 comments
 favorites
 notifications
-twbs:bootstrap
 useraccounts:iron-routing
 reywood:publish-composite
 percolate:momentum-iron-router
@@ -72,3 +71,4 @@ pagebakers:ionicons
 mpowaga:autoform-autocomplete
 oauth2-server
 pbastowski:body-parser
+bootstrap
