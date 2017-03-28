@@ -110,7 +110,7 @@ Schemas.User = new SimpleSchema
     type: [String]
     blackbox: true
     optional: true
-    label: '管理'
+    label: '角色'
     autoform:
       type: "select-checkbox-inline"
       options: ->
