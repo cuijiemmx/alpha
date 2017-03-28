@@ -127,6 +127,7 @@ natestrauser:animate-css@3.5.1
 notifications@0.0.7
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.41
+numeral:numeral@1.5.3_1
 oauth2-server@2.0.0
 observe-sequence@1.0.9
 ordered-dict@1.0.5
@@ -146,6 +147,7 @@ reload@1.1.6
 retry@1.0.5
 reywood:publish-composite@1.4.2
 routepolicy@1.0.8
+rzymek:moment-locale-zh-cn@2.12.0
 service-configuration@1.0.7
 session@1.1.3
 sha@1.0.5

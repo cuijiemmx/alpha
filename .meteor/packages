@@ -35,7 +35,7 @@ service-configuration
 yogiben:mixpanel
 juliancwirko:s-alert
 juliancwirko:s-alert-stackslide
-momentjs:moment
+rzymek:moment-locale-zh-cn
 zimme:active-route
 user-thumbs
 comments
@@ -72,3 +72,5 @@ mpowaga:autoform-autocomplete
 oauth2-server
 pbastowski:body-parser
 bootstrap
+numeral:numeral
+reactive-var
