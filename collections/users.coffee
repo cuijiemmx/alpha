@@ -24,9 +24,10 @@ Schemas.UserProfile = new SimpleSchema(
   picture:
     type: String
     label: '头像'
-    optional:true
+    optional: true
     autoform:
       afFieldInput:
+        label: '选择图片'
         type: 'fileUpload'
         collection: 'ProfilePictures'
 
