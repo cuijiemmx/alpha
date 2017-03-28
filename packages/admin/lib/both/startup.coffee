@@ -35,9 +35,12 @@ adminTablePubName = (collection) ->
 adminCreateTables = (collections) ->
 	_.each AdminConfig?.collections, (collection, name) ->
 		_.defaults collection, {
-			showEditColumn: true
-			showDelColumn: true
+			# showEditColumn: true
+			# showDelColumn: true
 			showInSideBar: true
+			insert: true
+			edit: true
+			delete: true
 		}
 
 		columns = _.map collection.tableColumns, (column) ->
@@ -53,9 +56,9 @@ adminCreateTables = (collections) ->
 		if columns.length == 0
 			columns = defaultColumns()
 
-		if collection.showEditColumn
+		if collection.edit
 			columns.push(adminEditButton)
-		if collection.showDelColumn
+		if collection.delete
 			columns.push(adminDelButton)
 
 		AdminTables[name] = new Tabular.Table

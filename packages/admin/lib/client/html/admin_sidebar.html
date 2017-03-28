@@ -16,8 +16,10 @@
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li class="{{isActivePath path=newPath}}"><a href="{{newPath}}"><i class="fa fa-angle-double-right"></i> New</a></li>
-							<li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}"><i class="fa fa-angle-double-right"></i> View All</a></li>
+							{{#if this.insert}}
+							<li class="{{isActivePath path=newPath}}"><a href="{{newPath}}"><i class="fa fa-angle-double-right"></i> 添加</a></li>
+							{{/if}}
+							<li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}"><i class="fa fa-angle-double-right"></i> 查看全部</a></li>
 							{{#each admin_collection_items}}
 							<li class="{{isActivePath path=url}}"><a href="{{url}}"><i class="fa fa-angle-double-right"></i> {{title}}</a></li>
 							{{/each}}

@@ -10,9 +10,14 @@ adminCollections = ->
 		collectionObject: Meteor.users
 		# icon: 'user'
 		icon: ''
-		label: 'Users'
+		label: '用户'
 
 	_.map collections, (obj, key) ->
+		_.defaults obj, {
+			insert: true
+			edit: true
+			delete: true
+		}
 		obj = _.extend obj, {name: key}
 		obj = _.defaults obj, {label: key, icon: 'plus', color: 'blue'}
 		obj = _.extend obj,

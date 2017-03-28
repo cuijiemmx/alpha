@@ -33,6 +33,7 @@
 		Apps:
 			color: 'green'
 			icon: ''
+			label: '应用'
 			extraFields: ['user']
 			tableColumns: [
 				{ label: 'Active', name: 'active', template: 'adminAppsIsActive'}
@@ -40,7 +41,8 @@
 				{ label: 'Client Id', name: 'clientId'}
 				{ label: 'Client Secret', name: 'clientSecret'}
 			]
-			showEditColumn: false
-			showDelColumn: false
+			insert: false
+			edit: false
+			delete: false
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']
