@@ -35,7 +35,7 @@
 			icon: ''
 			extraFields: ['user']
 			tableColumns: [
-				{ label: 'Active', name: 'active'}
+				{ label: 'Active', name: 'active', template: 'adminAppsIsActive'}
 				{ label: 'Name', name: 'name'}
 				{ label: 'Client Id', name: 'clientId'}
 				{ label: 'Client Secret', name: 'clientSecret'}

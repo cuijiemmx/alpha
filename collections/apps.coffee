@@ -3,6 +3,7 @@
 Schemas.Apps = new SimpleSchema
 	active:
 		type: Boolean
+		defaultValue: true
 	clientId:
 		type: String
 	clientSecret:
