@@ -1,6 +1,6 @@
 <template name="navbar">
   <div class="template-navbar">
-    <div class="navbar">
+    <div class="navbar navbar-default">
       <div class="container-fluid close-navbar">
         <div class="navbar-header">
           <input type="checkbox" id="sliding-menu-controller" class="hide">
@@ -25,10 +25,15 @@
               {{/if}}
             </div>
           </div>
-          <!-- <a class="navbar-brand" href="{{#if User}}{{Config.dashboardRoute}}{{else}}{{Config.homeRoute}}{{/if}}">{{{Config.logo}}}</a> -->
-          <a class="navbar-brand">{{#if User}}{{dateTime}}{{/if}}</a>
         </div>
         <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+        	<ul class="nav navbar-nav navbar-left">
+        		{{#if User}}
+        		<li>
+        			<a>{{dateTime}}</a>
+        		</li>
+        		{{/if}}
+        	</ul>
           <ul class="nav navbar-nav navbar-right">
             {{#if User}}
               {{> userDropdown}}

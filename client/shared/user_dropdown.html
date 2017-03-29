@@ -1,6 +1,6 @@
 <template name="userDropdown">
-  <li class="dropdown hidden-xs">
-    <a href="#" class="dropdown-toggle link" data-toggle="dropdown">{{niceName User._id}} <i class="ion-android-arrow-dropdown i-xs"></i></a>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle link" data-toggle="dropdown" role="button">{{niceName User._id}} <span class="caret"></span></a>
     <ul class="dropdown-menu">
       <li><a href="{{pathFor 'profile'}}">{{_ "profile"}}</a></li>
       <li><a href="{{pathFor 'account'}}">{{_ "account"}}</a></li>

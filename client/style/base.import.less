@@ -1,6 +1,12 @@
-html, body
-{
-  height:100%;
+@brand-primary: #008cba;
+
+@light-blue: #EFF2F7;
+@blue: #49A1FF;
+@dark-blue: #273444;
+
+html,
+body {
+  height: 100%;
 }
 
 .layout {
@@ -12,14 +18,14 @@ button.navbar-toggle {
 }
 
 .navbar {
-   margin-left: 0;
- }
+  margin-left: 0;
+}
 
 #iron-router-progress {
-    background-color : darken(@brand-primary,20%);
-    box-shadow       : 0 0 5px darken(@brand-primary,20%);
+  background-color: darken(@brand-primary, 20%);
+  box-shadow: 0 0 5px darken(@brand-primary, 20%);
 }
 
 #iron-router-progress.spinner:before {
-    border-color : darken(@brand-primary,20%);
+  border-color: darken(@brand-primary, 20%);
 }
