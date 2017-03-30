@@ -2,23 +2,22 @@
 
 @light-blue: #EFF2F7;
 @blue: #49A1FF;
-@dark-blue: #273444;
+@dark-blue: #1F2D3D;
 
 html,
 body {
   height: 100%;
+  color: #475669;
 }
 
 .layout {
-  min-height: 80%;
-}
-
-button.navbar-toggle {
-  background: inherit;
-}
-
-.navbar {
-  margin-left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  div[data-momentum] {
+  	position: relative;
+  	flex-grow: 1;
+  }
 }
 
 #iron-router-progress {

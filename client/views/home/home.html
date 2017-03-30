@@ -1,10 +1,29 @@
 <template name="home">
   <div class="container-fluid home">
     <div class="row">
-      <div class="col-md-3">
-      la
+      <div class="col-xs-3 g-left">
+        <ul>
+          {{#each navs}}
+          <li class="m-nav-item {{#if isNavSelected @index}} active {{/if}}">
+            <i class="{{icon}}"></i>{{label}}
+          </li>
+          {{/each}}
+        </ul>
       </div>
-      <div class="col-md-9"></div>
+      <div class="col-xs-9 g-right">
+        <!-- <div class="g-apps">
+          <ul class="list-inline">
+            {{#each times}}
+            <li>
+              {{> appItem}}
+            </li>
+            {{/each}}
+          </ul>
+        </div> -->
+        <div class="m-nav-content">
+          {{> Template.dynamic template=contentTemplate}}
+        </div>
+      </div>
     </div>
   </div>
 </template>

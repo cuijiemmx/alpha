@@ -29,3 +29,35 @@ Template.home.rendered = () ->
 Template.home.destroyed = () ->
 	#For Skrollr
 	$('body').attr('style','')
+
+
+Template.home.helpers
+	times: [1,1,1,1,1,1,1,1,1,1,1,1]
+	navs: ->
+		Template.instance().navs
+	isNavSelected: (index) ->
+		Template.instance().currentNavIndex.get() == index
+	contentTemplate: ->
+		Template.instance().navs[Template.instance().currentNavIndex.get()].contentTemplate
+
+
+Template.home.events
+	'click .m-nav-item': (e, instance) ->
+		index = $(e.target).index()
+		instance.currentNavIndex.set(index)
+
+Template.home.onCreated ->
+	this.currentNavIndex = new ReactiveVar(0)
+	this.navs = [
+			icon: 'ion-android-apps'
+			label: '我的桌面'
+			contentTemplate: 'noData'
+		,
+			icon: 'ion-aperture'
+			label: '应用中心'
+			contentTemplate: 'notFound'
+		,
+			icon: 'ion-link'
+			label: '上级云平台'
+			contentTemplate: 'noData'
+	]
