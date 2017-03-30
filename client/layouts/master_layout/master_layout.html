@@ -5,7 +5,9 @@
 		{{/if}}
 		{{#momentum plugin='iron-router' options=momentumIRTransition}}
 			{{> yield }}
-			{{> contacts}}
+			{{#if currentUser}}
+				{{> contacts}}
+			{{/if}}
 		{{/momentum}}
 	</div>
 
