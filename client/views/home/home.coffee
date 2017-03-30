@@ -59,5 +59,5 @@ Template.home.onCreated ->
 		,
 			icon: 'ion-link'
 			label: '上级云平台'
-			contentTemplate: 'noData'
+			contentTemplate: 'links'
 	]

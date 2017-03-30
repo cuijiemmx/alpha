@@ -1,0 +1,17 @@
+{
+  "public": {
+    "links": [{
+      "label": "武昌区教育局",
+      "thumb": "/img/wuchang.png",
+      "url": "http://wuchang.com"
+    }, {
+      "label": "武汉市教育局",
+      "thumb": "/img/wuchang.png",
+      "url": "http://wuhan.com"
+    }, {
+      "label": "湖北省教育局",
+      "thumb": "/img/wuchang.png",
+      "url": "http://hubei.com"
+    }]
+  }
+}
