@@ -19,3 +19,6 @@ Template.account.events
 Template.setUserName.helpers
 	user: ->
 		Meteor.user()
+
+Template['custom-atTitle'].replaces('atTitle');
+Template['custom-atPwdForm'].replaces('atPwdForm');
