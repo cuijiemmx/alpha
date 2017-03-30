@@ -1,8 +1,14 @@
 [{
 	"active": true,
+  "clientId": "admin",
+  "icon": "/appicons/G28.png",
+  "name": "用户管理",
+  "startupUri": "/admin"
+},{
+	"active": true,
   "clientId": "testApp",
-  "clientSecret": "_T3PzclWAgyU6Jb7UaR836VoXro4aOCChhVAEoRwU54",
   "icon": "/appicons/G28.png",
   "name": "测试应用",
-  "startupUri": "/admin"
+  "startupUri": "http://updust.com",
+  "redirectUri": "http://updust.com"
 }]

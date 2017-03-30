@@ -17,5 +17,6 @@ Meteor.startup ->
 					type: 'app'
 					name: appInfo.name
 			app = appInfo
+			app.clientSecret or app.clientSecret = Random.secret()
 			app.user = uid
 			Apps.insert app
