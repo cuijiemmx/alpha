@@ -6,3 +6,6 @@ Meteor.publish 'posts', ->
 
 Meteor.publish 'attachments', ->
 	Attachments.find()
+
+Meteor.publish 'apps', ->
+	Apps.find({active: true})

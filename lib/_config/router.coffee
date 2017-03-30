@@ -29,6 +29,7 @@ Router.configure
 
 Router.waitOn ->
   subs.subscribe 'user'
+  subs.subscribe 'apps'
 
 # Router.onAfterAction onAfterAction
 

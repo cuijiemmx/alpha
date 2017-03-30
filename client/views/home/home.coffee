@@ -55,7 +55,7 @@ Template.home.onCreated ->
 		,
 			icon: 'ion-aperture'
 			label: '应用中心'
-			contentTemplate: 'notFound'
+			contentTemplate: 'appstore'
 		,
 			icon: 'ion-link'
 			label: '上级云平台'

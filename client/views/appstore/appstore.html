@@ -1,0 +1,11 @@
+<template name="appstore">
+  <div class="g-appstore">
+    <ul class="list-inline">
+      {{#each apps}}
+      <li>
+        {{> appItem}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

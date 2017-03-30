@@ -40,9 +40,10 @@
 				{ label: 'Name', name: 'name'}
 				{ label: 'Client Id', name: 'clientId'}
 				{ label: 'Client Secret', name: 'clientSecret'}
+				{ label: 'Startup Url', name: 'redirectUri'}
 			]
 			insert: false
-			edit: false
+			edit: true
 			delete: false
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']
