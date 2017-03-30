@@ -32,7 +32,6 @@ Template.home.destroyed = () ->
 
 
 Template.home.helpers
-	times: [1,1,1,1,1,1,1,1,1,1,1,1]
 	navs: ->
 		Template.instance().navs
 	isNavSelected: (index) ->
