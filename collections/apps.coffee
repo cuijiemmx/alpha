@@ -8,6 +8,8 @@ Schemas.Apps = new SimpleSchema
 		type: String
 	clientSecret:
 		type: String
+	icon:
+		type: String
 	name:
 		type: String
 		min: 2
@@ -15,9 +17,10 @@ Schemas.Apps = new SimpleSchema
 	redirectUri:
 		type: String
 		regEx: SimpleSchema.RegEx.Url
+		optional: true
 	startupUri:
 		type: String
-		regEx: SimpleSchema.RegEx.Url
+		# regEx: SimpleSchema.RegEx.Url
 	user:
 		type: String
 		regEx: SimpleSchema.RegEx.Id

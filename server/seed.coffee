@@ -4,10 +4,11 @@ Meteor.startup ->
 		app = Apps.findOne({clientId: appInfo.clientId})
 		if app
 			Apps.update(app._id, {$set: {
-				clientSecret:   appInfo.clientSecret
-				name:        appInfo.name,
-				startupUri:  appInfo.startupUri,
-				redirectUri: appInfo.redirectUri
+				clientSecret: appInfo.clientSecret
+				icon:         appInfo.icon,
+				name:         appInfo.name,
+				startupUri:   appInfo.startupUri,
+				redirectUri:  appInfo.redirectUri
 			}})
 		else
 			uid = Accounts.createUser
