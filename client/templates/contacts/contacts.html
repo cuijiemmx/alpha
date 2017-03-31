@@ -1,11 +1,36 @@
 <template name="contacts">
-	<div class="contacts">
-		<div class="g-bar">
-			<i class="ion-ios-people"></i>通迅录
-		</div>
+	<div class="contacts {{contactsState}}">
+	{{#if expanded}}
+		{{> contactsExpanded}}
+	{{else}}
+		{{> contactsFolded}}
+	{{/if}}
 	</div>
 
 	{{> contactModalTemplate}}
+</template>
+
+<template name="contactsExpanded">
+	<ul>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+		<li class="m-contact-item">李磊同学</li>
+	</ul>
+	<div class="m-bar">
+		<input type="text" name="">
+    <i class="ion-android-close"></i>
+  </div>
+</template>
+
+<template name="contactsFolded">
+  <div class="m-bar">
+    <i class="ion-ios-people"></i>通迅录
+  </div>
 </template>
 
 <template name="contactModalTemplate">
