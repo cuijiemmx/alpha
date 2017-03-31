@@ -1,4 +1,4 @@
-@ProfilePictures = new FS.Collection("profilePictures",
+@Pictures = new FS.Collection("Pictures",
 	stores: [
 		new FS.Store.GridFS("images", {
 

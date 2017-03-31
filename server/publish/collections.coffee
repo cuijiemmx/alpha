@@ -9,3 +9,12 @@ Meteor.publish 'attachments', ->
 
 Meteor.publish 'apps', ->
 	Apps.find({active: true})
+
+Meteor.publishComposite 'links', ->
+  find: ->
+    Links.find()
+  children: [
+    find: (link) ->
+      _id = link.thumbnail or null
+      Pictures.find _id: _id
+    ]

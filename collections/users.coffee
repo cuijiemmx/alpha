@@ -29,7 +29,7 @@ Schemas.UserProfile = new SimpleSchema(
       afFieldInput:
         label: '选择图片'
         type: 'fileUpload'
-        collection: 'ProfilePictures'
+        collection: 'Pictures'
 
   name:
     type: String

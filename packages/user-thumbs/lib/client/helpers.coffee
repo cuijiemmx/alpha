@@ -22,6 +22,6 @@ Template.registerHelper 'profileThumbSrc', (_id) ->
 				if picture.indexOf('/') > -1
 					picture
 				else
-					if typeof ProfilePictures != 'undefined' && ProfilePictures.findOne user.profile.picture
-						picture = ProfilePictures.findOne picture
+					if typeof Pictures != 'undefined' && Pictures.findOne user.profile.picture
+						picture = Pictures.findOne picture
 						picture.url({store: 'thumbs'})

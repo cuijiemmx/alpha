@@ -20,3 +20,16 @@ Meteor.startup ->
 			app.clientSecret or app.clientSecret = Random.secret()
 			app.user = uid
 			Apps.insert app
+
+
+Seed 'links',
+	data: [
+		label: '武昌区教育局'
+		url: 'http://www.updust.com'
+	,
+		label: '武汉市教育局'
+		url: 'http://www.geekernel.com'
+	,
+		label: '湖北省教育局'
+		url: 'http://www.aliyun.com'
+	]

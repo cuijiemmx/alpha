@@ -156,6 +156,7 @@ standard-minifier-js@1.0.4
 tap:i18n@1.8.0
 templating@1.1.7
 templating-tools@1.0.2
+themeteorchef:seeder@0.2.0
 timmyg:wow@1.0.1
 tracker@1.0.11
 tsega:skrollr@0.0.2

@@ -45,5 +45,13 @@
 			insert: false
 			edit: true
 			delete: false
+		Links:
+			color: 'green'
+			icon: ''
+			label: '友情链接'
+			tableColumns: [
+				{ label: '标题', name: 'label' }
+				{ label: '地址', name: 'url' }
+			]
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

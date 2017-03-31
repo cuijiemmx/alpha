@@ -1,3 +1,6 @@
 Template.links.helpers
 	links: ->
-		Meteor.settings.public.links
+		Links.find()
+	thumbnailSrc: (_id) ->
+		picture = Pictures.findOne _id
+		picture.url({store: 'images'})
