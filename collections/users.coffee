@@ -60,7 +60,7 @@ Schemas.UserProfile = new SimpleSchema(
   	max: 11
   	optional: true
   	custom: ->
-      if @field('profile.type').value == 'teacher'
+      if 'admin' not in @field('roles').value and @field('profile.type').value == 'teacher'
         # inserts
         if !@operator
           if !@isSet or !@value
@@ -116,6 +116,12 @@ Schemas.User = new SimpleSchema
       type: "select-checkbox-inline"
       options: ->
         admin: '管理员'
+
+  createdAt:
+	  type: Date
+	  autoValue: ->
+		  if this.isInsert
+			  new Date()
 
 Meteor.users.attachSchema Schemas.User
 
