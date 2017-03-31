@@ -1,3 +1,4 @@
 Template.contacts.events
-	'click .contacts': ->
-		console.log("contacts clicked")
+	'click .contacts': (e) ->
+		# e.preventDefault()
+		$('#contactModal').modal('show')

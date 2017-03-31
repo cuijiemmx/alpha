@@ -4,4 +4,32 @@
 			<i class="ion-ios-people"></i>通迅录
 		</div>
 	</div>
+
+	{{> contactModalTemplate}}
 </template>
+
+<template name="contactModalTemplate">
+	<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="contactModalLabel">联系人详情</h4>
+				</div>
+				<div class="modal-body">
+					<div class="col-md-3">
+						<img src="http://api.randomuser.me/portraits/men/24.jpg" alt="cuijiemmx" class="img-responsive img-circle">
+						<h6>cuijiemmx</h6>
+					</div>
+					<div class="col-md-8 col-md-offset-1">
+						<h6>手机: 17671469302</h6>
+						<h6>微信: 17671469302</h6>
+						<h6>QQ: 17671469302</h6>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
