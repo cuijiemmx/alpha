@@ -3,12 +3,14 @@
 		{{#if User}}
 			{{> navbar}}
 		{{/if}}
-		{{#momentum plugin='iron-router' options=momentumIRTransition}}
-			{{> yield }}
-		{{/momentum}}
-		{{#if currentUser}}
-			{{> contacts}}
-		{{/if}}
+		<div class="g-content">
+			{{#momentum plugin='iron-router' options=momentumIRTransition}}
+				{{> yield }}
+			{{/momentum}}
+			{{#if currentUser}}
+				{{> contacts}}
+			{{/if}}
+		</div>
 	</div>
 
 	<!-- Prevent footer from popping up when route loading -->
