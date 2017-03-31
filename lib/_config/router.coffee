@@ -5,6 +5,7 @@ Router.configure
   loadingTemplate: "loading"
   notFoundTemplate: "notFound"
   routeControllerNameConverter: "camelCase"
+  progressSpinner: false
 
   onBeforeAction: ->
   	# Redirect to set username if required
