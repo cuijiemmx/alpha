@@ -56,7 +56,7 @@ class OAuth2Server
 		@app.all '/oauth/token', debugMiddleware, transformRequestsNotUsingFormUrlencodedType, @oauth.grant()
 
 		@app.get '/oauth/authorize', debugMiddleware, Meteor.bindEnvironment (req, res, next) ->
-			client = self.model.Clients.findOne({ active: true, clientId: req.query.client_id })
+			client = self.model.Clients.findOne({ clientId: req.query.client_id })
 			if not client?
 				return res.redirect '/oauth/error/404'
 

@@ -1,26 +1,46 @@
-Meteor.startup ->
-	appsInfo = JSON.parse Assets.getText('apps.json')
-	for appInfo in appsInfo
-		app = Apps.findOne({clientId: appInfo.clientId})
-		if app
-			Apps.update(app._id, {$set: {
-				clientSecret: appInfo.clientSecret
-				icon:         appInfo.icon,
-				name:         appInfo.name,
-				startupUri:   appInfo.startupUri,
-				redirectUri:  appInfo.redirectUri
-			}})
-		else
-			uid = Accounts.createUser
-				username: "aid_#{appInfo.clientId}"
+preinstalledApps = [
+	type: 'system'
+	userType: 'teacher'
+	userRoles: ['admin']
+	clientId: 'admin'
+	label: '平台管理'
+	icon: '/appicons/G28.png'
+	startupUri: '/admin'
+,
+	type: '3rd-party'
+	userType: 'teacher'
+	clientId: 'testApp'
+	clientSecret: Random.secret()
+	label: '测试应用'
+	icon: '/appicons/G28.png'
+	startupUri: 'http://updust.com'
+	redirectUri: 'http://updust.com'
+]
+
+if Apps.find().count() == 0
+	for preinstalledApp in preinstalledApps
+		if preinstalledApp.type == '3rd-party'
+			preinstalledApp.user = Accounts.createUser
+				username: "aid_#{preinstalledApp.clientId}"
 				profile:
 					type: 'app'
-					name: appInfo.name
-			app = appInfo
-			app.clientSecret or app.clientSecret = Random.secret()
-			app.user = uid
-			Apps.insert app
+					name: preinstalledApp.label
 
+Seed 'apps',
+	data: preinstalledApps
+
+Seed 'appCategories',
+	data: [
+		name: 'category0'
+		label: '类型0'
+		icon: 'ion-aperture'
+		apps: ['admin', 'testApp']
+	,
+		name: 'category1'
+		label: '类型1'
+		icon: 'ion-aperture'
+		apps: ['testApp']
+	]
 
 Seed 'links',
 	data: [

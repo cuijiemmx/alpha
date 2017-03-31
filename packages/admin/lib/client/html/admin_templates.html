@@ -166,7 +166,11 @@
 			{{#unless afFieldValueIs name="profile.type" value="app"}}
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
-			<!-- {{>afQuickField name="profile.type"}} -->
+			{{/unless}}
+			{{#unless admin_current_doc.profile.type}}
+			{{>afQuickField name="profile.type"}}
+			{{/unless}}
+			{{#unless afFieldValueIs name="profile.type" value="app"}}
 			{{#if afFieldValueIs name="profile.type" value="teacher"}}
 			{{>afQuickField name="roles"}}
 			{{/if}}
@@ -228,8 +232,4 @@
 <template name="adminDeleteBtn">
 	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="hidden-xs btn btn-xs btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i></a>
 	<a data-toggle="modal" doc="{{_id}}" href='#admin-delete-modal' class="visible-xs btn btn-sm btn-danger btn-delete"><i class="fa fa-times" doc="{{_id}}"></i> Delete</a>
-</template>
-
-<template name="adminAppsIsActive">
-	{{#if value}}<i class="fa fa-check"></i>{{/if}}
 </template>

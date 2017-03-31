@@ -36,15 +36,28 @@
 			label: '应用'
 			extraFields: ['user']
 			tableColumns: [
-				{ label: 'Active', name: 'active', template: 'adminAppsIsActive'}
-				{ label: 'Name', name: 'name'}
 				{ label: 'Client Id', name: 'clientId'}
-				{ label: 'Client Secret', name: 'clientSecret'}
-				{ label: 'Startup Url', name: 'redirectUri'}
+				{ label: 'Label', name: 'label'}
+				{ label: 'User Type', name: 'userType'}
+				{ label: 'User Roles', name: 'userRoles'}
 			]
 			insert: false
 			edit: true
 			delete: false
+		AppCategories:
+			color: 'green'
+			icon: ''
+			label: '应用类别'
+			tableColumns: [
+				label: 'Name'
+				name: 'name'
+			,
+				label: 'Label'
+				name: 'label'
+			,
+				label: 'Apps'
+				name: 'apps'
+			]
 		Links:
 			color: 'green'
 			icon: ''

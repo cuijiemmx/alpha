@@ -12,7 +12,11 @@
       </div>
       <div class="col-xs-9 g-right">
         <div class="m-nav-content">
-          {{> Template.dynamic template=contentTemplate}}
+        	{{#if templateData}}
+          {{> Template.dynamic template=contentTemplate data=templateData}}
+        	{{else}}
+        	{{> Template.dynamic template=contentTemplate}}
+        	{{/if}}
         </div>
       </div>
     </div>

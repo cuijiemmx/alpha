@@ -8,7 +8,10 @@ Meteor.publish 'attachments', ->
 	Attachments.find()
 
 Meteor.publish 'apps', ->
-	Apps.find({active: true})
+	Apps.find()
+
+Meteor.publish 'appCategories', ->
+	AppCategories.find()
 
 Meteor.publishComposite 'links', ->
   find: ->

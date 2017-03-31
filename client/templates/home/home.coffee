@@ -38,6 +38,8 @@ Template.home.helpers
 		Template.instance().currentNavIndex.get() == index
 	contentTemplate: ->
 		Template.instance().navs[Template.instance().currentNavIndex.get()].contentTemplate
+	templateData: ->
+		Template.instance().navs[Template.instance().currentNavIndex.get()].templateData
 
 
 Template.home.events
@@ -46,17 +48,26 @@ Template.home.events
 		instance.currentNavIndex.set(index)
 
 Template.home.onCreated ->
-	this.currentNavIndex = new ReactiveVar(0)
-	this.navs = [
-			icon: 'ion-android-apps'
-			label: '我的桌面'
-			contentTemplate: ''
-		,
-			icon: 'ion-aperture'
-			label: '应用中心'
-			contentTemplate: 'appstore'
-		,
-			icon: 'ion-link'
-			label: '上级云平台'
-			contentTemplate: 'links'
+	@currentNavIndex = new ReactiveVar(0)
+	@navs = [
+		icon: 'ion-android-apps'
+		label: '我的桌面'
+		contentTemplate: 'links'
+	,
+		icon: 'ion-aperture'
+		label: '应用中心'
+		contentTemplate: 'appsGrid'
+		templateData: Apps.find()
+	,
+		icon: 'ion-link'
+		label: '上级云平台'
+		contentTemplate: 'links'
 	]
+
+	categoriedAppsNavs = AppCategories.find().map (appCategory) ->
+		icon: appCategory.icon
+		label: appCategory.label
+		contentTemplate: 'appsGrid'
+		templateData: Apps.find({clientId: {$in: appCategory.apps}})
+
+	Array.prototype.splice.apply @navs, [1, 0].concat categoriedAppsNavs

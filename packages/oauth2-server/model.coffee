@@ -36,9 +36,9 @@ debug = undefined
 
 		try
 			if not clientSecret?
-				client = Clients.findOne { active: true, clientId: clientId }
+				client = Clients.findOne { clientId: clientId }
 			else
-				client = Clients.findOne { active: true, clientId: clientId, clientSecret: clientSecret }
+				client = Clients.findOne { clientId: clientId, clientSecret: clientSecret }
 			callback null, client
 		catch e
 			callback e
@@ -128,7 +128,7 @@ debug = undefined
 			console.log '[OAuth2Server]', 'in getUserFromClient (clientId: ', clientId, ', clientSecret:', clientSecret, ')'
 
 		try
-			client = Clients.findOne { active: true, clientId: clientId, clientSecret: clientSecret }
+			client = Clients.findOne { clientId: clientId, clientSecret: clientSecret }
 
 			user =
 				id: client.user

@@ -198,7 +198,7 @@ Meteor.startup ->
 				data: 'profile.type'
 				title: '用户类型'
 				render: (value) ->
-					{app: 'App', teacher: '老师', parent: '家长', student: '学生'}[value]
+					{app: '应用', teacher: '老师', parent: '家长', student: '学生'}[value]
 			}
 			{
 				data: 'username'
