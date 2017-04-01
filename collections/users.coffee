@@ -60,7 +60,7 @@ Schemas.UserProfile = new SimpleSchema(
   	max: 11
   	optional: true
   	custom: ->
-      if 'admin' not in @field('roles').value and @field('profile.type').value == 'teacher'
+      if @field('roles')?.value and 'admin' not in @field('roles')?.value and @field('profile.type')?.value == 'teacher'
         # inserts
         if !@operator
           if !@isSet or !@value

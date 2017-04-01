@@ -1,19 +1,22 @@
 <template name="profile">
-	<div class="template-profile">
-		<div class="container">
-			<div class="row">
-				{{#autoForm id="updatePicture" collection=Users doc=User type="update"}}
-				<div class="col-md-4">
-						{{> afQuickField name="profile.picture"}}
-				</div>
-				{{/autoForm}}
-				{{#autoForm id="updateProfile" collection=Users doc=User type="update"}}
-				<div class="col-md-8">
-					{{> afQuickField name='profile' omitFields="profile.picture"}}
-					<button type="submit" class="btn btn-primary">{{_ "update"}}</button>
-				</div>
-				{{/autoForm}}
-			</div>
-		</div>
-	</div>
+  <div class="profile">
+	  <div class="container me-nav-container">
+	    <div class="row">
+	      <div class="col-sm-3 col-sm-offset-1">
+	        {{> meNav active='profile'}}
+	      </div>
+	      <div class="col-sm-7">
+	      	{{> sAlert}}
+	        {{#autoForm id="accountUpdateProfile" collection=Users type="update" doc=currentUser}}
+					{{>afQuickField name="profile.picture"}}
+					{{>afQuickField name="profile.name"}}
+					{{>afQuickField name="profile.gender"}}
+					{{>afQuickField name="profile.birthday"}}
+					{{>afQuickField name="profile.mobile"}}
+					<button type="submit" class="btn btn-primary btn-sm">更新</button>
+					{{/autoForm}}
+	      </div>
+	    </div>
+    </div>
+  </div>
 </template>

@@ -66,7 +66,6 @@ spacebars
 check
 standard-minifier-css
 standard-minifier-js
-pagebakers:ionicons
 oauth2-server
 pbastowski:body-parser
 numeral:numeral

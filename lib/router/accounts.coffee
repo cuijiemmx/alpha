@@ -9,14 +9,20 @@ Router.map ->
     path: "/account"
     onAfterAction: ->
       SEO.set
-        title: '帐户'
+        title: '帐户设置'
 
-  @route "setUserName",
-    path: "/setUserName"
-    onBeforeAction: ->
-      if not Config.username or (Meteor.userId() and Meteor.user().username)
-        @redirect '/'
-      @next()
+  @route "personalize",
+    path: "/personalize"
+    onAfterAction: ->
+      SEO.set
+        title: '个性化'
+
+  # @route "setUserName",
+  #   path: "/setUserName"
+  #   onBeforeAction: ->
+  #     if not Config.username or (Meteor.userId() and Meteor.user().username)
+  #       @redirect '/'
+  #     @next()
 
   @route 'signOut',
     path: '/sign-out'

@@ -1,0 +1,35 @@
+<template name="customAtTitle">
+  <div class="at-title">
+    <h3>育才中学校园智慧平台登录</h3>
+    <hr>
+  </div>
+</template>
+
+<template name="customAtPwdForm">
+  <div class="at-pwd-form">
+    <form role="form" id="at-pwd-form" novalidate action="#" method="POST">
+      <fieldset>
+        <!--用户名-->
+        <div class="input-group">
+					<div class="input-group-addon" style="padding: 0">
+						<select class="selectpicker">
+							<option>教师</option>
+							<option>家长</option>
+						</select>
+					</div>
+          <input type="text" class="form-control" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="用户名/身份证号" autocapitalize="none" autocorrect="off">
+        </div>
+
+        <!--密码框-->
+        <div class="input-group" style="margin-top: 15px">
+          <span class="input-group-addon">密码</span>
+          <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="登录密码" autocapitalize="none" autocorrect="off">
+        </div>
+
+        <button type="submit" class="at-btn submit btn btn-lg btn-block btn-primary {{submitDisabled}}" id="at-btn">
+					登录
+				</button>
+      </fieldset>
+    </form>
+  </div>
+</template>

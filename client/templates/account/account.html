@@ -1,95 +1,28 @@
 <template name="account">
-	<div class="template-account">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<div class="panel panel-default">
-					  <div class="panel-heading">
-							<h3 class="panel-title">{{_ "account_details"}}</h3>
-					  </div>
-					  <div class="panel-body">
-							{{> updatePassword}}
-					  </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</template>
+  <div class="account">
+	  <div class="container me-nav-container">
+	    <div class="row">
+	      <div class="col-sm-3 col-sm-offset-1">
+	        {{> meNav active='account'}}
+	      </div>
+	      <div class="col-sm-7">
+	      	{{> sAlert}}
+	      	<legend>帐号</legend>
+	      	{{#autoForm id="accountUpdateAccount" collection=Users type="update" doc=currentUser}}
+		      	{{>afQuickField name="username"}}
+						{{>afQuickField name="emails.0.address"}}
+						<button type="submit" class="btn btn-primary">更新</button>
+					{{/autoForm}}
 
-<template name="updatePassword">
-  <div class="template-update-password">
-  	{{#autoForm schema=Schemas.updatePassword id="updatePassword"}}
-  	<fieldset>
-  	  <legend>Change Password</legend>
-  	  {{> afQuickField name="old" type="password"}}
-  	  {{> afQuickField name="new" type="password"}}
-  	  {{> afQuickField name="confirm" type="password"}}
-  	  <div>
-  	    <button type="submit" class="btn btn-primary">Change Password</button>
-  	  </div>
-  	</fieldset>
-  	{{/autoForm}}
-  </div>
-</template>
-
-<template name="setUserName">
-	<div class="template-set-username">
-		<div class="container">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">{{_ "account_details"}}</h3>
-					</div>
-					<div class="panel-body">
-						{{#autoForm collection="Meteor.users" doc=user type="update" id="setUserName"}}
-						<fieldset>
-							<legend>Choose your name</legend>
-					    	{{> afQuickField name="username"}}
-					    	<div>
-					      		<button type="submit" class="btn btn-primary">Save</button>
-							</div>
-						</fieldset>
-						{{/autoForm}}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</template>
-
-<template name="customAtTitle">
-  <div class="at-title">
-    <h3>育才中学校园智慧平台登录</h3>
-    <hr>
-  </div>
-</template>
-
-<template name="customAtPwdForm">
-  <div class="at-pwd-form">
-    <form role="form" id="at-pwd-form" novalidate action="#" method="POST">
-      <fieldset>
-        <!--用户名-->
-        <div class="input-group">
-					<div class="input-group-addon" style="padding: 0">
-						<select class="selectpicker">
-							<option>教师</option>
-							<option>家长</option>
-						</select>
-					</div>
-          <input type="text" class="form-control" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="用户名/身份证号" autocapitalize="none" autocorrect="off">
-        </div>
-
-        <!--密码框-->
-        <div class="input-group" style="margin-top: 15px">
-          <span class="input-group-addon">密码</span>
-          <input type="password" class="form-control" id="at-field-password" name="at-field-password" placeholder="登录密码" autocapitalize="none" autocorrect="off">
-        </div>
-
-        <button type="submit" class="at-btn submit btn btn-lg btn-block btn-primary {{submitDisabled}}" id="at-btn">
-					登录
-				</button>
-      </fieldset>
-    </form>
+					<legend>密码</legend>
+					{{#autoForm id="accountUpdatePassword" schema=Schemas.updatePassword resetOnSuccess=true}}
+			  	  {{> afQuickField name="old" type="password"}}
+			  	  {{> afQuickField name="new" type="password"}}
+			  	  {{> afQuickField name="confirm" type="password"}}
+			  	  <button type="submit" class="btn btn-primary">更改密码</button>
+			  	{{/autoForm}}
+	      </div>
+	    </div>
+	  </div>
   </div>
 </template>

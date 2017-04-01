@@ -13,10 +13,10 @@ var oauth2server = new OAuth2Server({
 WebApp.connectHandlers.use(oauth2server.app);
 
 // Add a route to return account information
-oauth2server.routes.get('/account', oauth2server.oauth.authorise(), function(req, res, next) {
-  var user = Meteor.users.findOne(req.user.id);
+// oauth2server.routes.get('/account', oauth2server.oauth.authorise(), function(req, res, next) {
+//   var user = Meteor.users.findOne(req.user.id);
 
-  res.send({
-    id: user._id
-  });
-});
+//   res.send({
+//     id: user._id
+//   });
+// });

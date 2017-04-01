@@ -1,0 +1,15 @@
+<template name="meNav">
+  <div class="me-nav">
+    <ul>
+      <li class="{{#if isActive 'profile'}}active{{/if}}">
+        <a href="{{pathFor 'profile'}}">个人资料</a>
+      </li>
+      <li class="{{#if isActive 'account'}}active{{/if}}">
+        <a href="{{pathFor 'account'}}">帐户设置</a>
+      </li>
+      <li class="{{#if isActive 'personalize'}}active{{/if}}">
+        <a href="{{pathFor 'personalize'}}">个性化</a>
+      </li>
+    </ul>
+  </div>
+</template>

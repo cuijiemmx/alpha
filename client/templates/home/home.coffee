@@ -52,7 +52,7 @@ Template.home.onCreated ->
 	@navs = [
 		icon: 'ion-android-apps'
 		label: '我的桌面'
-		contentTemplate: 'links'
+		contentTemplate: 'desktop'
 	,
 		icon: 'ion-aperture'
 		label: '应用中心'

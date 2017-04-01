@@ -126,7 +126,6 @@ numeral:numeral@1.5.3_1
 oauth2-server@2.0.0
 observe-sequence@1.0.9
 ordered-dict@1.0.5
-pagebakers:ionicons@2.0.1_1
 pbastowski:body-parser@0.0.4
 percolate:momentum@0.7.2
 percolate:momentum-iron-router@0.7.0

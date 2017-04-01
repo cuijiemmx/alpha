@@ -4,17 +4,17 @@
 Schemas.updatePassword = new SimpleSchema
   old:
     type: String
-    label: "Current Password"
+    label: "当前密码"
     max: 50
 
   new:
     type: String
     min: 6
     max: 20
-    label: "New Password"
+    label: "新密码"
 
   confirm:
     type: String
     min: 6
     max: 20
-    label: "Confirm new Password"
+    label: "再次输入新密码"
