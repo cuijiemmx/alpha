@@ -1,8 +1,6 @@
 <template name="masterLayout">
 	<div class="layout master-layout {{$.Session.get 'sidebar'}}">
-		<!-- {{#if currentUser}} -->
 		{{> navbar}}
-		<!-- {{/if}} -->
 		<div class="main-content" style="{{#if currentUser}}background-image: {{desktopImage}};{{/if}}">
 			{{#momentum plugin='iron-router' options=momentumIRTransition}}
 				{{> yield }}
@@ -12,6 +10,4 @@
 			{{/if}}
 		</div>
 	</div>
-
-	{{> autoformModals}}
 </template>
