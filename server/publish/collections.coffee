@@ -21,3 +21,12 @@ Meteor.publishComposite 'links', ->
       _id = link.thumbnail or null
       Pictures.find _id: _id
     ]
+
+Meteor.publishComposite 'wallpapers', ->
+	find: ->
+		Wallpapers.find()
+	children: [
+		find: (wallpaper) ->
+			_id = wallpaper.image or null
+			Pictures.find _id: _id
+	]

@@ -33,6 +33,7 @@ Router.waitOn ->
   subs.subscribe 'apps'
   subs.subscribe 'appCategories'
   subs.subscribe 'links'
+  subs.subscribe 'wallpapers'
 
 # Router.onAfterAction onAfterAction
 

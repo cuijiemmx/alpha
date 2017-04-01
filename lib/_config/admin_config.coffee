@@ -66,5 +66,12 @@
 				{ label: '标题', name: 'label' }
 				{ label: '地址', name: 'url' }
 			]
+		Wallpapers:
+			color: 'green'
+			icon: ''
+			label: '桌面背景'
+			tableColumns: [
+				{ label: '标题', name: 'label' }
+			]
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

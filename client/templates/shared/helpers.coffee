@@ -17,3 +17,15 @@ Template.registerHelper 'currentRoute', ->
 
 Template.registerHelper 'isRouteReady', ->
   Router and Router.current and Router.current() and Router.current()._waitlist._notReadyCount == 0
+
+Template.registerHelper 'desktopImage', ->
+	wid = Meteor.user()?.profile?.wallpaper
+	if wid
+		wallpaper = Wallpapers.findOne wid
+		unless wallpaper?.image
+			''
+		else
+			picture = Pictures.findOne wallpaper.image
+			path = picture?.url
+				store: 'images'
+			"url(#{path})"

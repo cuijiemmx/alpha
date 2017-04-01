@@ -53,3 +53,9 @@ Seed 'links',
 		label: '湖北省教育局'
 		url: 'http://www.aliyun.com'
 	]
+
+Seed 'wallpapers',
+	data: [
+		label: '无'
+		image: ''
+	]

@@ -40,6 +40,16 @@ Template.home.helpers
 		Template.instance().navs[Template.instance().currentNavIndex.get()].contentTemplate
 	templateData: ->
 		Template.instance().navs[Template.instance().currentNavIndex.get()].templateData
+	# desktopImage: ->
+	# 	wid = Meteor.user().profile?.wallpaper
+	# 	if wid
+	# 		wallpaper = Wallpapers.findOne wid
+	# 		unless wallpaper.image
+	# 			''
+	# 		else
+	# 			picture = Pictures.findOne wallpaper.image
+	# 			picture?.url
+	# 				store: 'images'
 
 
 Template.home.events

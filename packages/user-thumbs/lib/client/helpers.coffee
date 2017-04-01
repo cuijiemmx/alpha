@@ -12,7 +12,7 @@ Template.registerHelper 'niceName', (_id)->
 		else
 			'A user'
 
-Template.registerHelper 'profileThumbSrc', (_id) ->
+Template.registerHelper 'imageThumbSrc', (_id) ->
 	if typeof Meteor.users != 'undefined'
 		if Meteor.users.findOne _id
 			user = Meteor.users.findOne({_id:_id})

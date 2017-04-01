@@ -73,6 +73,16 @@ Schemas.UserProfile = new SimpleSchema(
           	return "required"
           if @operator == "$rename"
           	return "required"
+  wallpaper:
+  	type: String
+  	optional: true
+  	label: '桌面背景'
+  	autoform:
+  		options: ->
+  			Wallpapers.find().map (w) ->
+  				label: w.label
+  				value: w._id
+  		firstOption: '(请选择)'
 )
 
 Schemas.User = new SimpleSchema

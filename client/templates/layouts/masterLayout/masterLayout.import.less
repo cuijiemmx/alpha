@@ -1,0 +1,19 @@
+.layout {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	.main-content {
+		position: relative;
+		flex-grow: 1;
+		background-position: center;
+		background-size: cover;
+		div[data-momentum] {
+			flex-grow: 1;
+			> div:nth-child(2) {
+				position: absolute !important;
+				top: 0;
+				width: 100%;
+			}
+		}
+	}
+}

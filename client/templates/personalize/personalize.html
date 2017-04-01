@@ -6,7 +6,10 @@
 	        {{> meNav active='personalize'}}
 	      </div>
 	      <div class="col-sm-7">
-	      	per
+	      	{{#autoForm id="accountUpdateWallpaper" collection=Users type="update" doc=currentUser}}
+		      	{{>afQuickField name="profile.wallpaper"}}
+						<button type="submit" class="btn btn-primary">保存</button>
+					{{/autoForm}}
 	      </div>
 	    </div>
 	  </div>
