@@ -4,12 +4,26 @@
 Meteor.publish 'posts', ->
 	Posts.find()
 
-Meteor.publish 'attachments', ->
-	Attachments.find()
-
 Meteor.publish 'apps', ->
-	Apps.find()
-
+	unless @userId
+		[]
+	else
+		user = Meteor.users.findOne @userId
+		type = user.profile?.type or null
+		roles = user.roles or []
+		Apps.find
+			userType: type
+			$or: [
+				userRoles:
+					$exists: false
+			,
+				userRoles: []
+			,
+				userRoles:
+					$elemMatch:
+						$in:
+							roles
+			]
 Meteor.publish 'appCategories', ->
 	AppCategories.find()
 

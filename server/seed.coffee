@@ -9,6 +9,7 @@ preinstalledApps = [
 ,
 	type: '3rd-party'
 	userType: 'teacher'
+	userRoles: []
 	clientId: 'testApp'
 	clientSecret: Random.secret()
 	label: '测试应用'

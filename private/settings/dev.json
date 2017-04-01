@@ -1,9 +1,0 @@
-{
-    "environment": "dev",
-
-    "public": {
-        "ga": {
-            "id": "UA-XXXXXXXX-1"
-        }
-    }
-}

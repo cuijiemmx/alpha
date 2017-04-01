@@ -40,17 +40,6 @@ Template.home.helpers
 		Template.instance().navs[Template.instance().currentNavIndex.get()].contentTemplate
 	templateData: ->
 		Template.instance().navs[Template.instance().currentNavIndex.get()].templateData
-	# desktopImage: ->
-	# 	wid = Meteor.user().profile?.wallpaper
-	# 	if wid
-	# 		wallpaper = Wallpapers.findOne wid
-	# 		unless wallpaper.image
-	# 			''
-	# 		else
-	# 			picture = Pictures.findOne wallpaper.image
-	# 			picture?.url
-	# 				store: 'images'
-
 
 Template.home.events
 	'click .m-nav-item': (e, instance) ->
@@ -59,7 +48,7 @@ Template.home.events
 
 Template.home.onCreated ->
 	@currentNavIndex = new ReactiveVar(0)
-	@navs = [
+	navs = [
 		icon: 'ion-android-apps'
 		label: '我的桌面'
 		contentTemplate: 'desktop'
@@ -80,4 +69,7 @@ Template.home.onCreated ->
 		contentTemplate: 'appsGrid'
 		templateData: Apps.find({clientId: {$in: appCategory.apps}})
 
-	Array.prototype.splice.apply @navs, [1, 0].concat categoriedAppsNavs
+	Array.prototype.splice.apply navs, [1, 0].concat categoriedAppsNavs
+
+	@navs = navs.filter (nav) ->
+		nav.contentTemplate != 'appsGrid' or nav.templateData.length > 0
