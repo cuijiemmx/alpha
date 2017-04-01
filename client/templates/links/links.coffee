@@ -3,4 +3,4 @@ Template.links.helpers
 		Links.find()
 	thumbnailSrc: (_id) ->
 		picture = Pictures.findOne _id
-		picture.url({store: 'images'})
+		picture?.url({store: 'images'})
