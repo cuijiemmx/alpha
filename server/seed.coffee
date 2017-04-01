@@ -46,16 +46,19 @@ Seed 'links',
 	data: [
 		label: '武昌区教育局'
 		url: 'http://www.updust.com'
+		thumbnail: '/images/wuchang.png'
 	,
 		label: '武汉市教育局'
 		url: 'http://www.geekernel.com'
+		thumbnail: '/images/wuchang.png'
 	,
 		label: '湖北省教育局'
 		url: 'http://www.aliyun.com'
+		thumbnail: '/images/wuchang.png'
 	]
 
 Seed 'wallpapers',
 	data: [
-		label: '无'
+		label: '无 '
 		image: ''
 	]

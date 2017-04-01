@@ -1,6 +1,9 @@
 Template.links.helpers
 	links: ->
 		Links.find()
-	thumbnailSrc: (_id) ->
-		picture = Pictures.findOne _id
-		picture?.url({store: 'images'})
+	thumbnailSrc: (thumbnail) ->
+		if thumbnail.indexOf('/') > -1
+			thumbnail
+		else
+			picture = Pictures.findOne thumbnail
+			picture?.url({store: 'images'})
