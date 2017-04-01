@@ -17,9 +17,10 @@
           <!--用户名-->
           <div class="input-group">
             <div class="input-group-addon" style="padding: 0">
-              <select class="selectpicker">
-                <option>教师</option>
-                <option>家长</option>
+              <select class="selectpicker" name="role">
+                <option value="teacher">教师</option>
+                <option value="student">学生</option>
+                <option value="parent">家长</option>
               </select>
             </div>
             <input type="text" class="form-control" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="用户名/身份证号" autocapitalize="none" autocorrect="off">
