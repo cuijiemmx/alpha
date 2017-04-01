@@ -29,3 +29,7 @@ Template.registerHelper 'desktopImage', ->
 			path = picture?.url
 				store: 'images'
 			"url(#{path})"
+
+Template.registerHelper 'userDisplayName', ->
+	user = Meteor.user()
+	user?.profile?.name or user?.username or user?.emails[0]?.address or '我'
