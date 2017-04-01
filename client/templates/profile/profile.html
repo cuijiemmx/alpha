@@ -7,14 +7,16 @@
 	      </div>
 	      <div class="col-sm-7">
 	      	{{> sAlert}}
-	        {{#autoForm id="accountUpdateProfile" collection=Users type="update" doc=currentUser}}
-					{{>afQuickField name="profile.picture"}}
-					{{>afQuickField name="profile.name"}}
-					{{>afQuickField name="profile.gender"}}
-					{{>afQuickField name="profile.birthday"}}
-					{{>afQuickField name="profile.mobile"}}
-					<button type="submit" class="btn btn-primary btn-sm">更新</button>
-					{{/autoForm}}
+	      	<section>
+		        {{#autoForm id="accountUpdateProfile" collection=Users type="update" doc=currentUser}}
+						{{>afQuickField name="profile.picture"}}
+						{{>afQuickField name="profile.name"}}
+						{{>afQuickField name="profile.gender"}}
+						{{>afQuickField name="profile.birthday"}}
+						{{>afQuickField name="profile.mobile"}}
+						<button type="submit" class="btn btn-primary btn-sm">更新</button>
+						{{/autoForm}}
+					</section>
 	      </div>
 	    </div>
     </div>
