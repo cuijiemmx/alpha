@@ -1,32 +1,26 @@
 <template name="account">
   <div class="account">
-	  <div class="container me-nav-container">
-	    <div class="row">
-	      <div class="col-sm-3 col-sm-offset-1">
-	        {{> meNav active='account'}}
-	      </div>
-	      <div class="col-sm-7">
-	      	{{> sAlert}}
-	      	<section>
-		      	<legend>帐号</legend>
-		      	{{#autoForm id="accountUpdateAccount" collection=Users type="update" doc=currentUser}}
-			      	{{>afQuickField name="username"}}
-							{{>afQuickField name="emails.0.address"}}
-							<button type="submit" class="btn btn-primary">更新</button>
-						{{/autoForm}}
-					</section>
-
-					<section>
-						<legend>密码</legend>
-						{{#autoForm id="accountUpdatePassword" schema=Schemas.updatePassword resetOnSuccess=true}}
-				  	  {{> afQuickField name="old" type="password"}}
-				  	  {{> afQuickField name="new" type="password"}}
-				  	  {{> afQuickField name="confirm" type="password"}}
-				  	  <button type="submit" class="btn btn-primary">更改密码</button>
-				  	{{/autoForm}}
-			  	</section>
-	      </div>
-	    </div>
-	  </div>
+    <div class="container me-nav-container">
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+          {{> meNav active='account'}}
+        </div>
+        <div class="col-sm-7">
+          <section>
+            <legend>帐号</legend>
+            {{#autoForm id="accountUpdateAccount" collection=Users type="update" doc=currentUser}} {{>afQuickField name="username"}} {{>afQuickField name="emails.0.address"}}
+            <button type="submit" class="btn btn-primary">更新</button>
+            {{/autoForm}}
+          </section>
+          <section>
+            <legend>密码</legend>
+            {{#autoForm id="accountUpdatePassword" schema=Schemas.updatePassword resetOnSuccess=true}} {{> afQuickField name="old" type="password"}} {{> afQuickField name="new" type="password"}} {{> afQuickField name="confirm" type="password"}}
+            <button type="submit" class="btn btn-primary">更改密码</button>
+            {{/autoForm}}
+          </section>
+          {{> sAlert}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
