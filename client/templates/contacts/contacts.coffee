@@ -4,7 +4,7 @@ Template.contacts.events
 
 	'click .contacts-folded': (e, instance) ->
 		instance.expanded.set(true)
-	'click .contacts-expanded i:last-child': (e, instance) ->
+	'click .u-close': (e, instance) ->
 		instance.expanded.set(false)
 
 Template.contacts.helpers

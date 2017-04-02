@@ -34,12 +34,16 @@
 	    <li class="m-contact-item">
 	      <img class="img-circle" src="http://api.randomuser.me/portraits/men/49.jpg">Scott Stevens
 	    </li>
+	    <li class="m-contact-item">
+	    	{{> contactsDefaultHead}}
+	    	cuijiemmx
+	    </li>
 	  </ul>
   </div>
   <div class="m-bar">
   	<i class="ion-ios-search"></i>
     <input type="text" name="" placeholder="搜索">
-    <i class="ion-android-close"></i>
+    <i class="ion-android-close u-close"></i>
   </div>
 </template>
 
@@ -73,6 +77,12 @@
       </div>
     </div>
   </div>
+</template>
+
+<template name="contactsDefaultHead">
+  <span class="m-contact-head">
+		<i class="ion-person"></i>
+	</span>
 </template>
 
 
