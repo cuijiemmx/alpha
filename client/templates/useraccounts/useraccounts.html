@@ -18,12 +18,13 @@
           <div class="input-group">
             <div class="input-group-addon" style="padding: 0">
               <select class="selectpicker" name="role">
-                <option value="teacher">老师</option>
-                <option value="student">学生</option>
-                <option value="parent">家长</option>
+                <option value="tid">老师</option>
+                <option value="sid">学生</option>
+                <option value="pid">家长</option>
               </select>
             </div>
-            <input type="text" class="form-control" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="用户名" autocapitalize="none" autocorrect="off">
+            <input type="text" class="form-control" id="at-field-username_and_email-dummy" name="at-field-username_and_email-dummy" placeholder="用户名" autocapitalize="none" autocorrect="off">
+            <input type="hidden" class="form-control" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="用户名" autocapitalize="none" autocorrect="off" value="{{username}}">
           </div>
 
           <!--密码框-->
