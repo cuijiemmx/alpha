@@ -46,24 +46,23 @@ AccountsTemplates.configureRoute 'signUp'
 # AccountsTemplates.configureRoute 'forgotPwd'
 
 AccountsTemplates.addFields [
-  _id: "username"
-  type: "text"
-  displayName: "username"
+  _id: 'username'
+  type: 'text'
+  displayName: 'username'
   required: true
   minLength: 5
-, 
-  _id: "type"
-  type: "select"
-  displayName: "用户类型"
-  required: true
+,
+  _id: 'type'
+  type: 'select'
+  displayName: '用户类型'
   select: [
-    text: "老师"
-    value: "teacher"
+    text: '老师'
+    value: 'teacher'
   ,
-    text: "学生"
-    value: "student"
+    text: '学生'
+    value: 'student'
   ,
-    text: "家长"
-    value: "parent"
+    text: '家长'
+    value: 'parent'
   ]
 ]

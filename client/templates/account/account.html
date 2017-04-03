@@ -7,8 +7,9 @@
         </div>
         <div class="col-sm-7">
           <section>
-            {{#autoForm id="accountUpdateAccount" collection=Users type="update" doc=currentUser}} {{>afQuickField name="username"}} {{>afQuickField name="emails.0.address"}}
-            <button type="submit" class="btn btn-primary">更新</button>
+            {{#autoForm id="accountUpdateAccount" collection=Users type="update" doc=currentUser}}
+            {{>afQuickField name="emails.0.address"}}
+            <button type="submit" class="btn btn-primary">更改邮箱</button>
             {{/autoForm}}
           </section>
           <section>

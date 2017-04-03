@@ -22,7 +22,7 @@ if Apps.find().count() == 0
 	for preinstalledApp in preinstalledApps
 		if preinstalledApp.type == '3rd-party'
 			preinstalledApp.user = Accounts.createUser
-				username: "aid_#{preinstalledApp.clientId}"
+				username: preinstalledApp.clientId
 				profile:
 					type: 'app'
 					name: preinstalledApp.label
