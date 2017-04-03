@@ -29,19 +29,19 @@
       margin-right: 8px;
     }
     .m-contact-head {
-    	width: 48px;
-    	height: 48px;
-    	margin-right: 8px;
-    	border-radius: 24px;
-    	overflow: hidden;
-    	text-align: center;
-    	background: #D3DCE6;
-    	i {
-    		display: block;
-    		margin-top: -4px;
-    		font-size: 48px;
-    		vertical-align: middle;
-    	}
+      width: 48px;
+      height: 48px;
+      margin-right: 8px;
+      border-radius: 24px;
+      overflow: hidden;
+      text-align: center;
+      background: #D3DCE6;
+      i {
+        display: block;
+        margin-top: -4px;
+        font-size: 48px;
+        vertical-align: middle;
+      }
     }
   }
   &.contacts-expanded {
@@ -77,6 +77,70 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+      cursor: default;
+    }
+  }
+}
+
+#contact-modal {
+  .modal-dialog {
+  	width: 360px;
+  	margin: 30px auto;
+    .modal-content {
+      border-radius: 0;
+      .modal-header {
+        height: 38px;
+        background: @light-blue;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        .modal-title {
+          font-size: 14px;
+          color: #475669;
+          flex-grow: 1;
+          padding-left: 12px;
+        }
+        button {
+          vertical-align: middle;
+          flex-grow: 0;
+          flex-shrink: 0;
+          width: 38px;
+          height: 38px;
+        }
+      }
+      .modal-body {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        .g-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: rgba(238, 242, 247, 0.30);
+          min-height: 180px;
+          width: 108px;
+          img {
+            margin-top: 28px;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 10px;
+          }
+        }
+        .g-right {
+          background: white;
+          padding: 20px;
+          dl {
+            dt {
+              width: 30px;
+              height: 24px;
+            }
+            dd {
+              margin-left: 50px;
+              height: 24px;
+            }
+          }
+        }
+      }
     }
   }
 }

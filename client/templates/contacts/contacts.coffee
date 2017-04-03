@@ -1,7 +1,4 @@
 Template.contacts.events
-	'click .m-contact-item': (e) ->
-		$('#contactModal').modal('show')
-
 	'click .contacts-folded': (e, instance) ->
 		instance.expanded.set(true)
 	'click .u-close': (e, instance) ->
@@ -19,8 +16,24 @@ Template.contacts.helpers
 Template.contacts.onCreated ->
 	@expanded = new ReactiveVar(false)
 
+Template.contactsExpanded.onCreated ->
+	@selectedContact = new ReactiveVar()
+	@contacts = Meteor.users.find
+		_id:
+				$ne: Meteor.userId()
+
 Template.contactsExpanded.helpers
 	contacts: ->
-		Meteor.users.find
-			_id:
-				$ne: 'Meteor.userId()'
+		Template.instance().contacts
+	selectedContact: ->
+		Template.instance().selectedContact.get()
+
+Template.contactsExpanded.events
+	'click .m-contact-item': (e, instance) ->
+		uid = $(e.currentTarget).data('uid')
+		instance.selectedContact.set(Meteor.users.findOne uid)
+		$('#contact-modal').modal('show')
+
+Template.contactModalTemplate.helpers
+	userEmail: (user) ->
+		user?.emails?[0]?.address

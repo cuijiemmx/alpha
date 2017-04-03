@@ -6,20 +6,14 @@
 		{{> contactsFolded}}
 	{{/if}}
 	</div>
-
-	{{> contactModalTemplate}}
 </template>
 
 <template name="contactsExpanded">
 	<div class="g-list">
 		<ul>
 			{{#each contacts}}
-				<li class="m-contact-item">
-					{{#if profile.picture}}
-						<img class="img-circle" src="{{imageSrc _id}}">
-					{{else}}
-						{{> contactsDefaultHead}}
-					{{/if}}
+				<li class="m-contact-item" data-uid="{{_id}}">
+					<img class="img-circle" src="{{userHeadImageSrc _id}}">
 					{{userDisplayName _id}}
 				</li>
 			{{/each}}
@@ -30,8 +24,8 @@
 		<input type="text" name="" placeholder="搜索">
 		<i class="ion-android-close u-close"></i>
 	</div>
+	{{> contactModalTemplate selectedContact}}
 </template>
-
 
 <template name="contactsFolded">
 	<div class="m-bar">
@@ -40,34 +34,32 @@
 </template>
 
 <template name="contactModalTemplate">
-	<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
-		<div class="modal-dialog modal-sm" role="document">
+	<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel">
+		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
+					<div class="modal-title" id="contactModalLabel">联系人详情</div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="contactModalLabel">联系人详情</h4>
 				</div>
 				<div class="modal-body">
-					<div class="col-md-3">
-						<img src="http://api.randomuser.me/portraits/men/24.jpg" alt="cuijiemmx" class="img-responsive img-circle">
-						<h6>cuijiemmx</h6>
+					<div class="g-left">
+						<img src="{{userHeadImageSrc _id}}" class="img-circle">
+						{{userDisplayName _id}}
 					</div>
-					<div class="col-md-8 col-md-offset-1">
-						<h6>手机: 17671469302</h6>
-						<h6>微信: 17671469302</h6>
-						<h6>QQ: 17671469302</h6>
+					<div class="g-right">
+						<dl class="dl-horizontal">
+							<dt>姓名</dt>
+							<dd>{{profile.name}}</dd>
+							<dt>邮箱</dt>
+							<dd>{{userEmail this}}</dd>
+							<dt>手机</dt>
+							<dd>{{profile.mobile}}</dd>
+						</dl>
 					</div>
-					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-</template>
-
-<template name="contactsDefaultHead">
-	<span class="m-contact-head">
-		<i class="ion-person"></i>
-	</span>
 </template>
 
 

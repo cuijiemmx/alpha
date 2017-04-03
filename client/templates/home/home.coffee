@@ -43,7 +43,7 @@ Template.home.helpers
 
 Template.home.events
 	'click .m-nav-item': (e, instance) ->
-		index = $(e.target).index()
+		index = $(e.currentTarget).index()
 		instance.currentNavIndex.set(index)
 
 Template.home.onCreated ->

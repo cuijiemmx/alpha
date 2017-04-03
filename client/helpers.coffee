@@ -1,11 +1,13 @@
-Template.registerHelper 'imageSrc', (_id) ->
-	if Meteor.users
-		user = Meteor.users.findOne _id
-		if user?.profile?.picture
-			picture = user.profile.picture
+Template.registerHelper 'imageSrc', (pathOrId) ->
+	if pathOrId.indexOf('/') > -1
+		pathOrId
+	else
+		picture = Pictures.findOne pathOrId
+		picture?.url({store: 'images'})
 
-			if picture.indexOf('/') > -1
-				picture
-			else
-				picture = Pictures.findOne user.profile.picture
-				picture?.url({store: 'images'})
+Template.registerHelper 'userHeadImageSrc', (_id) ->
+	user = Meteor.users.findOne _id
+	if user?.profile?.picture
+		Blaze._globalHelpers.imageSrc user.profile.picture
+	else
+		'/images/default_user_head.png'
