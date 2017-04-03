@@ -23,7 +23,6 @@ iron:router
 yogiben:autoform-modals
 yogiben:pretty-email
 yogiben:autoform-file
-yogiben:autoform-map
 multiply:iron-router-progress
 manuelschoebel:ms-seo
 spiderable

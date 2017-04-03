@@ -28,6 +28,7 @@ Schemas.UserProfile = new SimpleSchema(
     autoform:
       afFieldInput:
         label: '选择图片'
+        removeLabel: '删除'
         type: 'fileUpload'
         collection: 'Pictures'
 
