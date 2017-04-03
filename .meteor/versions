@@ -47,7 +47,6 @@ cfs:worker@0.1.4
 check@1.1.2
 cmather:handlebars-server@2.0.0
 coffeescript@1.0.15
-comments@0.1.0
 dburles:collection-helpers@1.0.4
 dburles:google-maps@1.1.5
 ddp@1.2.3
@@ -62,7 +61,6 @@ ecmascript-runtime@0.2.8
 ejson@1.0.9
 email@1.0.10
 fastclick@1.0.9
-favorites@0.0.4
 fortawesome:fontawesome@4.5.0
 geojson-utils@1.0.6
 handlebars@1.0.5
@@ -163,7 +161,6 @@ twbs:bootstrap@3.3.6
 ui@1.0.9
 underscore@1.0.6
 url@1.0.7
-user-thumbs@0.0.8
 useraccounts:bootstrap@1.13.1
 useraccounts:core@1.13.1
 useraccounts:iron-routing@1.13.1

@@ -18,3 +18,9 @@ Template.contacts.helpers
 
 Template.contacts.onCreated ->
 	@expanded = new ReactiveVar(false)
+
+Template.contactsExpanded.helpers
+	contacts: ->
+		Meteor.users.find
+			_id:
+				$ne: 'Meteor.userId()'

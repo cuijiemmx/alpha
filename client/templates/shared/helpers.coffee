@@ -30,6 +30,10 @@ Template.registerHelper 'desktopImage', ->
 				store: 'images'
 			"url(#{path})"
 
-Template.registerHelper 'userDisplayName', ->
-	user = Meteor.user()
+Template.registerHelper 'userDisplayName', (_id) ->
+	user
+	unless _id
+		user = Meteor.user()
+	else
+		user = Meteor.users.findOne _id
 	user?.profile?.name or user?.username or user?.emails[0]?.address or '我'
