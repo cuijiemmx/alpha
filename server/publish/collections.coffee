@@ -33,7 +33,7 @@ Meteor.publishComposite 'links', ->
   children: [
     find: (link) ->
       _id = link.thumbnail or null
-      Pictures.find _id: _id
+      Pictures.find _id
     ]
 
 Meteor.publishComposite 'wallpapers', ->
@@ -42,5 +42,13 @@ Meteor.publishComposite 'wallpapers', ->
 	children: [
 		find: (wallpaper) ->
 			_id = wallpaper.image or null
-			Pictures.find _id: _id
+			Pictures.find _id
+	]
+
+Meteor.publishComposite 'sysSettings', ->
+	find: ->
+		SysSettings.find()
+	children: [
+		find: (sysSettings) ->
+			Pictures.find sysSettings.signInBackground
 	]

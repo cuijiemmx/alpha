@@ -24,6 +24,12 @@ Router.map ->
       SEO.set
         title: '个性化'
 
+  @route "sysSettings",
+    path: "/sysSettings"
+    onAfterAction: ->
+      SEO.set
+        title: '系统设置'
+
   @route 'signOut',
     path: '/sign-out'
     onBeforeAction: ->

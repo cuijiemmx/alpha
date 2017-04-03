@@ -22,3 +22,10 @@ Meteor.roles.allow
 	remove: (userId, doc) ->
 		true
 
+SysSettings.allow
+	insert: (userId, doc) ->
+		Roles.userIsInRole userId, ['admin']
+	update: (userId, doc, fields, modifier) ->
+		Roles.userIsInRole userId, ['admin']
+	remove: (userId, doc) ->
+		Roles.userIsInRole userId, ['admin']

@@ -1,7 +1,7 @@
 <template name="masterLayout">
 	<div class="layout master-layout {{$.Session.get 'sidebar'}}">
 		{{> navbar}}
-		<div class="main-content" style="{{#if currentUser}}background-image: {{desktopImage}};{{/if}}">
+		<div class="main-content" style="{{#if currentUser}}background-image: {{desktopImage}};{{else}}background-image: {{signInBackground}};{{/if}}">
 			{{#momentum plugin='iron-router' options=momentumIRTransition}}
 				{{> yield }}
 			{{/momentum}}

@@ -34,6 +34,7 @@ Router.waitOn ->
   subs.subscribe 'appCategories'
   subs.subscribe 'links'
   subs.subscribe 'wallpapers'
+  subs.subscribe 'sysSettings'
 
 # Router.onAfterAction onAfterAction
 

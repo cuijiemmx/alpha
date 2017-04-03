@@ -10,6 +10,11 @@
       <li class="{{#if isActive 'personalize'}}active{{/if}}">
         <a href="{{pathFor 'personalize'}}">个性化</a>
       </li>
+      {{#if adminIsUserInRole currentUser._id 'admin'}}
+      <li class="{{#if isActive 'sysSettings'}}active{{/if}}">
+        <a href="{{pathFor 'sysSettings'}}">系统设置</a>
+      </li>
+      {{/if}}
     </ul>
   </div>
 </template>

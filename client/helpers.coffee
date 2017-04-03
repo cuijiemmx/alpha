@@ -11,3 +11,8 @@ Template.registerHelper 'userHeadImageSrc', (_id) ->
 		Blaze._globalHelpers.imageSrc user.profile.picture
 	else
 		'/images/default_user_head.png'
+
+Template.registerHelper 'signInBackground', ->
+	settings = SysSettings.findOne()
+	if settings
+		"url(#{Blaze._globalHelpers.imageSrc settings.signInBackground})"
