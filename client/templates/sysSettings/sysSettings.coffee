@@ -1,9 +1,6 @@
-Template.sysSettings.onCreated ->
-	@sysSettings = SysSettings.findOne()
-
 Template.sysSettings.helpers
 	sysSettings: ->
-		Template.instance().sysSettings
+		SysSettings.findOne()
 
 AutoForm.hooks
 	sysSettingsForm:
