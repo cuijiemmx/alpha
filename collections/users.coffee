@@ -84,6 +84,8 @@ Schemas.UserProfile = new SimpleSchema(
   				label: w.label
   				value: w._id
   		firstOption: '(请选择)'
+  mruApps:
+  	type: [String]
 )
 
 Schemas.User = new SimpleSchema
