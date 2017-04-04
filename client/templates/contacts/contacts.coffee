@@ -35,19 +35,22 @@ Template.contactsExpanded.events
 		$('#contact-modal').modal('show')
 	'input input': (e, instance) ->
 		filter = $(e.currentTarget).val().trim()
+		regFilter =
+			$regex: "#{filter}"
+			$options: 'i'
 		instance.contacts.set Meteor.users.find
 			$and: [
 				_id:
 					$ne: Meteor.userId()
 			,
 				$or: [
-					username:
-						$regex: "#{filter}"
-						$options: 'i'
+					username: regFilter
 				,
-					'profile.name':
-						$regex: "#{filter}"
-						$options: 'i'
+					'profile.name': regFilter
+				,
+					emails:
+						$elemMatch:
+							address: regFilter
 				]
 			]
 
