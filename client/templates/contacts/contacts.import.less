@@ -64,10 +64,15 @@
     }
     .m-bar {
       background: white;
-      input {
-        height: 36px;
+      border: 1px solid @light-blue;
+      box-sizing: border-box;
+      .u-filter {
         flex-grow: 1;
-        width: 0;
+        input {
+          width: 100%;
+          height: 34px;
+          border: none;
+        }
       }
     }
   }
@@ -84,8 +89,8 @@
 
 #contact-modal {
   .modal-dialog {
-  	width: 360px;
-  	margin: 30px auto;
+    width: 360px;
+    margin: 30px auto;
     .modal-content {
       border-radius: 0;
       .modal-header {
