@@ -30,6 +30,7 @@
 	"admin": "用户管理",
 	"profile": "个人资料",
 	"account": "账户",
+	"sysSettings": "平台设置",
 	"signout": "退出",
 	"signup": "登入",
 	"login": "登录",

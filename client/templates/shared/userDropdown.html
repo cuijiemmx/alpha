@@ -2,7 +2,10 @@
   <li class="dropdown">
     <a href="#" class="dropdown-toggle link" data-toggle="dropdown" role="button">{{userDisplayName}} <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="{{pathFor 'profile'}}">个人中心</a></li>
+      <li><a href="{{pathFor 'profile'}}">{{_ 'profile'}}</a></li>
+      {{#if isAdmin}}
+      <li><a href="{{pathFor 'sysSettings'}}">{{_ 'sysSettings'}}</a></li>
+      {{/if}}
       <li class="divider"></li>
       <li><a href="/sign-out">{{_ "signout"}}</a></li>
     </ul>

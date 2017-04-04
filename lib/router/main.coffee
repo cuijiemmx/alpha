@@ -28,7 +28,7 @@ Router.map ->
     path: "/sysSettings"
     onAfterAction: ->
       SEO.set
-        title: '系统设置'
+        title: '平台设置'
 
   @route 'signOut',
     path: '/sign-out'

@@ -16,3 +16,6 @@ Template.registerHelper 'signInBackground', ->
 	settings = SysSettings.findOne()
 	if settings
 		"url(#{Blaze._globalHelpers.imageSrc settings.signInBackground})"
+
+Template.registerHelper 'isAdmin', ->
+	Roles.userIsInRole Meteor.user()?._id, ['admin']

@@ -30,6 +30,7 @@
 	"admin": "Admin",
 	"profile": "Profile",
 	"account": "Account",
+	"sysSettings": "System Settings",
 	"signout": "Sign out",
 	"signup": "Sign up",
 	"login": "Log in",
