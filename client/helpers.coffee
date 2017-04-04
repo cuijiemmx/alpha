@@ -1,9 +1,10 @@
 Template.registerHelper 'imageSrc', (pathOrId) ->
-	if pathOrId.indexOf('/') > -1
-		pathOrId
-	else
-		picture = Pictures.findOne pathOrId
-		picture?.url({store: 'images'})
+	if pathOrId?
+		if pathOrId.indexOf('/') > -1
+			pathOrId
+		else
+			picture = Pictures.findOne pathOrId
+			picture?.url({store: 'images'})
 
 Template.registerHelper 'userHeadImageSrc', (_id) ->
 	user = Meteor.users.findOne _id
