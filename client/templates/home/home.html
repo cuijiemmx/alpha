@@ -1,7 +1,7 @@
 <template name="home">
-  <div class="container-fluid home">
+  <div class="home">
     <div class="row">
-      <div class="col-xs-3 g-left">
+      <div class="g-left">
         <ul>
           {{#each navs}}
           <li class="m-nav-item {{#if isNavSelected @index}} active {{/if}}">
@@ -10,7 +10,7 @@
           {{/each}}
         </ul>
       </div>
-      <div class="col-xs-9 g-right">
+      <div class="g-right">
         <div class="m-nav-content">
         	{{#if templateData}}
           {{> Template.dynamic template=contentTemplate data=templateData}}
@@ -19,6 +19,9 @@
         	{{/if}}
         </div>
       </div>
+      {{#if currentUser}}
+				{{> contacts}}
+			{{/if}}
     </div>
   </div>
 </template>
