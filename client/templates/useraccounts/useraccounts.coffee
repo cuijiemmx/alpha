@@ -34,5 +34,4 @@ AutoForm.hooks
 			insert: (doc) ->
 				console.log(doc)
 
-
-
+T9n.setLanguage("zh_cn")
