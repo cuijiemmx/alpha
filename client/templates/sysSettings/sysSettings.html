@@ -6,7 +6,6 @@
 	        {{> meNav active='sysSettings'}}
 	      </div>
 	      <div class="col-sm-7">
-	      	{{> sAlert}}
 	      	<section>
 	      	{{#if sysSettings}}
 		        {{#autoForm id="sysSettingsForm" collection="SysSettings" type="update" doc=sysSettings}}
@@ -20,6 +19,20 @@
 						{{/autoForm}}
 					{{/if}}
 					</section>
+
+					<section>
+					  <div class="form-group">
+					    <label class="control-label">导入用户数据</label>
+					    <div>
+					      <button class="btn btn-default af-select-file js-af-select-file">
+					        选择文件
+					        <input id="init-file" type="file" class="js-file">
+					      </button>
+					    </div>
+					  </div>
+					</section>
+
+					{{> sAlert}}
 	      </div>
 	    </div>
     </div>

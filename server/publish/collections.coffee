@@ -51,4 +51,9 @@ Meteor.publishComposite 'sysSettings', ->
 	children: [
 		find: (sysSettings) ->
 			Pictures.find sysSettings.signInBackground
+		find: (sysSettings) ->
+			if Roles.userIsInRole @userId, ['admin']
+				InitFiles.find()
+			else
+				[]
 	]

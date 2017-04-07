@@ -29,3 +29,9 @@ SysSettings.allow
 		Roles.userIsInRole userId, ['admin']
 	remove: (userId, doc) ->
 		Roles.userIsInRole userId, ['admin']
+
+InitFiles.allow
+	insert: (userId, doc) ->
+		true
+	update: (userId, doc, fieldNames, modifier) ->
+		true

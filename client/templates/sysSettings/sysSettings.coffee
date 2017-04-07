@@ -8,3 +8,18 @@ AutoForm.hooks
 			sAlert.success '设置保存成功'
 		onError: (operation, error, template) ->
 			sAlert.error error
+
+Template.sysSettings.events
+	'change #init-file': (e, instance) ->
+		file = e.target.files[0]
+
+		if file
+			InitFiles.insert file, (err, fileObj) ->
+				if err
+					sAlert.error err.message
+				else
+					Meteor.call 'initWithFile', fileObj._id, (err, res) ->
+						if err
+							sAlert.error err.message
+						else
+							sAlert.success '导入成功'
