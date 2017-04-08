@@ -7,17 +7,11 @@
 	      </div>
 	      <div class="col-sm-7">
 	      	<section>
-	      	{{#if sysSettings}}
-		        {{#autoForm id="sysSettingsForm" collection="SysSettings" type="update" doc=sysSettings}}
+		        {{#autoForm id="sysSettingsForm" collection="SysSettings" type=formType doc=sysSettings}}
+		        	{{>afQuickField name="schoolName"}}
 							{{>afQuickField name="signInBackground"}}
 							<button type="submit" class="btn btn-primary">保存</button>
 						{{/autoForm}}
-					{{else}}
-						{{#autoForm id="sysSettingsForm" collection="SysSettings" type="insert"}}
-							{{>afQuickField name="signInBackground"}}
-							<button type="submit" class="btn btn-primary">保存</button>
-						{{/autoForm}}
-					{{/if}}
 					</section>
 
 					<section>

@@ -23,3 +23,6 @@ Template.registerHelper 'isAdmin', ->
 
 Template.registerHelper 'isTeacher', ->
 	Meteor.user()?.profile?.type == 'teacher'
+
+Template.registerHelper 'schoolName', ->
+	SysSettings.findOne()?.schoolName

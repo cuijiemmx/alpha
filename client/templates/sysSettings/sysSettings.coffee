@@ -1,4 +1,9 @@
 Template.sysSettings.helpers
+	formType: ->
+		if SysSettings.findOne()
+			'update'
+		else
+			'insert'
 	sysSettings: ->
 		SysSettings.findOne()
 

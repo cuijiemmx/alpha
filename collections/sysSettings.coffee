@@ -1,6 +1,10 @@
 @SysSettings = new Meteor.Collection 'sysSettings'
 
 Schemas.SysSettings = new SimpleSchema
+	schoolName:
+		type: String
+		label: '校名'
+		optional: true
 	signInBackground:
 		type: String
 		label: '登录页背景图'
