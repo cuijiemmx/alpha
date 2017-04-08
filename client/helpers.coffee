@@ -26,3 +26,46 @@ Template.registerHelper 'isTeacher', ->
 
 Template.registerHelper 'schoolName', ->
 	SysSettings.findOne()?.schoolName
+
+Template.registerHelper 'Config', ->
+	Config
+
+Template.registerHelper 'Schemas', ->
+	Schemas
+
+Template.registerHelper 'Utils', ->
+  Utils
+
+Template.registerHelper 'socialMedia', ->
+  _.map Config.socialMedia, (obj)->
+    obj
+
+Template.registerHelper 'currentRoute', ->
+  if Router and Router.current and Router.current()
+    Router.current()
+
+Template.registerHelper 'isRouteReady', ->
+  Router and Router.current and Router.current() and Router.current()._waitlist._notReadyCount == 0
+
+Template.registerHelper 'desktopImage', ->
+	wid = Meteor.user()?.profile?.wallpaper
+	if wid
+		wallpaper = Wallpapers.findOne wid
+		unless wallpaper?.image
+			''
+		else
+			picture = Pictures.findOne wallpaper.image
+			path = picture?.url
+				store: 'images'
+			"url(#{path})"
+
+Template.registerHelper 'displayUsername', (username) ->
+	username?.replace /^tid_|^aid_|^sid_|^pid_/, ''
+
+Template.registerHelper 'userDisplayName', (_id) ->
+	user
+	unless _id
+		user = Meteor.user()
+	else
+		user = Meteor.users.findOne _id
+	user?.profile?.name or Blaze._globalHelpers.displayUsername(user?.username) or user?.emails[0]?.address or '我'
