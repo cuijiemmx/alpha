@@ -67,7 +67,7 @@ Template.home.onCreated ->
 		icon: appCategory.icon
 		label: appCategory.label
 		contentTemplate: 'appsGrid'
-		templateData: Apps.find({clientId: {$in: appCategory.apps}}).fetch()
+		templateData: Apps.find({clientId: {$in: appCategory.apps or []}}).fetch()
 
 	Array.prototype.splice.apply navs, [1, 0].concat categoriedAppsNavs
 
