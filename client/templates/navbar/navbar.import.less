@@ -4,10 +4,17 @@
     background: @dark-blue;
     border: none;
     border-radius: 0;
-    .navbar-nav.navbar-center {
-      position: absolute;
-      left: 50%;
-      transform: translatex(-50%);
+    .navbar-nav {
+      &.navbar-left {
+        .navbar-brand {
+          font-weight: 200;
+        }
+      }
+      // &.navbar-center {
+      //   position: absolute;
+      //   left: 50%;
+      //   transform: translatex(-50%);
+      // }
     }
   }
 }

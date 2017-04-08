@@ -16,16 +16,16 @@
         			<a href="{{pathFor 'home'}}" class="navbar-brand">{{schoolName}}</a>
         		</li>
         	</ul>
-        	<ul class="nav navbar-nav navbar-center">
-        		<li>
-        			<a>{{dateTime}}</a>
-        		</li>
-        	</ul>
-          <ul class="nav navbar-nav navbar-right">
+        	<ul class="nav navbar-nav navbar-right">
             {{#if User}}
               {{> userDropdown}}
             {{/if}}
           </ul>
+        	<ul class="nav navbar-nav navbar-right">
+        		<li>
+        			<a>{{dateTime}}</a>
+        		</li>
+        	</ul>
         </div>
       </div>
     </div>
