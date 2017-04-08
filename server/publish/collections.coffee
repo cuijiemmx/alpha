@@ -6,7 +6,7 @@ Meteor.publish 'posts', ->
 
 Meteor.publish 'apps', ->
 	unless @userId
-		[]
+		Apps.find(null)
 	else
 		user = Meteor.users.findOne @userId
 		type = user.profile?.type or null
@@ -50,10 +50,12 @@ Meteor.publishComposite 'sysSettings', ->
 		SysSettings.find()
 	children: [
 		find: (sysSettings) ->
-			Pictures.find sysSettings.signInBackground
+			_id = sysSettings.signInBackground or null
+			Pictures.find _id
+	,
 		find: (sysSettings) ->
-			if Roles.userIsInRole @userId, ['admin']
+			if @userId and Roles.userIsInRole @userId, ['admin']
 				InitFiles.find()
 			else
-				[]
+				InitFiles.find(null)
 	]
