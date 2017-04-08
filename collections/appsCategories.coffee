@@ -20,4 +20,11 @@ AppCategories.attachSchema Schemas.AppCategories
 
 AppCategories.helpers
 	appNames: ->
-		console.log this
+		apps = Apps.find
+			clientId:
+				$in: @apps or []
+		labels = apps.fetch().map (app) ->
+			app.label
+		labels.join ','
+
+

@@ -48,6 +48,7 @@
 			color: 'green'
 			icon: ''
 			label: '应用类别'
+			extraFields: ['apps']
 			tableColumns: [
 				label: 'Name'
 				name: 'name'
@@ -56,7 +57,7 @@
 				name: 'label'
 			,
 				label: 'Apps'
-				name: 'apps'
+				name: 'appNames()'
 			]
 		Links:
 			color: 'green'
