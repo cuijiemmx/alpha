@@ -14,6 +14,10 @@ Schemas.AppCategories = new SimpleSchema
 			options: ->
 				Apps.find().fetch().map (app) ->
 					label: app.label
-					value: app.name
+					value: app.clientId
 
 AppCategories.attachSchema Schemas.AppCategories
+
+AppCategories.helpers
+	appNames: ->
+		console.log this
