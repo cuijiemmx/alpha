@@ -181,9 +181,6 @@
 			{{>afQuickField name="profile.birthday"}}
 			{{>afQuickField name="profile.mobile"}}
 			{{/unless}}
-			{{#if afFieldValueIs name="profile.type" value="teacher"}}
-			{{>afQuickField name="roles"}}
-			{{/if}}
 			{{#if afFieldValueIs name="profile.type" value="student"}}
 			{{>afQuickField name="profile.parents"}}
 			{{/if}}

@@ -54,7 +54,9 @@ Meteor.methods
 				password: doc.password
 			doc.emails and doc.emails[0] and doc.emails[0].address and user.email = doc.emails[0].address
 			user.profile = doc.profile
-			Accounts.createUser user
+			uid = Accounts.createUser user
+			if doc.roles
+				Roles.addUsersToRoles uid, doc.roles
 
 	adminUpdateUser: (modifier,_id)->
 		check arguments, [Match.Any]

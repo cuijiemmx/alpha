@@ -1,6 +1,5 @@
 Accounts.onCreateUser (options, user) ->
-	unless user.profile
-		user.profile = {}
+	user.profile = options.profile or {}
 
 	switch options.profile?.type
 		when 'app'
