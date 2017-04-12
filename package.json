@@ -14,6 +14,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/cuijiemmx/alpha#readme",
   "dependencies": {
-    "babel-runtime": "^6.23.0"
+    "babel-runtime": "^6.23.0",
+    "bcrypt": "^1.0.2"
   }
 }
