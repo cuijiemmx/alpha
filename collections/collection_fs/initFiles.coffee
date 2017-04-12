@@ -13,7 +13,7 @@
 				if areTeachers content
 					importTeachers content
 				else
-					importStudents content
+					importStudentsAndParents content
 
 				console.log '[ImportUsers] End'
 			)
@@ -52,8 +52,8 @@ importTeachers = (content) =>
 		catch e
 			console.log(email + "   " + e)	
 
-importStudents = (content) =>
-	console.log 'Importing students'
+importStudentsAndParents = (content) =>
+	console.log 'Importing students and parents'
 	start = content.indexOf('\n') + 1
 	stop = content.lastIndexOf('\n')
 	content = content.substr(start, stop - start)
@@ -63,12 +63,26 @@ importStudents = (content) =>
 		id = nameIdGender[1].trim()
 		gender = nameIdGender[2].trim()
 		# console.log name, id, gender
+		# import students
 		try
 			Accounts.createUser(
 				username: id
 				password: '12345678'
 				profile:
 					type: 'student'
+					name: name
+			)
+			console.log(id + "   created successfully.")
+		catch e
+			console.log(id + "   " + e)
+
+		# import parents
+		try
+			Accounts.createUser(
+				username: id
+				password: '12345678'
+				profile:
+					type: 'parent'
 					name: name
 			)
 			console.log(id + "   created successfully.")
