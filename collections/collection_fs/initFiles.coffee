@@ -41,14 +41,13 @@ importTeachers = (content) =>
 		gender = nameEmailGender[2].trim()
 		# console.log name, email, gender
 		try
-			Accounts.createUser({
+			Accounts.createUser(
 				email: email
-				password: '12345678'
 				username: name
-				profile: {
+				password: '12345678'
+				profile:
 					type: 'teacher'
-				}
-			})
+			)
 			console.log(email + "   created successfully.")
 		catch e
 			console.log(email + "   " + e)	
@@ -65,14 +64,13 @@ importStudents = (content) =>
 		gender = nameIdGender[2].trim()
 		# console.log name, id, gender
 		try
-			Accounts.createUser({
-				username_and_email: id
+			Accounts.createUser(
+				username: id
 				password: '12345678'
-				username: name
-				profile: {
+				profile:
 					type: 'student'
-				}
-			})
+					name: name
+			)
 			console.log(id + "   created successfully.")
 		catch e
 			console.log(id + "   " + e)
