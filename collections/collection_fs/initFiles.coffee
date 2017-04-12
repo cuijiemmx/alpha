@@ -7,7 +7,8 @@
 				content += chunk.toString()
 			
 			readStream.on 'end', Meteor.bindEnvironment(() =>
-				console.log content
+				console.log '[ImportUsers] Begin'
+				# console.log content
 				start = content.indexOf('\n') + 1
 				stop = content.lastIndexOf('\n')
 				content = content.substr(start, stop - start)
@@ -16,7 +17,7 @@
 					name = nameEmailGender[0].trim()
 					email = nameEmailGender[1].trim()
 					gender = nameEmailGender[2].trim()
-					console.log name, email, gender
+					# console.log name, email, gender
 					try
 						Accounts.createUser({
 							email: email
@@ -29,6 +30,8 @@
 						console.log(email + "   created successfully.")
 					catch e
 						console.log(email + "   " + e)
+
+				console.log '[ImportUsers] End'
 			)
 
 			readStream.pipe writeStream
@@ -38,12 +41,3 @@
 			contentTypes: ['text/csv']
 			extensions: ['csv']
 )
-
-# @InitFiles.on("stored", (fileObj, s) => 
-# 	console.log fileObj
-# 	# console.log s
-# )
-
-# @InitFiles.on('data', (chunk) =>
-# 	console.log chunk
-# )
