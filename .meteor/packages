@@ -26,11 +26,9 @@ yogiben:autoform-file
 multiply:iron-router-progress
 manuelschoebel:ms-seo
 spiderable
-accounts-ui@1.1.9
 jparker:gravatar
 tap:i18n
 useraccounts:bootstrap
-service-configuration@1.0.11
 juliancwirko:s-alert
 juliancwirko:s-alert-stackslide
 rzymek:moment-locale-zh-cn
@@ -44,7 +42,6 @@ natestrauser:animate-css
 meteorhacks:subs-manager
 fastclick@1.0.13
 admin
-timmyg:wow
 tsega:skrollr
 utilities:avatar
 meteor-base@1.0.4

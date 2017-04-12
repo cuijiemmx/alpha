@@ -1,5 +1,4 @@
 Template.home.rendered = () ->
-	w = new WOW().init()
 
 	# TODO: End after home destroyed
 
