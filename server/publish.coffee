@@ -1,5 +1,18 @@
-# You'll want to replace these functions. They publish the whole
-# collection which is problematic after your app grows
+Meteor.publishComposite 'user',
+  find: ->
+    Meteor.users.find _id: @userId
+  children: [
+    find: (user) ->
+      # _id = user.profile?.picture or null
+      # Pictures.find _id: _id
+      Pictures.find()
+  ,
+    find: (user) ->
+      Meteor.users.find
+        'profile.type': 'teacher'
+        _id:
+          $ne: @userId
+  ]
 
 Meteor.publish 'posts', ->
 	Posts.find()
