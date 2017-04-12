@@ -18,7 +18,6 @@
     "pem": "~/.ssh/id_rsa",
     "deploymentDir": "/home/deploy",
     "loadProfile": "",
-    "interpreter": "node@6.7.0",
     "exec_mode": "fork_mode",
     "instances": 1
   }

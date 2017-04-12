@@ -2,4 +2,5 @@
 .meteor/meteorite
 .meteor/.id
 build
+node_modules
 .DS_Store
