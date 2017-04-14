@@ -92,7 +92,7 @@ adminCreateRouteViewOptions = (collection, collectionName) ->
 			@render()
 		onAfterAction: ->
 			Session.set 'admin_title', collectionName
-			Session.set 'admin_subtitle', 'View'
+			Session.set 'admin_subtitle', '查看'
 			Session.set 'admin_collection_name', collectionName
 			collection.routes?.view?.onAfterAction
 	_.defaults options, collection.routes?.view
@@ -110,7 +110,7 @@ adminCreateRouteNewOptions = (collection, collectionName) ->
 			@render()
 		onAfterAction: ->
 			Session.set 'admin_title', AdminDashboard.collectionLabel collectionName
-			Session.set 'admin_subtitle', 'Create new'
+			Session.set 'admin_subtitle', '添加'
 			Session.set 'admin_collection_page', 'new'
 			Session.set 'admin_collection_name', collectionName
 			collection.routes?.new?.onAfterAction
