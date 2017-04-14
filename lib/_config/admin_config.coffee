@@ -1,5 +1,5 @@
 @AdminConfig =
-	name: '用户管理'
+	name: '平台管理'
 	# collections:
 		# Posts:
 		# 	color: 'red'

@@ -19,7 +19,7 @@ Router.configure
 
 	    if Router.current().route.path() and Router.current().route.path().split('/')[1] == 'admin'
 	      SEO.set
-	        title: '用户管理'
+	        title: '平台管理'
 
 	    # Remove modal
 	    $bd = $('.modal-backdrop')

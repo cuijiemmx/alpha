@@ -27,7 +27,7 @@
 	"favorite": "常用",
 
 	 /*Navbar*/
-	"admin": "用户管理",
+	"admin": "平台管理",
 	"profile": "个人资料",
 	"account": "账户",
 	"sysSettings": "平台设置",
