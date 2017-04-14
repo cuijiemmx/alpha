@@ -12,7 +12,7 @@
             <small>{{$.Session.get 'admin_subtitle'}}</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="/admin/">Dashboard</a></li>
+            <li><a href="/admin/">控制面板</a></li>
             {{#if $.Session.get 'admin_collection_name'}}
               <li><a href="/admin/{{$.Session.get 'admin_collection_name'}}/">
                 {{adminCollectionLabel admin_collection_name}}
