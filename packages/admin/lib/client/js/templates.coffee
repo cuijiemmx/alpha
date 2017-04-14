@@ -20,7 +20,7 @@ Template.AdminDashboardView.rendered = ->
 
 	filter.html '
 		<div class="input-group">
-			<input type="search" class="form-control input-sm" placeholder="Search"></input>
+			<input type="search" class="form-control input-sm" placeholder="搜索"></input>
 			<div class="input-group-btn">
 				<button class="btn btn-sm btn-default">
 					<i class="fa fa-search"></i>
