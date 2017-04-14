@@ -190,13 +190,13 @@
 
 			<hr/>
 
-			{{#unless adminUserIsApp admin_current_doc}}
+			<!-- {{#unless adminUserIsApp admin_current_doc}} -->
 			{{#autoForm id="adminChangePassword" schema=AdminSchemas.changePassword type="method" meteormethod="adminChangePassword"}}
 			<input value="{{admin_current_id}}" type="hidden" name="_id" data-schema-key="_id"/>
 			{{>afQuickField name="password"}}
 			<button type="submit" class="btn btn-primary btn-sm">修改密码</button>
 			{{/autoForm}}
-			{{/unless}}
+			<!-- {{/unless}} -->
 		</div>
 	</div>
 </template>
