@@ -18,6 +18,7 @@ Package.onUse(function(api) {
 
 Npm.depends({
 	"oauth2-server": "2.4.1",
+	"body-parser": "1.17.1",
 	"express": "4.13.3"
 });
 

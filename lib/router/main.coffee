@@ -36,3 +36,7 @@ Router.map ->
       Meteor.logout ->
       @redirect '/'
       @next()
+
+  @route 'authorize',
+  	path: '/oauth/authorize'
+

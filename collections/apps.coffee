@@ -37,7 +37,7 @@ Schemas.Apps = new SimpleSchema
           	return "required"
 	redirectUri:
 		type: String
-		regEx: SimpleSchema.RegEx.Url
+		# regEx: SimpleSchema.RegEx.Url
 		optional: true
 		custom: ->
       if @field('type').value == '3rd-party'

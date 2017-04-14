@@ -1,5 +1,6 @@
 oauthserver = Npm.require('oauth2-server')
 express = Npm.require('express')
+bodyParser = Npm.require('body-parser')
 
 # WebApp.rawConnectHandlers.use app
 # JsonRoutes.Middleware.use app
@@ -8,32 +9,31 @@ express = Npm.require('express')
 class OAuth2Server
 	constructor: (@config={}) ->
 		@app = express()
+		@app.use(bodyParser.urlencoded({ extended: false }))
 
-		@routes = express()
+		@config.model.debug = @config.debug
+		@config.options.model = new Model(@config.model)
 
-		options = @config.options
-		options.model = new Model(@config.model)
+		@oauth = oauthserver @config.options
 
-		@oauth = oauthserver options
-
-		@publishAuhorizedClients()
+		# @publishAuhorizedClients()
 		@initRoutes()
 
 		return @
 
 
-	publishAuhorizedClients: ->
-		Meteor.publish 'authorizedOAuth', ->
-				if not @userId?
-					return @ready()
+	# publishAuhorizedClients: ->
+	# 	Meteor.publish 'authorizedOAuth', ->
+	# 			if not @userId?
+	# 				return @ready()
 
-				return Meteor.users.find
-					_id: @userId
-				,
-					fields:
-						'oauth.authorizedClients': 1
+	# 			return Meteor.users.find
+	# 				_id: @userId
+	# 			,
+	# 				fields:
+	# 					'oauth.authorizedClients': 1
 
-				return user?
+	# 			return user?
 
 
 	initRoutes: ->
@@ -55,13 +55,25 @@ class OAuth2Server
 
 		@app.all '/oauth/token', debugMiddleware, transformRequestsNotUsingFormUrlencodedType, @oauth.grant()
 
+		# @app.get '/oauth/authorize', debugMiddleware, Meteor.bindEnvironment (req, res, next) ->
+		# 	client = self.model.Clients.findOne({ clientId: req.query.client_id })
+		# 	if not client?
+		# 		return res.redirect '/oauth/error/404'
+
+		# 	if client.redirectUri isnt req.query.redirect_uri
+		# 		return res.redirect '/oauth/error/invalid_redirect_uri'
+
+		# 	next()
+
 		@app.get '/oauth/authorize', debugMiddleware, Meteor.bindEnvironment (req, res, next) ->
-			client = self.model.Clients.findOne({ clientId: req.query.client_id })
-			if not client?
-				return res.redirect '/oauth/error/404'
+
+			client = self.config.options.model.Clients.findOne({ clientId: req.query.client_id })
+			console.log 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+			unless client
+				return res.status(404).send('client not found')
 
 			if client.redirectUri isnt req.query.redirect_uri
-				return res.redirect '/oauth/error/invalid_redirect_uri'
+				return res.status(401).send('invalid redirect uri')
 
 			next()
 
@@ -82,11 +94,10 @@ class OAuth2Server
 
 
 		@app.post '/oauth/authorize', debugMiddleware, @oauth.authCodeGrant (req, next) ->
-			if req.body.allow is 'yes'
-				Meteor.users.update req.user.id, {$addToSet: {'oauth.authorizedClients': @clientId}}, {filter: false, validate: false}
-
-			next(null, req.body.allow is 'yes', req.user)
-
-		@app.use @routes
+			# Meteor.users.update req.user.id, {$addToSet: {'oauth.authorizedClients': @clientId}}, {filter: false, validate: false}
+			if req.user
+				next(null, true, req.user)
+			else
+				next(null, false, null)
 
 		@app.all '/oauth/*', @oauth.errorHandler()

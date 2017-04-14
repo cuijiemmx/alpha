@@ -1,17 +1,14 @@
 oauth2server = new OAuth2Server
+  debug: true
   model:
     clientsCollection: Apps
   options:
-    accessTokenLifetime: null
+    # accessTokenLifetime: null
     grants: ['authorization_code', 'refresh_token']
-    debug: true
 
-WebApp.connectHandlers.use(oauth2server.app)
+WebApp.rawConnectHandlers.use(oauth2server.app)
 
-# oauth2server.routes.get('/account', oauth2server.oauth.authorise(), function(req, res, next) {
-#   var user = Meteor.users.findOne(req.user.id);
+oauth2server.app.get '/account', oauth2server.oauth.authorise(), (req, res, next) ->
+  user = Meteor.users.findOne(req.user.id)
+  res.json user
 
-#   res.send({
-#     id: user._id
-#   });
-# });
