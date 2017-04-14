@@ -8,6 +8,7 @@
 			
 			readStream.on 'end', Meteor.bindEnvironment(() =>
 				console.log '[ImportUsers] Begin'
+				content = content.trim()
 				console.log content
 
 				if areTeachers content
@@ -32,47 +33,46 @@ areTeachers = (content) =>
 importTeachers = (content) =>
 	console.log 'Importing teachers'
 	start = content.indexOf('\n') + 1
-	stop = content.lastIndexOf('\n')
-	content = content.substr(start, stop - start)
+	content = content.substr(start)
 	content.split('\n').forEach (line) =>
-		nameEmailGender = line.split(',')
-		name = nameEmailGender[0].trim()
-		email = nameEmailGender[1].trim()
-		gender = nameEmailGender[2].trim()
-		# console.log name, email, gender
+		arr = line.split(',')
+		name = arr[0].trim()
+		email = arr[1].trim()
+		mobile = arr[2].trim()
+		# console.log name, email, mobile
 		try
 			Accounts.createUser(
 				email: email
 				username: name
 				password: '12345678'
+				type: 'teacher'
 				profile:
-					type: 'teacher'
+					mobile: mobile
 			)
 			console.log(email + "   created successfully.")
 		catch e
-			console.log(email + "   " + e)	
+			console.log(email + "   " + e)
 
 importStudentsAndParents = (content) =>
 	console.log 'Importing students and parents'
 	start = content.indexOf('\n') + 1
-	stop = content.lastIndexOf('\n')
-	content = content.substr(start, stop - start)
+	content = content.substr(start)
 	content.split('\n').forEach (line) =>
-		nameIdGender = line.split(',')
-		name = nameIdGender[0].trim()
-		id = nameIdGender[1].trim()
-		gender = nameIdGender[2].trim()
+		arr = line.split(',')
+		name = arr[0].trim()
+		id = arr[1].trim()
+		# gender = nameIdGender[2].trim()
 		# console.log name, id, gender
 		# import students
 		try
 			Accounts.createUser(
 				username: id
 				password: '12345678'
+				type: 'student'
 				profile:
-					type: 'student'
 					name: name
 			)
-			console.log(id + "   created successfully.")
+			console.log(id + "   student created successfully.")
 		catch e
 			console.log(id + "   " + e)
 
@@ -81,10 +81,10 @@ importStudentsAndParents = (content) =>
 			Accounts.createUser(
 				username: id
 				password: '12345678'
+				type: 'parent'
 				profile:
-					type: 'parent'
 					name: name
 			)
-			console.log(id + "   created successfully.")
+			console.log(id + "   parent created successfully.")
 		catch e
 			console.log(id + "   " + e)
