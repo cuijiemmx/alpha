@@ -4,7 +4,7 @@ adminTablesDom = '<"box"<"box-header"<"box-toolbar"<"pull-left"<lf>><"pull-right
 
 adminEditButton = {
 	data: '_id'
-	title: 'Edit'
+	title: '编辑'
 	createdCell: (node, cellData, rowData) ->
 		$(node).html(Blaze.toHTMLWithData Template.adminEditBtn, {_id: cellData})
 	width: '40px'
@@ -12,7 +12,7 @@ adminEditButton = {
 }
 adminDelButton = {
 	data: '_id'
-	title: 'Delete'
+	title: '删除'
 	createdCell: (node, cellData, rowData) ->
 		$(node).html(Blaze.toHTMLWithData Template.adminDeleteBtn, {_id: cellData})
 	width: '40px'
