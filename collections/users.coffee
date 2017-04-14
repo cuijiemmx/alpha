@@ -149,6 +149,7 @@ Schemas.User = new SimpleSchema
 		  if this.isInsert
 			  new Date()
 
+
 Meteor.users.attachSchema Schemas.User
 
 # Export schemas

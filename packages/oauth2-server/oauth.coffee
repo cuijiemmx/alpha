@@ -67,13 +67,13 @@ class OAuth2Server
 
 		@app.post '/oauth/authorize', debugMiddleware, Meteor.bindEnvironment (req, res, next) ->
 			if not req.body.token?
-				return res.sendStatus(401).send('No token')
+				return res.status(401).send('No token')
 
 			user = Meteor.users.findOne
 				'services.resume.loginTokens.hashedToken': Accounts._hashLoginToken req.body.token
 
 			if not user?
-				return res.sendStatus(401).send('Invalid token')
+				return res.status(401).send('Invalid token')
 
 			req.user =
 				id: user._id
@@ -83,7 +83,7 @@ class OAuth2Server
 
 		@app.post '/oauth/authorize', debugMiddleware, @oauth.authCodeGrant (req, next) ->
 			if req.body.allow is 'yes'
-				Meteor.users.update req.user.id, {$addToSet: {'oauth.authorizedClients': @clientId}}
+				Meteor.users.update req.user.id, {$addToSet: {'oauth.authorizedClients': @clientId}}, {filter: false, validate: false}
 
 			next(null, req.body.allow is 'yes', req.user)
 

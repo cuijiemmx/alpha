@@ -3,7 +3,7 @@ oauth2server = new OAuth2Server
     clientsCollection: Apps
   options:
     accessTokenLifetime: null
-    grants: ['authorization_code', 'client_credentials']
+    grants: ['authorization_code', 'refresh_token']
     debug: true
 
 WebApp.connectHandlers.use(oauth2server.app)
