@@ -22,7 +22,7 @@ Template.registerHelper 'isAdmin', ->
 	Roles.userIsInRole Meteor.user()?._id, ['admin']
 
 Template.registerHelper 'isTeacher', ->
-	Meteor.user()?.profile?.type == 'teacher'
+	Meteor.user()?.type == 'teacher'
 
 Template.registerHelper 'schoolName', ->
 	SysSettings.findOne()?.schoolName

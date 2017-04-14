@@ -1,22 +1,14 @@
 Accounts.onCreateUser (options, user) ->
+	# console.log options
+	# console.log user
+
+	user.type = options.type or 'teacher'
+	user.username = "#{user.type.substr(0, 1)}id_#{options.username}"
 	user.profile = options.profile or {}
+	user.roles = options.roles or []
 
-	switch options.profile?.type
-		when 'app'
-			user.profile.type = 'app'
-		when 'teacher'
-			user.profile.type = 'teacher'
-		when 'student'
-			user.profile.type = 'student'
-		when 'parent'
-			user.profile.type = 'parent'
-		else
-			user.profile.type = 'teacher'
-
-	user.username = "#{user.profile.type.substr(0, 1)}id_#{options.username}"
-
-	if user.profile.type == 'teacher'
-		unless Meteor.users.findOne({'profile.type': 'teacher'})
-			user.roles = ['admin']
+	if user.type == 'teacher'
+		unless Meteor.users.findOne({'type': 'teacher'})
+			user.roles.push 'admin'
 
 	return user

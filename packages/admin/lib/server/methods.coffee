@@ -52,11 +52,11 @@ Meteor.methods
 			user =
 				username: doc.username
 				password: doc.password
+				type: doc.type
+				profile: doc.profile
+			doc.roles and user.roles = doc.roles
 			doc.emails and doc.emails[0] and doc.emails[0].address and user.email = doc.emails[0].address
-			user.profile = doc.profile
 			uid = Accounts.createUser user
-			if doc.roles
-				Roles.addUsersToRoles uid, doc.roles
 
 	adminUpdateUser: (modifier,_id)->
 		check arguments, [Match.Any]

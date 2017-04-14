@@ -90,8 +90,8 @@
 			{{>afQuickField name="password"}}
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
-			{{>afQuickField name="profile.type"}}
-			{{#if afFieldValueIs name="profile.type" value="teacher"}}
+			{{>afQuickField name="type"}}
+			{{#if afFieldValueIs name="type" value="teacher"}}
 			{{>afQuickField name="roles"}}
 			{{/if}}
 			{{>afQuickField name="profile.name"}}
@@ -99,7 +99,7 @@
 			{{>afQuickField name="profile.picture"}}
 			{{>afQuickField name="profile.birthday"}}
 			{{>afQuickField name="profile.mobile"}}
-			{{#if afFieldValueIs name="profile.type" value="student"}}
+			{{#if afFieldValueIs name="type" value="student"}}
 			{{>afQuickField name="profile.parents"}}
 			{{/if}}
 			{{>afQuickField name="profile.wallpaper"}}
@@ -164,15 +164,13 @@
 			{{> adminAlert}}
 			{{# autoForm id="adminUpdateUser" collection=adminGetUsers type="update" doc=admin_current_doc}}
 			{{>afQuickField name="username"}}
-			{{#unless afFieldValueIs name="profile.type" value="app"}}
+			{{#unless afFieldValueIs name="type" value="app"}}
 			{{>afQuickField name="emails.0.address"}}
 			{{>afQuickField name="emails.0.verified"}}
 			{{/unless}}
-			{{#unless admin_current_doc.profile.type}}
-			{{>afQuickField name="profile.type"}}
-			{{/unless}}
-			{{#unless afFieldValueIs name="profile.type" value="app"}}
-			{{#if afFieldValueIs name="profile.type" value="teacher"}}
+			{{>afQuickField name="type" type="hidden"}}
+			{{#unless afFieldValueIs name="type" value="app"}}
+			{{#if afFieldValueIs name="type" value="teacher"}}
 			{{>afQuickField name="roles"}}
 			{{/if}}
 			{{>afQuickField name="profile.name"}}
@@ -181,7 +179,7 @@
 			{{>afQuickField name="profile.birthday"}}
 			{{>afQuickField name="profile.mobile"}}
 			{{/unless}}
-			{{#if afFieldValueIs name="profile.type" value="student"}}
+			{{#if afFieldValueIs name="type" value="student"}}
 			{{>afQuickField name="profile.parents"}}
 			{{/if}}
 			{{>afQuickField name="profile.wallpaper"}}

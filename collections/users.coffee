@@ -1,15 +1,15 @@
 Schemas.UserProfile = new SimpleSchema(
 
-	type:
-  	type: String
-  	label: '用户类型'
-  	allowedValues: ['app', 'teacher', 'student', 'parent']
-  	autoform:
-  		options:
-  			teacher: '老师'
-  			student: '学生'
-  			parent: '家长'
-  		firstOption: '(请选择)'
+	# type:
+ #  	type: String
+ #  	label: '用户类型'
+ #  	allowedValues: ['app', 'teacher', 'student', 'parent']
+ #  	autoform:
+ #  		options:
+ #  			teacher: '老师'
+ #  			student: '学生'
+ #  			parent: '家长'
+ #  		firstOption: '(请选择)'
 
   parents:
   	type: [String]
@@ -17,7 +17,7 @@ Schemas.UserProfile = new SimpleSchema(
   	optional: true
   	autoform:
   		options: ->
-  			Meteor.users.find({'profile.type': 'parent'}).map (i) ->
+  			Meteor.users.find({type: 'parent'}).map (i) ->
   				label: "#{i.profile.name} (#{i.profile.mobile})"
   				value: i._id
 
@@ -61,7 +61,7 @@ Schemas.UserProfile = new SimpleSchema(
   	max: 11
   	optional: true
   	custom: ->
-      if @field('roles')?.value and 'admin' not in @field('roles')?.value and @field('profile.type')?.value == 'teacher'
+      if @field('roles')?.value and 'admin' not in @field('roles')?.value and @field('type')?.value == 'teacher'
         # inserts
         if !@operator
           if !@isSet or !@value
@@ -110,6 +110,18 @@ Schemas.User = new SimpleSchema
     type: Boolean
     label: '邮箱已验证'
     optional: true
+
+  type:
+  	type: String
+  	label: '用户类型'
+  	allowedValues: ['app', 'teacher', 'student', 'parent']
+  	autoform:
+  		options:
+  			app: '应用'
+  			teacher: '老师'
+  			student: '学生'
+  			parent: '家长'
+  		firstOption: '(请选择)'
 
   profile:
     type: Schemas.UserProfile

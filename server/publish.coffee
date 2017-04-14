@@ -9,7 +9,7 @@ Meteor.publishComposite 'user',
   ,
     find: (user) ->
       Meteor.users.find
-        'profile.type': 'teacher'
+        type: 'teacher'
         _id:
           $ne: @userId
   ]
@@ -22,7 +22,7 @@ Meteor.publish 'apps', ->
 		Apps.find(null)
 	else
 		user = Meteor.users.findOne @userId
-		type = user.profile?.type or null
+		type = user.type or null
 		roles = user.roles or []
 		Apps.find
 			userType: type
@@ -77,6 +77,6 @@ Meteor.publish 'users', ->
 	Meteor.users.find {}, fields:
 		username: 1
 		'emails.address': 1
+		type: 1
 		roles: 1
 		profile: 1
-

@@ -23,8 +23,8 @@ if Apps.find().count() == 0
 		if preinstalledApp.type == '3rd-party'
 			preinstalledApp.user = Accounts.createUser
 				username: preinstalledApp.clientId
+				type: 'app'
 				profile:
-					type: 'app'
 					name: preinstalledApp.label
 
 Seed 'apps',
