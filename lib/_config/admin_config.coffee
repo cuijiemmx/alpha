@@ -38,8 +38,8 @@
 			tableColumns: [
 				{ label: 'Client Id', name: 'clientId'}
 				{ label: 'Label', name: 'label'}
-				{ label: 'User Type', name: 'userType'}
-				{ label: 'User Roles', name: 'userRoles'}
+				{ label: '用户类型', name: 'userType'}
+				{ label: '用户角色', name: 'userRoles'}
 			]
 			insert: false
 			edit: true
