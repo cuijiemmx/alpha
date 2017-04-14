@@ -72,3 +72,11 @@ Meteor.publishComposite 'sysSettings', ->
 			else
 				InitFiles.find(null)
 	]
+
+Meteor.publish 'users', ->
+	Meteor.users.find {}, fields:
+		username: 1
+		'emails.address': 1
+		roles: 1
+		profile: 1
+
