@@ -89,7 +89,7 @@
 			{{>afQuickField name="username"}}
 			{{>afQuickField name="password"}}
 			{{>afQuickField name="emails.0.address"}}
-			{{>afQuickField name="emails.0.verified"}}
+			{{>afQuickField name="emails.0.verified" type="hidden"}}
 			{{>afQuickField name="type"}}
 			{{#if afFieldValueIs name="type" value="teacher"}}
 			{{>afQuickField name="roles"}}
@@ -166,7 +166,7 @@
 			{{>afQuickField name="username"}}
 			{{#unless afFieldValueIs name="type" value="app"}}
 			{{>afQuickField name="emails.0.address"}}
-			{{>afQuickField name="emails.0.verified"}}
+			{{>afQuickField name="emails.0.verified" type="hidden"}}
 			{{/unless}}
 			{{>afQuickField name="type" type="hidden"}}
 			{{#unless afFieldValueIs name="type" value="app"}}
