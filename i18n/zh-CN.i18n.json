@@ -67,10 +67,12 @@
 	"postContent": "正文",
 	"postPicture": "图片",
 	// "uploadLabel": "选择文件"
-	"profilePicture": "资料图片"
+	"profilePicture": "资料图片",
 
-
-
-
+	/*Tabular*/
+	"paginate_first": "第一页",
+	"paginate_last": "最末页",
+	"paginate_next": "下一页",
+	"paginate_previous": "上一页"
 
 }
