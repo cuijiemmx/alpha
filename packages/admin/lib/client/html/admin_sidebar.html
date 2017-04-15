@@ -17,11 +17,11 @@
 						</a>
 						<ul class="treeview-menu">
 							{{#if this.insert}}
-							<li class="{{isActivePath path=newPath}}"><a href="{{newPath}}"><i class="fa fa-angle-double-right"></i> {{_ 'add'}}</a></li>
+							<li class="{{isActivePath path=newPath}}"><a href="{{newPath}}">{{_ 'add'}}</a></li>
 							{{/if}}
-							<li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}"><i class="fa fa-angle-double-right"></i> {{_ 'see_all'}}</a></li>
+							<li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}">{{_ 'see_all'}}</a></li>
 							{{#each admin_collection_items}}
-							<li class="{{isActivePath path=url}}"><a href="{{url}}"><i class="fa fa-angle-double-right"></i> {{title}}</a></li>
+							<li class="{{isActivePath path=url}}"><a href="{{url}}">{{title}}</a></li>
 							{{/each}}
 						</ul>
 					</li>
