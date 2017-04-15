@@ -36,3 +36,11 @@
 @parseIDs = (ids) ->
     return _.map ids, (id) ->
         parseID id
+
+@chinese = (str) ->
+	enZhMapping =
+		'Apps': '应用'
+		'AppCategories': '应用类别'
+		'Links': '友情链接'
+		'Wallpapers': '桌面背景'
+	enZhMapping[str]
