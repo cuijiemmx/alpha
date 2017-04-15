@@ -73,6 +73,10 @@
 	"paginate_first": "第一页",
 	"paginate_last": "最末页",
 	"paginate_next": "下一页",
-	"paginate_previous": "上一页"
+	"paginate_previous": "上一页",
 
+	"dashboard": "控制面板",
+	"add": "添加",
+	"edit": "编辑",
+	"see_all": "查看全部"
 }

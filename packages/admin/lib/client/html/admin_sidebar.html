@@ -4,7 +4,7 @@
 			<ul class="sidebar-menu">
 				<li class="{{isActiveRoute 'adminDashboard'}}">
 					<a href="{{pathFor 'adminDashboard'}}">
-						<i class="fa fa-dashboard"></i> <span>控制面板</span>
+						<i class="fa fa-dashboard"></i> <span>{{_ 'dashboard'}}</span>
 					</a>
 				</li>
 				{{#each admin_collections}}
@@ -17,9 +17,9 @@
 						</a>
 						<ul class="treeview-menu">
 							{{#if this.insert}}
-							<li class="{{isActivePath path=newPath}}"><a href="{{newPath}}"><i class="fa fa-angle-double-right"></i> 添加</a></li>
+							<li class="{{isActivePath path=newPath}}"><a href="{{newPath}}"><i class="fa fa-angle-double-right"></i> {{_ 'add'}}</a></li>
 							{{/if}}
-							<li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}"><i class="fa fa-angle-double-right"></i> 查看全部</a></li>
+							<li class="{{isActivePath path=viewPath}}"><a href="{{viewPath}}"><i class="fa fa-angle-double-right"></i> {{_ 'see_all'}}</a></li>
 							{{#each admin_collection_items}}
 							<li class="{{isActivePath path=url}}"><a href="{{url}}"><i class="fa fa-angle-double-right"></i> {{title}}</a></li>
 							{{/each}}
