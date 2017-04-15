@@ -1,22 +1,24 @@
-Template.registerHelper 'imageSrc', (pathOrId) ->
+Template.registerHelper '_imageSrc', (pathOrId, collection, store) ->
 	if pathOrId?
 		if pathOrId.indexOf('/') > -1
 			pathOrId
 		else
-			picture = Pictures.findOne pathOrId
-			picture?.url({store: 'images'})
+			image = collection.findOne pathOrId
+			image?.url({store: store})
 
-Template.registerHelper 'userHeadImageSrc', (_id) ->
-	user = Meteor.users.findOne _id
-	if user?.profile?.picture
-		Blaze._globalHelpers.imageSrc user.profile.picture
-	else
-		'/images/default_user_head.png'
+Template.registerHelper 'imageSrc', (pathOrId) ->
+	Blaze._globalHelpers._imageSrc pathOrId, Pictures, 'images'
+
+Template.registerHelper 'appIconSrc', (pathOrId) ->
+	Blaze._globalHelpers._imageSrc pathOrId, AppIcons, 'appIcons'
+
+Template.registerHelper 'headImageSrc', (id) ->
+	id ?= '/images/default_user_head.png'
+	Blaze._globalHelpers._imageSrc id, HeadImages, 'headImages'
 
 Template.registerHelper 'signInBackground', ->
-	settings = SysSettings.findOne()
-	if settings
-		"url(#{Blaze._globalHelpers.imageSrc settings.signInBackground})"
+	url = Blaze._globalHelpers.imageSrc SysSettings.findOne()?.signInBackground
+	"url(#{url})"
 
 Template.registerHelper 'isAdmin', ->
 	Roles.userIsInRole Meteor.user()?._id, ['admin']

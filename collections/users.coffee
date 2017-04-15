@@ -1,16 +1,5 @@
 Schemas.UserProfile = new SimpleSchema(
 
-	# type:
- #  	type: String
- #  	label: '用户类型'
- #  	allowedValues: ['app', 'teacher', 'student', 'parent']
- #  	autoform:
- #  		options:
- #  			teacher: '老师'
- #  			student: '学生'
- #  			parent: '家长'
- #  		firstOption: '(请选择)'
-
   parents:
   	type: [String]
   	label: '家长'
@@ -30,7 +19,7 @@ Schemas.UserProfile = new SimpleSchema(
         label: '选择图片'
         removeLabel: '删除'
         type: 'fileUpload'
-        collection: 'Pictures'
+        collection: 'HeadImages'
 
   name:
     type: String

@@ -35,3 +35,19 @@ InitFiles.allow
 		true
 	update: (userId, doc, fieldNames, modifier) ->
 		true
+
+AppIcons.allow
+	insert: (userId, doc) ->
+		true
+	update: (userId, doc, fieldNames, modifier) ->
+		true
+	download: (userId)->
+		true
+
+HeadImages.allow
+	insert: (userId, doc) ->
+		true
+	update: (userId, doc, fieldNames, modifier) ->
+		true
+	download: (userId)->
+		true

@@ -26,6 +26,12 @@ Schemas.Apps = new SimpleSchema
 	icon:
 		type: String
 		label: '图标'
+		autoform:
+			afFieldInput:
+				label: '选择图片'
+				removeLabel: '删除'
+				type: 'fileUpload'
+				collection: 'AppIcons'
 	label:
 		type: String
 		label: '标题'
@@ -37,37 +43,37 @@ Schemas.Apps = new SimpleSchema
 		type: String
 		optional: true
 		custom: ->
-      if @field('type').value == '3rd-party'
-        # inserts
-        if !@operator
-          if !@isSet or !@value
-          	return "required"
-        # updates
-        else if @isSet
-          if @operator == "$set" and !@value
-          	return "required"
-          if @operator == "$unset"
-          	return "required"
-          if @operator == "$rename"
-          	return "required"
+			if @field('type').value == '3rd-party'
+				# inserts
+				if !@operator
+					if !@isSet or !@value
+						return "required"
+				# updates
+				else if @isSet
+					if @operator == "$set" and !@value
+						return "required"
+					if @operator == "$unset"
+						return "required"
+					if @operator == "$rename"
+						return "required"
 	redirectUri:
 		type: String
 		# regEx: SimpleSchema.RegEx.Url
 		optional: true
 		custom: ->
-      if @field('type').value == '3rd-party'
-        # inserts
-        if !@operator
-          if !@isSet or !@value
-          	return "required"
-        # updates
-        else if @isSet
-          if @operator == "$set" and !@value
-          	return "required"
-          if @operator == "$unset"
-          	return "required"
-          if @operator == "$rename"
-          	return "required"
+			if @field('type').value == '3rd-party'
+				# inserts
+				if !@operator
+					if !@isSet or !@value
+						return "required"
+				# updates
+				else if @isSet
+					if @operator == "$set" and !@value
+						return "required"
+					if @operator == "$unset"
+						return "required"
+					if @operator == "$rename"
+						return "required"
 	# user:
 	# 	type: String
 	# 	regEx: SimpleSchema.RegEx.Id

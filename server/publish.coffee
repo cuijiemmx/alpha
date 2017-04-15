@@ -3,9 +3,7 @@ Meteor.publishComposite 'user',
     Meteor.users.find _id: @userId
   children: [
     find: (user) ->
-      # _id = user.profile?.picture or null
-      # Pictures.find _id: _id
-      Pictures.find()
+      HeadImages.find()
   ,
     find: (user) ->
       Meteor.users.find
@@ -17,26 +15,32 @@ Meteor.publishComposite 'user',
 Meteor.publish 'posts', ->
 	Posts.find()
 
-Meteor.publish 'apps', ->
-	unless @userId
-		Apps.find(null)
-	else
-		user = Meteor.users.findOne @userId
-		type = user.type or null
-		roles = user.roles or []
-		Apps.find
-			userType: type
-			$or: [
-				userRoles:
-					$exists: false
-			,
-				userRoles: []
-			,
-				userRoles:
-					$elemMatch:
-						$in:
-							roles
-			]
+Meteor.publishComposite 'apps', ->
+	find: ->
+		unless @userId
+			Apps.find(null)
+		else
+			user = Meteor.users.findOne @userId
+			type = user.type or null
+			roles = user.roles or []
+			Apps.find
+				userType: type
+				$or: [
+					userRoles:
+						$exists: false
+				,
+					userRoles: []
+				,
+					userRoles:
+						$elemMatch:
+							$in:
+								roles
+				]
+	children: [
+		find: (app) ->
+			AppIcons.find app.icon
+	]
+
 Meteor.publish 'appCategories', ->
 	AppCategories.find()
 

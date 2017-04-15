@@ -13,7 +13,7 @@
 		<ul>
 			{{#each contacts}}
 				<li class="m-contact-item" data-uid="{{_id}}">
-					<img class="img-circle" src="{{userHeadImageSrc _id}}">
+					<img class="img-circle" src="{{headImageSrc profile.picture}}">
 					<span>{{userDisplayName _id}}</span>
 				</li>
 			{{/each}}
@@ -45,7 +45,7 @@
 				</div>
 				<div class="modal-body">
 					<div class="g-left">
-						<img src="{{userHeadImageSrc _id}}" class="img-circle">
+						<img class="img-circle" src="{{headImageSrc profile.picture}}">
 						<span>{{userDisplayName _id}}</span>
 					</div>
 					<div class="g-right">
