@@ -49,20 +49,7 @@ Schemas.UserProfile = new SimpleSchema(
   	min: 11
   	max: 11
   	optional: true
-  	custom: ->
-      if @field('roles')?.value and 'admin' not in @field('roles')?.value and @field('type')?.value == 'teacher'
-        # inserts
-        if !@operator
-          if !@isSet or !@value
-          	return "required"
-        # updates
-        else if @isSet
-          if @operator == "$set" and !@value
-          	return "required"
-          if @operator == "$unset"
-          	return "required"
-          if @operator == "$rename"
-          	return "required"
+
   wallpaper:
   	type: String
   	optional: true
