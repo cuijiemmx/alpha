@@ -1,0 +1,31 @@
+<template name="adminApps">
+	<div class="box box-default">
+		<div class="box-body">
+			{{#if admin_current_doc}}
+			{{# autoForm id="admin_update" collection='Apps' doc=admin_current_doc}}
+				{{> adminAppsFormFields}}
+				<button type="submit" class="btn btn-primary">更新</button>
+			{{/autoForm}}
+			{{else}}
+			{{# autoForm id="admin_insert" collection='Apps'}}
+				{{> adminAppsFormFields}}
+				<button type="submit" class="btn btn-primary">添加</button>
+			{{/autoForm}}
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+<template name="adminAppsFormFields">
+	{{>afQuickField name="type"}}
+	{{>afQuickField name="userType"}}
+	{{>afQuickField name="userRoles"}}
+	{{>afQuickField name="icon"}}
+	{{>afQuickField name="label"}}
+	{{>afQuickField name="startupUri"}}
+	{{>afQuickField name="clientId"}}
+	{{#if afFieldValueIs name="type" value="3rd-party"}}
+	{{>afQuickField name="clientSecret"}}
+	{{>afQuickField name="redirectUri"}}
+	{{/if}}
+</template>

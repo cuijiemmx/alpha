@@ -41,9 +41,11 @@
 				{ label: '用户类型', name: 'userType'}
 				{ label: '用户角色', name: 'userRoles'}
 			]
-			insert: false
-			edit: true
-			delete: false
+			templates:
+				new:
+					name: 'adminApps'
+				edit:
+					name: 'adminApps'
 		AppCategories:
 			color: 'green'
 			icon: ''
