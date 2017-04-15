@@ -11,6 +11,7 @@ Schemas.Apps = new SimpleSchema
 			firstOption: '(请选择)'
 	userType:
 		type: String
+		label: '用户类型'
 		allowedValues: ['teacher', 'student', 'parent']
 		autoform:
 			options:
@@ -27,7 +28,7 @@ Schemas.Apps = new SimpleSchema
 		label: '图标'
 	label:
 		type: String
-		label: '名称'
+		label: '标题'
 	startupUri:
 		type: String
 	clientId:
@@ -87,3 +88,12 @@ Schemas.Apps = new SimpleSchema
  #          	return "required"
 
 Apps.attachSchema Schemas.Apps
+
+Apps.helpers
+	userTypeName: ->
+		if @userType is 'teacher'
+			'老师'
+		else if @userType is 'student'
+			'学生'
+		else
+			'家长'

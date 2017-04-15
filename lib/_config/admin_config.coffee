@@ -34,11 +34,11 @@
 			color: 'green'
 			icon: ''
 			label: '应用'
-			extraFields: ['user']
+			extraFields: ['user', 'userType']
 			tableColumns: [
 				{ label: 'Client Id', name: 'clientId'}
-				{ label: 'Label', name: 'label'}
-				{ label: '用户类型', name: 'userType'}
+				{ label: '标题', name: 'label'}
+				{ label: '用户类型', name: 'userTypeName()'}
 				{ label: '用户角色', name: 'userRoles'}
 			]
 			templates:
