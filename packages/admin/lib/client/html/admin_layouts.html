@@ -19,12 +19,12 @@
               </a></li>
             {{/if}}
 
-            <!--{{#if $.Session.equals 'admin_collection_page' 'new'}}
-              <li>New</li>
-            {{/if}}-->
+            {{#if $.Session.equals 'admin_collection_page' 'new'}}
+              <li>添加</li>
+            {{/if}}
 
             {{#if $.Session.equals 'admin_collection_page' 'edit'}}
-              <li>Edit</li>
+              <li>编辑</li>
             {{/if}}
           </ol>
         </section>
