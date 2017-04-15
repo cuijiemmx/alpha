@@ -36,10 +36,10 @@ AccountsTemplates.configure
 
   # Hooks
   onLogoutHook: ->
-    console.log 'logout'
+    # console.log 'logout'
 
   onSubmitHook: ->
-    console.log 'submitting form'
+    # console.log 'submitting form'
 
 AccountsTemplates.configureRoute 'signIn'
 AccountsTemplates.configureRoute 'signUp'
