@@ -48,6 +48,7 @@ Schemas.UserProfile = new SimpleSchema(
   	label: '手机号'
   	min: 11
   	max: 11
+  	unique: true
   	optional: true
 
   wallpaper:
