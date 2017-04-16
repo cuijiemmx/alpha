@@ -83,5 +83,22 @@
 	"Apps": "应用",
 	"AppCategories": "应用类别",
 	"Links": "友情链接",
-	"Wallpapers": "桌面背景"
+	"Wallpapers": "桌面背景",
+
+	"schemas": {
+		"appCategories": {
+			"name": {
+				"label": "名称"
+			},
+			"label": {
+				"label": "标题"
+			},
+			"icon": {
+				"label": "图标"
+			},
+			"apps": {
+				"label": "应用"
+			}
+		}
+	}
 }

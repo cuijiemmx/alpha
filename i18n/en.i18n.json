@@ -73,6 +73,23 @@
 	"paginate_first": "First",
 	"paginate_last": "Last",
 	"paginate_next": "Next",
-	"paginate_previous": "Previous"
+	"paginate_previous": "Previous",
+
+	"schemas": {
+		"appCategories": {
+			"name": {
+				"label": "Name"
+			},
+			"label": {
+				"label": "Label"
+			},
+			"icon": {
+				"label": "Icon"
+			},
+			"apps": {
+				"label": "Apps"
+			}
+		}
+	}
 
 }

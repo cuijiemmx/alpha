@@ -1,34 +1,5 @@
 @AdminConfig =
 	name: '平台管理'
-	# collections:
-		# Posts:
-		# 	color: 'red'
-		# 	icon: 'pencil'
-		# 	extraFields: ['owner']
-		# 	tableColumns: [
-		# 		{ label: 'Title', name: 'title' }
-		# 		{ label: 'User', name: 'author()', template: 'adminUserCell' }
-		# 	]
-		# Comments:
-		# 	color: 'green'
-		# 	icon: 'comments'
-		# 	extraFields: ['doc', 'owner']
-		# 	tableColumns: [
-		# 		{ label: 'Content', name: 'content' }
-		# 		{ label: 'Post', name: 'docTitle()', template: 'adminPostCell' }
-		# 		{ label: 'User', name: 'author()', template: 'adminUserCell' }
-		# 	]
-		# 	children: [
-		# 		{
-		# 			find: (comment) ->
-		# 				Posts.find comment.doc, limit: 1
-		# 		}
-		# 		{
-		# 			find: (comment) ->
-		# 				Meteor.users.find comment.owner, limit: 1
-		# 		}
-		# 	]
-		#
 	collections:
 		Apps:
 			color: 'green'
@@ -52,13 +23,13 @@
 			label: '应用类别'
 			extraFields: ['apps']
 			tableColumns: [
-				label: 'Name'
+				label: '名称'
 				name: 'name'
 			,
-				label: 'Label'
+				label: '标题'
 				name: 'label'
 			,
-				label: 'Apps'
+				label: '应用'
 				name: 'appNames()'
 			]
 		Links:
