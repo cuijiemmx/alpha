@@ -1,0 +1,52 @@
+.my-apps {
+  section {
+    &.u-apps {
+      padding: 0;
+    }
+    .my-app {
+      margin: 10px;
+      background: rgba(210, 220, 229, 0.5);
+      width: 140px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      .app-item {
+      	align-self: stretch;
+      }
+      &.my-app-add {
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 50px;
+      }
+      &:hover {
+        background: rgb(210, 220, 229);
+        cursor: pointer;
+        .g-action {
+          button {
+            display: inline-block;
+            &.btn-danger {
+              margin-left: 5px;
+            }
+          }
+          span {
+            display: none;
+          }
+        }
+      }
+      .g-action {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: -15px;
+        height: 32px;
+        line-height: 32px;
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+}

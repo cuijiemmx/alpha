@@ -29,6 +29,7 @@
 	 /*Navbar*/
 	"admin": "平台管理",
 	"profile": "个人资料",
+	"myApps": "我的应用",
 	"account": "账户",
 	"sysSettings": "平台设置",
 	"signout": "退出",

@@ -3,7 +3,9 @@
 Schemas.Apps = new SimpleSchema
 	type:
 		type: String
+		label: '应用类型'
 		allowedValues: ['system', '3rd-party']
+		defaultValue: '3rd-party'
 		autoform:
 			options:
 				system: '系统'
@@ -34,7 +36,7 @@ Schemas.Apps = new SimpleSchema
 				collection: 'AppIcons'
 	label:
 		type: String
-		label: '标题'
+		label: '应用名'
 	startupUri:
 		type: String
 	clientId:
@@ -42,6 +44,9 @@ Schemas.Apps = new SimpleSchema
 	clientSecret:
 		type: String
 		optional: true
+		autoValue: ->
+			if @isInsert
+				Random.secret()
 		custom: ->
 			if @field('type').value == '3rd-party'
 				# inserts
@@ -74,24 +79,29 @@ Schemas.Apps = new SimpleSchema
 						return "required"
 					if @operator == "$rename"
 						return "required"
-	# user:
-	# 	type: String
-	# 	regEx: SimpleSchema.RegEx.Id
-	# 	optional: true
-	# 	custom: ->
- #      if @field('type').value == '3rd-party'
- #        # inserts
- #        if !@operator
- #          if !@isSet or !@value
- #          	return "required"
- #        # updates
- #        else if @isSet
- #          if @operator == "$set" and !@value
- #          	return "required"
- #          if @operator == "$unset"
- #          	return "required"
- #          if @operator == "$rename"
- #          	return "required"
+	user:
+		type: String
+		regEx: SimpleSchema.RegEx.Id
+		optional: true
+		custom: ->
+			if @field('type').value == '3rd-party'
+				# inserts
+				if !@operator
+					if !@isSet or !@value
+						return "required"
+				# updates
+				else if @isSet
+					if @operator == "$set" and !@value
+						return "required"
+					if @operator == "$unset"
+						return "required"
+					if @operator == "$rename"
+						return "required"
+
+	online:
+		type: Boolean
+		defaultValue: false
+		label: '上线中'
 
 Apps.attachSchema Schemas.Apps
 
@@ -103,3 +113,9 @@ Apps.helpers
 			'学生'
 		else
 			'家长'
+	onlineStatus: ->
+		console.log @
+		if @online
+			'是'
+		else
+			'否'

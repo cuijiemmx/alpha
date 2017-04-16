@@ -10,6 +10,14 @@ Meteor.publishComposite 'user',
         type: 'teacher'
         _id:
           $ne: @userId
+  ,
+  	find: (user) ->
+  		Apps.find
+  			user: @userId
+  	children: [
+  		find: (app) ->
+  			AppIcons.find app.icon
+  	]
   ]
 
 Meteor.publish 'posts', ->

@@ -30,6 +30,12 @@ Router.map ->
       SEO.set
         title: '平台设置'
 
+  @route "myApps",
+    path: "/myApps"
+    onAfterAction: ->
+      SEO.set
+        title: '我的应用'
+
   @route 'signOut',
     path: '/sign-out'
     onBeforeAction: ->

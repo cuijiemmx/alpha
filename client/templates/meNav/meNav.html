@@ -15,6 +15,11 @@
         <a href="{{pathFor 'sysSettings'}}">平台设置</a>
       </li>
       {{/if}}
+      {{#if isApp}}
+      <li class="{{#if isActive 'myApps'}}active{{/if}}">
+        <a href="{{pathFor 'myApps'}}">我的应用</a>
+      </li>
+      {{/if}}
     </ul>
   </div>
 </template>

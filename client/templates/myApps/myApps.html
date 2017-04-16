@@ -1,0 +1,55 @@
+<template name="myApps">
+  <div class="my-apps">
+    <div class="container me-nav-container">
+      <div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+          {{> meNav active='myApps'}}
+        </div>
+        <div class="col-sm-7">
+          {{> sAlert}}
+          <div class="row">
+          	{{#unless editing}}
+            <section class="g-apps">
+              {{#each apps}}
+              <div class="my-app pull-left">
+						    {{> appItem}}
+						    <div class="g-action">
+						    	{{#if online}}
+						    	<span class="text-warning">审核中</span>
+						    	{{else}}
+						    	<span class="text-success">已上线</span>
+						    	{{/if}}
+						    	<button class="btn btn-sm btn-primary u-config" data-index="{{@index}}">配置</button>
+						    	<button class="btn btn-sm btn-danger u-del" data-index="{{@index}}">删除</button>
+						    </div>
+						  </div>
+              {{/each}}
+              <div class="my-app my-app-add pull-left">
+								<i class="ion-plus"></i>
+							</div>
+              <div class="clearfix"></div>
+            </section>
+            {{else}}
+           	<section>
+           		{{#autoForm id="myAppForm" schema=schema doc=editingApp}}
+								{{>afQuickField name="label"}}
+								{{>afQuickField name="icon"}}
+								{{>afQuickField name="userType"}}
+								{{>afQuickField name="userRoles"}}
+								{{>afQuickField name="clientId"}}
+								{{#if editingApp}}
+								{{>afQuickField name="clientSecret" readonly="true"}}
+								{{/if}}
+								{{>afQuickField name="startupUri"}}
+								{{>afQuickField name="redirectUri"}}
+								<button type="submit" class="btn btn-primary">{{buttonText}}</button>
+								<button type="button" class="btn btn-default u-cancel">取消</button>
+							{{/autoForm}}
+           	</section>
+           	{{/unless}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -5,8 +5,9 @@
 			color: 'green'
 			icon: ''
 			label: '应用'
-			extraFields: ['user', 'userType']
+			extraFields: ['user', 'userType', 'online']
 			tableColumns: [
+				{ label: '上线中', name: 'onlineStatus()' }
 				{ label: 'Client Id', name: 'clientId'}
 				{ label: '标题', name: 'label'}
 				{ label: '用户类型', name: 'userTypeName()'}
@@ -17,6 +18,7 @@
 					name: 'adminApps'
 				edit:
 					name: 'adminApps'
+			insert: false
 		AppCategories:
 			color: 'green'
 			icon: ''

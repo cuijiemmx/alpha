@@ -6,6 +6,9 @@
       {{#if isAdmin}}
       <li><a href="{{pathFor 'sysSettings'}}">{{_ 'sysSettings'}}</a></li>
       {{/if}}
+      {{#if isApp}}
+      <li><a href="{{pathFor 'myApps'}}">{{_ 'myApps'}}</a></li>
+      {{/if}}
       <li class="divider"></li>
       <li><a href="/sign-out">{{_ "signout"}}</a></li>
     </ul>

@@ -17,6 +17,7 @@
 </template>
 
 <template name="adminAppsFormFields">
+	{{>afQuickField name="online"}}
 	{{>afQuickField name="type"}}
 	{{>afQuickField name="userType"}}
 	{{>afQuickField name="userRoles"}}
@@ -27,5 +28,6 @@
 	{{#if afFieldValueIs name="type" value="3rd-party"}}
 	{{>afQuickField name="clientSecret"}}
 	{{>afQuickField name="redirectUri"}}
+	{{>afQuickField name="user"}}
 	{{/if}}
 </template>
