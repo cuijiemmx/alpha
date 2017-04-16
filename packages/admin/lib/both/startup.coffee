@@ -91,7 +91,7 @@ adminCreateRouteViewOptions = (collection, collectionName) ->
 		action: ->
 			@render()
 		onAfterAction: ->
-			Session.set 'admin_title', chinese(collectionName)
+			Session.set 'admin_title', TAPi18n.__ collectionName
 			Session.set 'admin_subtitle', '查看'
 			Session.set 'admin_collection_name', collectionName
 			collection.routes?.view?.onAfterAction

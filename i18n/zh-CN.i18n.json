@@ -78,5 +78,10 @@
 	"dashboard": "控制面板",
 	"add": "添加",
 	"edit": "编辑",
-	"view_all": "查看全部"
+	"view_all": "查看全部",
+
+	"Apps": "应用",
+	"AppCategories": "应用类别",
+	"Links": "友情链接",
+	"Wallpapers": "桌面背景"
 }
