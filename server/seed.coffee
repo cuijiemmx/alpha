@@ -11,11 +11,11 @@ preinstalledApps = [
 	userType: 'teacher'
 	userRoles: []
 	clientId: 'testApp'
-	clientSecret: Random.secret()
-	label: '测试应用'
+	clientSecret: 'hMwuYNz2YYSGhwRh_lX0k3QWFQv3Sv5VmBNxgNMZo92'
+	label: '示例应用'
 	icon: '/appicons/G28.png'
-	startupUri: 'http://updust.com'
-	redirectUri: 'http://updust.com'
+	startupUri: 'http://app0.geekernel.com'
+	redirectUri: 'http://app0.geekernel.com/callback'
 ]
 
 if Apps.find().count() == 0
