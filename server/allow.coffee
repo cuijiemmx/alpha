@@ -51,3 +51,4 @@ HeadImages.allow
 		true
 	download: (userId)->
 		true
+

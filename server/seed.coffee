@@ -1,3 +1,6 @@
+unless Meteor.roles.findOne {name: 'admin'}
+	Roles.createRole 'admin'
+
 preinstalledApps = [
 	type: 'system'
 	userType: 'teacher'

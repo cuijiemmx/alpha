@@ -18,3 +18,11 @@ Schemas.updatePassword = new SimpleSchema
     min: 6
     max: 20
     label: "再次输入新密码"
+
+Schemas.Roles = new SimpleSchema
+	name:
+		type: String
+	label:
+		type: String
+
+Meteor.roles.attachSchema Schemas.Roles

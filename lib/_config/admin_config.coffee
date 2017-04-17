@@ -49,5 +49,13 @@
 			tableColumns: [
 				{ label: '标题', name: 'label' }
 			]
+		'Meteor.roles':
+			color: 'green'
+			icon: ''
+			label: '角色'
+			tableColumns: [
+				{ label: 'Name', name: 'name'}
+				{ label: 'Label', name: 'label'}
+			]
 	autoForm:
 		omitFields: ['createdAt', 'updatedAt']

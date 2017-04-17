@@ -85,6 +85,13 @@ Meteor.publishComposite 'sysSettings', ->
 				InitFiles.find(null)
 	]
 
+Meteor.publish 'roles', ->
+	find: ->
+		if @userId and Roles.userIsInRole @userId, ['admin']
+			Roles.find()
+		else
+			Roles.find(null)
+
 Meteor.publish 'users', ->
 	Meteor.users.find {}, fields:
 		username: 1

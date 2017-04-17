@@ -118,7 +118,9 @@ Schemas.User = new SimpleSchema
     autoform:
       type: "select-checkbox-inline"
       options: ->
-        admin: '管理员'
+        Meteor.roles.find().map (r) ->
+        	label: r.label or r.name
+        	value: r.name
 
   createdAt:
 	  type: Date

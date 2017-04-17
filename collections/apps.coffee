@@ -25,6 +25,12 @@ Schemas.Apps = new SimpleSchema
 		type: [String]
 		label: '用户角色'
 		optional: true
+		autoform:
+      type: "select-checkbox-inline"
+      options: ->
+        Meteor.roles.find().map (r) ->
+        	label: r.label or r.name
+        	value: r.name
 	icon:
 		type: String
 		label: '图标'
