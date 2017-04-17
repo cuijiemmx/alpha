@@ -9,7 +9,7 @@ AutoForm.hooks
 					if e
 						self.done(e)
 					else
-						self.done()
+						self.done(null, 'insert')
 				false
 			else
 				updateDoc.$set.user = Meteor.userId()
@@ -18,11 +18,14 @@ AutoForm.hooks
 					if e
 						self.done(e)
 					else
-						self.done()
+						self.done(null, 'update')
 				false
 		onSuccess: (formType, result) ->
 			@template.parent().editing.set false
-			sAlert.success '应用创建成功'
+			if result is 'insert'
+				sAlert.success '应用创建成功'
+			else
+				sAlert.success '配置保存成功'
 		onError: (formType, error) ->
 			sAlert.error error.message
 
