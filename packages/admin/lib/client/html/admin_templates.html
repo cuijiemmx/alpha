@@ -100,7 +100,7 @@
 			{{>afQuickField name="emails.0.verified" type="hidden"}}
 			{{/unless}}
 			{{>afQuickField name="type" type="hidden"}}
-			{{#unless afFieldValueIs name="type" value="app"}}
+			<!-- {{#unless afFieldValueIs name="type" value="app"}} -->
 			{{#if afFieldValueIs name="type" value="teacher"}}
 			{{>afQuickField name="roles"}}
 			{{/if}}
@@ -109,7 +109,7 @@
 			{{>afQuickField name="profile.picture"}}
 			{{>afQuickField name="profile.birthday"}}
 			{{>afQuickField name="profile.mobile"}}
-			{{/unless}}
+			<!-- {{/unless}} -->
 			{{#if afFieldValueIs name="type" value="student"}}
 			{{>afQuickField name="profile.parents"}}
 			{{/if}}

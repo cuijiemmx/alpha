@@ -1,3 +1,11 @@
+# new ValidatedMethod
+# 	name: 'Users.methods.updateProfile'
+# 	validate: Schemas.UserProfile
+# 	run: (profile) ->
+# 		Meteor.users.update @userId,
+# 			$set:
+# 				profile: profile
+
 Meteor.methods
 	deleteAccount: (userId) ->
 		if @userId == userId

@@ -67,3 +67,5 @@ softwarerero:accounts-t9n
 shell-server
 cfs:gridfs
 gwendall:autoform-i18n
+mdg:validated-method
+gwendall:simple-schema-i18n

@@ -8,7 +8,7 @@
 	      <div class="col-sm-7">
 	      	{{> sAlert}}
 	      	<section>
-		        {{#autoForm id="accountUpdateProfile" collection=Users type="update" doc=currentUser}}
+		        {{#autoForm id="accountUpdateProfile" collection=Users type="update" doc=currentUser validation="none"}}
 						{{>afQuickField name="profile.picture"}}
 						{{>afQuickField name="profile.name"}}
 						{{>afQuickField name="profile.gender"}}
