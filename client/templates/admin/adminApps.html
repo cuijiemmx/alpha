@@ -20,7 +20,9 @@
 	{{>afQuickField name="online"}}
 	{{>afQuickField name="type"}}
 	{{>afQuickField name="userType"}}
+	{{#if afFieldValueIs name="userType" value="teacher"}}
 	{{>afQuickField name="userRoles"}}
+	{{/if}}
 	{{>afQuickField name="icon"}}
 	{{>afQuickField name="label"}}
 	{{>afQuickField name="startupUri"}}

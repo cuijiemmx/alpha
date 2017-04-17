@@ -17,7 +17,7 @@
 						    	{{#if online}}
 						    	<span class="text-success">已上线</span>
 						    	{{else}}
-						    	<span class="text-warning">审核中</span>
+						    	<span class="text-muted">审核中</span>
 						    	{{/if}}
 						    	<button class="btn btn-sm btn-primary u-config" data-index="{{@index}}">配置</button>
 						    	<button class="btn btn-sm btn-danger u-del" data-index="{{@index}}">删除</button>
@@ -35,7 +35,9 @@
 								{{>afQuickField name="label"}}
 								{{>afQuickField name="icon"}}
 								{{>afQuickField name="userType"}}
+								{{#if afFieldValueIs name="userType" value="teacher"}}
 								{{>afQuickField name="userRoles"}}
+								{{/if}}
 								{{>afQuickField name="clientId"}}
 								{{#if editingApp}}
 								{{>afQuickField name="clientSecret" readonly="true"}}
