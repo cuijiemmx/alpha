@@ -114,7 +114,6 @@ Apps.helpers
 		else
 			'家长'
 	onlineStatus: ->
-		console.log @
 		if @online
 			'是'
 		else
