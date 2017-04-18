@@ -9,7 +9,7 @@
 			tableColumns: [
 				{ label: '上线中', name: 'onlineStatus()' }
 				{ label: 'Client Id', name: 'clientId'}
-				{ label: '标题', name: 'label'}
+				{ label: '应用名', name: 'label'}
 				{ label: '用户类型', name: 'userTypeName()'}
 				{ label: '用户角色', name: 'userRoles'}
 			]
@@ -52,7 +52,7 @@
 		'Meteor.roles':
 			color: 'blue'
 			icon: ''
-			label: '角色'
+			label: '用户角色'
 			tableColumns: [
 				{ label: 'Name', name: 'name'}
 				{ label: 'Label', name: 'label'}
