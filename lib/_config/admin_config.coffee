@@ -2,7 +2,7 @@
 	name: '平台管理'
 	collections:
 		Apps:
-			color: 'green'
+			color: 'blue'
 			icon: ''
 			label: '应用'
 			extraFields: ['user', 'userType', 'online']
@@ -20,7 +20,7 @@
 					name: 'adminApps'
 			insert: false
 		AppCategories:
-			color: 'green'
+			color: 'blue'
 			icon: ''
 			label: '应用类别'
 			extraFields: ['apps']
@@ -35,7 +35,7 @@
 				name: 'appNames()'
 			]
 		Links:
-			color: 'green'
+			color: 'blue'
 			icon: ''
 			label: '友情链接'
 			tableColumns: [
@@ -43,14 +43,14 @@
 				{ label: '地址', name: 'url' }
 			]
 		Wallpapers:
-			color: 'green'
+			color: 'blue'
 			icon: ''
 			label: '桌面背景'
 			tableColumns: [
 				{ label: '标题', name: 'label' }
 			]
 		'Meteor.roles':
-			color: 'green'
+			color: 'blue'
 			icon: ''
 			label: '角色'
 			tableColumns: [

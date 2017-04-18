@@ -1,7 +1,12 @@
-unless Meteor.roles.findOne {name: 'admin'}
-	Roles.createRole 'admin'
+Meteor.roles.upsert
+	name: 'admin'
+,
+	$set:
+		name: 'admin'
+		label: '管理员'
 
 preinstalledApps = [
+	online: true
 	type: 'system'
 	userType: 'teacher'
 	userRoles: ['admin']
@@ -10,6 +15,7 @@ preinstalledApps = [
 	icon: '/appicons/G28.png'
 	startupUri: '/admin'
 ,
+	online: true
 	type: '3rd-party'
 	userType: 'teacher'
 	userRoles: []
