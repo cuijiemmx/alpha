@@ -67,7 +67,7 @@ username|String|否|用户名
 emails|[Email](#email)数组|是|Email数组
 type|String|否|代表用户类型，可以是teacher, student, parent, app中的一个
 services|Object|否|请忽略
-roles|String数组|是|用户角色
+roles|String数组|是|请忽略
 profile|[Profile](#profile)|是|用户信息
 createdAt|String|否|请忽略
 
