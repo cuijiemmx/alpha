@@ -39,15 +39,20 @@ importTeachers = (content) =>
 		name = arr[0].trim()
 		email = arr[1].trim()
 		mobile = arr[2].trim()
-		# console.log name, email, mobile
+		gender = arr[3].trim()
+		birthday = arr[4].trim()
+		# console.log name, email, mobile, gender, birthday
 		try
 			Accounts.createUser(
 				email: email
 				username: name
 				password: '12345678'
 				type: 'teacher'
+				roles: ''
 				profile:
 					mobile: mobile
+					gender: gender
+					birthday: birthday
 			)
 			console.log(email + "   created successfully.")
 		catch e
@@ -61,16 +66,22 @@ importStudentsAndParents = (content) =>
 		arr = line.split(',')
 		name = arr[0].trim()
 		id = arr[1].trim()
-		# gender = nameIdGender[2].trim()
-		# console.log name, id, gender
+		mobile = arr[2].trim()
+		gender = arr[3].trim()
+		birthday = arr[4].trim()
+		# console.log name, id, gender, birthday, mobile
 		# import students
 		try
 			Accounts.createUser(
 				username: id
 				password: '12345678'
 				type: 'student'
+				roles: ''
 				profile:
 					name: name
+					mobile: mobile
+					gender: gender
+					birthday: birthday
 			)
 			console.log(id + "   student created successfully.")
 		catch e
@@ -82,6 +93,7 @@ importStudentsAndParents = (content) =>
 				username: id
 				password: '12345678'
 				type: 'parent'
+				roles: ''
 				profile:
 					name: name
 			)
