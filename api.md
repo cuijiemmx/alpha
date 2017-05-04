@@ -1,7 +1,9 @@
 # 平台Restful接口说明
 ## 获取用户数据
 ### URL
+```
 http://edu.updust.com/api/users/me?access_token=<access_token>  
+```
 
 ### 参数
 参数|类型|可选|说明
