@@ -41,6 +41,7 @@ class OAuth2Server
 		debugMiddleware = (req, res, next) ->
 			if self.config.debug is true
 				console.log '[OAuth2Server]', req.method, req.url
+				console.log '[OAuth2Server]', req.body
 			next()
 
 		# Transforms requests which are POST and aren't "x-www-form-urlencoded" content type
@@ -68,7 +69,6 @@ class OAuth2Server
 		@app.get '/oauth/authorize', debugMiddleware, Meteor.bindEnvironment (req, res, next) ->
 
 			client = self.config.options.model.Clients.findOne({ clientId: req.query.client_id })
-			console.log 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 			unless client
 				return res.status(404).send('client not found')
 
