@@ -92,3 +92,20 @@ mobile|String|是|手机号
 wallpaper|String|是|请忽略
 mruApps|String数组|是|请忽略
 
+
+## 获取用户头像
+此请求不需要用户认证，可直接调用
+### URL
+```
+http://edu.updust.com/api/users/<user_id>/head_image_url
+```
+### 参数
+参数|类型|可选|说明
+---|---|---|---
+user_id |String|否|user id
+### 返回值
+user不存在时返回404   
+存在时，返回200, 内容为图片的实际链接，如
+```
+http://edu.updust.com/cfs/files/HeadImages/TXpnDmAcHNQ3GsBuQ/523b06fbbd25b3fdcc8dfc394b5bdad0.jpg
+```

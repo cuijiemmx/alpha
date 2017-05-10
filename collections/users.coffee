@@ -137,3 +137,10 @@ Meteor.users.attachSchema Schemas.User
 Meteor.users.helpers
   hasRole: (role) ->
     @roles?.indexOf(role) > -1
+  headImageUrl: ->
+  	path
+  	if @profile?.picture?
+  		path = (HeadImages.findOne @profile.picture).url()
+  	else
+  		path = '/images/default_user_head.png'
+  	Meteor.absoluteUrl path

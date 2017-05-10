@@ -556,6 +556,44 @@ kbd {
 </tbody>
 </table>
 
+<h2 id="toc_5">获取用户头像</h2>
+
+<p>此请求不需要用户认证，可直接调用</p>
+
+<h3 id="toc_6">URL</h3>
+
+<div><pre><code class="language-none">http://edu.updust.com/api/users/&lt;user_id&gt;/head_image_url</code></pre></div>
+
+<h3 id="toc_7">参数</h3>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>可选</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>否</td>
+<td>user id</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_8">返回值</h3>
+
+<p>user不存在时返回404<br>
+存在时，返回200, 内容为图片的实际链接，如
+<code>
+http://edu.updust.com/cfs/files/HeadImages/TXpnDmAcHNQ3GsBuQ/523b06fbbd25b3fdcc8dfc394b5bdad0.jpg
+</code></p>
+
 
 
 
