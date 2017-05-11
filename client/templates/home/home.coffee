@@ -57,8 +57,7 @@ Template.home.onCreated ->
 		contentTemplate: 'appsGrid'
 		templateData: Apps.find
 			userTypes:
-				$elemMatch:
-					$eq: Meteor.user().type
+				$in: [Meteor.user().type]
 			$or: [
 				userRoles:
 					$exists: false
@@ -66,9 +65,8 @@ Template.home.onCreated ->
 				userRoles: []
 			,
 				userRoles:
-					$elemMatch:
-						$in:
-							Meteor.user().roles or []
+					$in:
+						Meteor.user().roles or []
 			]
 		.fetch()
 	,

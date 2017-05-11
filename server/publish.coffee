@@ -34,8 +34,7 @@ Meteor.publishComposite 'apps', ->
 
 			userTypesMatch =
 				userTypes:
-					$elemMatch:
-						$eq: type
+					$in: [type]
 
 			userRolesMatch =
 				$or: [
@@ -45,9 +44,8 @@ Meteor.publishComposite 'apps', ->
 					userRoles: []
 				,
 					userRoles:
-						$elemMatch:
-							$in:
-								roles
+						$in:
+							roles
 				]
 
 			if type is 'teacher'
