@@ -8,21 +8,45 @@ Meteor.roles.upsert
 preinstalledApps = [
 	online: true
 	type: 'system'
-	userType: 'teacher'
+	userTypes: ['teacher']
 	userRoles: ['admin']
 	clientId: 'admin'
 	label: '平台管理'
-	icon: '/appicons/G28.png'
+	icon: '/appicons/manage.png'
 	startupUri: '/admin'
 ,
 	online: true
+	type: 'system'
+	userTypes: ['teacher']
+	userRoles: ['admin']
+	clientId: 'sysSettings'
+	label: '平台个性化'
+	icon: '/appicons/sys_settings.png'
+	startupUri: '/sysSettings'
+,
+	online: true
+	type: 'system'
+	userTypes: ['teacher', 'student', 'parent', 'app']
+	clientId: 'profile'
+	label: '个人设置'
+	icon: '/appicons/profile.png'
+	startupUri: '/profile'
+,
+	online: true
+	type: 'system'
+	userTypes: ['app']
+	clientId: 'myApps'
+	label: '应用管理'
+	icon: '/appicons/apps.png'
+	startupUri: '/myApps'
+,
+	online: true
 	type: '3rd-party'
-	userType: 'teacher'
-	userRoles: []
+	userTypes: ['teacher']
 	clientId: 'testApp'
 	clientSecret: 'hMwuYNz2YYSGhwRh_lX0k3QWFQv3Sv5VmBNxgNMZo92'
 	label: '示例应用'
-	icon: '/appicons/G28.png'
+	icon: '/appicons/plugin.png'
 	startupUri: 'http://app0.geekernel.com'
 	redirectUri: 'http://app0.geekernel.com/callback'
 ]
@@ -30,27 +54,31 @@ preinstalledApps = [
 if Apps.find().count() == 0
 	for preinstalledApp in preinstalledApps
 		if preinstalledApp.type == '3rd-party'
-			preinstalledApp.user = Accounts.createUser
-				username: preinstalledApp.clientId
-				type: 'app'
-				profile:
-					name: preinstalledApp.label
+			user = Accounts.findUserByUsername("aid_#{preinstalledApp.clientId}")
+			if user
+				preinstalledApp.user = user._id
+			else
+				preinstalledApp.user = Accounts.createUser
+					username: preinstalledApp.clientId
+					type: 'app'
+					profile:
+						name: preinstalledApp.label
 
 Seed 'apps',
 	data: preinstalledApps
 
-Seed 'appCategories',
-	data: [
-		name: 'category0'
-		label: '类型0'
-		icon: 'ion-aperture'
-		apps: ['admin', 'testApp']
-	,
-		name: 'category1'
-		label: '类型1'
-		icon: 'ion-aperture'
-		apps: ['testApp']
-	]
+# Seed 'appCategories',
+# 	data: [
+# 		name: 'category0'
+# 		label: '类型0'
+# 		icon: 'ion-aperture'
+# 		apps: ['admin', 'testApp']
+# 	,
+# 		name: 'category1'
+# 		label: '类型1'
+# 		icon: 'ion-aperture'
+# 		apps: ['testApp']
+# 	]
 
 Seed 'links',
 	data: [
