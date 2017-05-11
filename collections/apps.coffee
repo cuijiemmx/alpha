@@ -119,7 +119,7 @@ Apps.attachSchema Schemas.Apps
 
 Apps.helpers
 	userTypesNames: ->
-		@userTypes.map (ut) ->
+		@userTypes?.map (ut) ->
 			if ut is 'teacher'
 				'老师'
 			else if ut is 'student'
