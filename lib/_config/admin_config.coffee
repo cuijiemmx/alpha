@@ -1,14 +1,14 @@
 @AdminConfig =
 	name: '平台管理'
 	collections:
-		'Meteor.roles':
-			color: 'blue'
-			icon: ''
-			label: '用户角色'
-			tableColumns: [
-				{ label: 'Name', name: 'name'}
-				{ label: 'Label', name: 'label'}
-			]
+		# 'Meteor.roles':
+		# 	color: 'blue'
+		# 	icon: ''
+		# 	label: '用户角色'
+		# 	tableColumns: [
+		# 		{ label: 'Name', name: 'name'}
+		# 		{ label: 'Label', name: 'label'}
+		# 	]
 		Apps:
 			color: 'blue'
 			icon: ''
@@ -27,21 +27,21 @@
 				edit:
 					name: 'adminApps'
 			# insert: false
-		AppCategories:
-			color: 'blue'
-			icon: ''
-			label: '应用分类'
-			extraFields: ['apps']
-			tableColumns: [
-				label: '名称'
-				name: 'name'
-			,
-				label: '标题'
-				name: 'label'
-			,
-				label: '应用'
-				name: 'appNames()'
-			]
+		# AppCategories:
+		# 	color: 'blue'
+		# 	icon: ''
+		# 	label: '应用分类'
+		# 	extraFields: ['apps']
+		# 	tableColumns: [
+		# 		label: '名称'
+		# 		name: 'name'
+		# 	,
+		# 		label: '标题'
+		# 		name: 'label'
+		# 	,
+		# 		label: '应用'
+		# 		name: 'appNames()'
+		# 	]
 		Links:
 			color: 'blue'
 			icon: ''

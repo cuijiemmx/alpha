@@ -55,20 +55,35 @@ Template.home.onCreated ->
 		icon: 'ion-aperture'
 		label: '应用中心'
 		contentTemplate: 'appsGrid'
-		templateData: Apps.find()
+		templateData: Apps.find
+			userTypes:
+				$elemMatch:
+					$eq: Meteor.user().type
+			$or: [
+				userRoles:
+					$exists: false
+			,
+				userRoles: []
+			,
+				userRoles:
+					$elemMatch:
+						$in:
+							Meteor.user().roles or []
+			]
+		.fetch()
 	,
 		icon: 'ion-link'
 		label: '上级云平台'
 		contentTemplate: 'links'
 	]
 
-	categoriedAppsNavs = AppCategories.find().map (appCategory) ->
-		icon: appCategory.icon
-		label: appCategory.label
-		contentTemplate: 'appsGrid'
-		templateData: Apps.find({clientId: {$in: appCategory.apps or []}}).fetch()
+	# categoriedAppsNavs = AppCategories.find().map (appCategory) ->
+	# 	icon: appCategory.icon
+	# 	label: appCategory.label
+	# 	contentTemplate: 'appsGrid'
+	# 	templateData: Apps.find({clientId: {$in: appCategory.apps or []}}).fetch()
 
-	Array.prototype.splice.apply navs, [1, 0].concat categoriedAppsNavs
+	# Array.prototype.splice.apply navs, [1, 0].concat categoriedAppsNavs
 
 	@navs = navs.filter (nav) ->
 		nav.contentTemplate != 'appsGrid' or nav.templateData.length > 0

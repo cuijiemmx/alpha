@@ -50,10 +50,13 @@ Meteor.publishComposite 'apps', ->
 								roles
 				]
 
-			if Roles.userIsInRole @userId, ['admin']
-				Apps.find()
+			if type is 'teacher'
+				if Roles.userIsInRole @userId, ['admin']
+					Apps.find()
+				else
+					Apps.find userTypesMatch, userRolesMatch
 			else
-				Apps.find userTypesMatch, userRolesMatch
+				Apps.find userTypesMatch
 	children: [
 		find: (app) ->
 			AppIcons.find app.icon
