@@ -67,8 +67,23 @@ Seed 'links',
 		thumbnail: '/images/wuchang.png'
 	]
 
-# Seed 'wallpapers',
-# 	data: [
-# 		label: '无 '
-# 		image: ''
-# 	]
+Seed 'wallpapers',
+	data: [
+		label: '冲浪'
+		image: '/images/冲浪.jpg'
+	,
+		label: '办公桌'
+		image: '/images/办公桌.jpg'
+	,
+		label: '麦田',
+		image: '/images/麦田.jpg'
+	,
+		label: '秋千'
+		image: '/images/秋千.jpg'
+	,
+		label: '船'
+		image: '/images/船.jpg'
+	,
+		label: '好好学习',
+		image: '/images/好好学习.jpg'
+	]

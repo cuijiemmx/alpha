@@ -54,10 +54,13 @@ Template.registerHelper 'wallpaperSrc', (wid) ->
 		unless wallpaper?.image
 			''
 		else
-			picture = Pictures.findOne wallpaper.image
-			path = picture?.url
-				store: 'images'
-			"url(#{path})"
+			if wallpaper.image.indexOf('/') > -1
+				"url(#{wallpaper.image})"
+			else
+				picture = Pictures.findOne wallpaper.image
+				path = picture?.url
+					store: 'images'
+				"url(#{path})"
 
 Template.registerHelper 'signInBackground', ->
 	wid = SysSettings.findOne()?.signInBackground
