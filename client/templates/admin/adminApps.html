@@ -19,12 +19,13 @@
 <template name="adminAppsFormFields">
 	{{>afQuickField name="online"}}
 	{{>afQuickField name="type"}}
-	{{>afQuickField name="userType"}}
-	{{#if afFieldValueIs name="userType" value="teacher"}}
+	{{>afQuickField name="userTypes"}}
+	{{#if afFieldValueContains name="userTypes" value="teacher"}}
 	{{>afQuickField name="userRoles"}}
 	{{/if}}
 	{{>afQuickField name="icon"}}
 	{{>afQuickField name="label"}}
+	{{>afQuickField name="openInNewTab"}}
 	{{>afQuickField name="startupUri"}}
 	{{>afQuickField name="clientId"}}
 	{{#if afFieldValueIs name="type" value="3rd-party"}}

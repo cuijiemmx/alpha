@@ -31,8 +31,13 @@ Meteor.publishComposite 'apps', ->
 			user = Meteor.users.findOne @userId
 			type = user.type or null
 			roles = user.roles or []
-			Apps.find
-				userType: type
+
+			userTypesMatch =
+				userTypes:
+					$elemMatch:
+						$eq: type
+
+			userRolesMatch =
 				$or: [
 					userRoles:
 						$exists: false
@@ -44,6 +49,11 @@ Meteor.publishComposite 'apps', ->
 							$in:
 								roles
 				]
+
+			if Roles.userIsInRole @userId, ['admin']
+				Apps.find()
+			else
+				Apps.find userTypesMatch, userRolesMatch
 	children: [
 		find: (app) ->
 			AppIcons.find app.icon

@@ -60,7 +60,10 @@ Schemas.UserProfile = new SimpleSchema(
   			Wallpapers.find().map (w) ->
   				label: w.label
   				value: w._id
-  		firstOption: '(请选择)'
+  		firstOption: '无'
+  	autoValue: ->
+  		if @isInsert
+  			SysSettings.findOne()?.defaultDesktopBackground
   mruApps:
   	type: [String]
   	optional: true

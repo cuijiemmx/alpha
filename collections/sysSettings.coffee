@@ -7,13 +7,24 @@ Schemas.SysSettings = new SimpleSchema
 		optional: true
 	signInBackground:
 		type: String
-		label: '登录页背景图'
+		label: '登录页背景'
 		optional: true
 		autoform:
-      afFieldInput:
-        label: '选择图片'
-        removeLabel: '删除'
-        type: 'fileUpload'
-        collection: 'Pictures'
+			options: ->
+				Wallpapers.find().map (w) ->
+					label: w.label
+					value: w._id
+			firstOption: '无'
+	defaultDesktopBackground:
+		type: String
+		label: '默认桌面壁纸'
+		optional: true
+		autoform:
+			options: ->
+				Wallpapers.find().map (w) ->
+					label: w.label
+					value: w._id
+			firstOption: '无'
+
 
 SysSettings.attachSchema Schemas.SysSettings

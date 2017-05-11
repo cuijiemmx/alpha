@@ -52,3 +52,10 @@ HeadImages.allow
 	download: (userId)->
 		true
 
+Wallpapers.allow
+	insert: (userId, doc) ->
+		true
+	update: (userId, doc, fieldNames, modifier) ->
+		true
+	remove: (userId, doc) ->
+		true

@@ -1,0 +1,63 @@
+.sysSettings {
+  .g-wallpapers {
+    .container-fluid {
+      padding: 0;
+      .col-md-4 {
+        .m-wallpaper {
+          padding-top: percentage(768/1024);
+          height: 0;
+          position: relative;
+          margin-top: 20px;
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+          }
+          .g-box {
+          	position: absolute;
+          	bottom: 10px;
+          	width: 100%;
+          	text-align: center;
+          	.u-delete {
+          		display: none;
+          	}
+          	.u-title {
+          		display: inline-block;
+          		height: 30px;
+          		line-height: 30px;
+          		color: white;
+          		text-shadow: 0 0 6px #000;
+          	}
+          }
+          &:hover {
+            .g-box {
+              .u-delete {
+              	display: inline-block;
+              }
+              .u-title {
+              	display: none;
+              }
+            }
+          }
+          .u-plus {
+            position: absolute;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+              font-size: 40px;
+              color: rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

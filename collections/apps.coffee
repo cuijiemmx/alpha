@@ -11,16 +11,17 @@ Schemas.Apps = new SimpleSchema
 				system: '系统'
 				'3rd-party': '第三方'
 			firstOption: '(请选择)'
-	userType:
-		type: String
+	userTypes:
+		type: [String]
 		label: '用户类型'
-		allowedValues: ['teacher', 'student', 'parent']
+		allowedValues: ['teacher', 'student', 'parent', 'app']
 		autoform:
+			type: "select-checkbox-inline"
 			options:
 				teacher: '老师'
 				student: '学生'
 				parent: '家长'
-			firstOption: '(请选择)'
+				app: '应用'
 	userRoles:
 		type: [String]
 		label: '用户角色'
@@ -109,16 +110,24 @@ Schemas.Apps = new SimpleSchema
 		defaultValue: false
 		label: '上线中'
 
+	openInNewTab:
+		type: Boolean
+		defaultValue: true
+		label: '在新tab中打开'
+
 Apps.attachSchema Schemas.Apps
 
 Apps.helpers
-	userTypeName: ->
-		if @userType is 'teacher'
-			'老师'
-		else if @userType is 'student'
-			'学生'
-		else
-			'家长'
+	userTypesNames: ->
+		@userTypes.map (ut) ->
+			if ut is 'teacher'
+				'老师'
+			else if ut is 'student'
+				'学生'
+			else if ut is 'parent'
+				'家长'
+			else
+				'应用'
 	onlineStatus: ->
 		if @online
 			'是'

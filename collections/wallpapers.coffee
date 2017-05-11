@@ -7,7 +7,6 @@ Schemas.Wallpapers = new SimpleSchema
 	image:
 		type: String
 		label: '图片'
-		optional: true
 		autoform:
       afFieldInput:
         label: '选择图片'

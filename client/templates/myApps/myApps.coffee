@@ -32,7 +32,8 @@ AutoForm.hooks
 Template.myApps.onCreated ->
 	@editingApp = new ReactiveVar(null)
 	@editing = new ReactiveVar(false)
-	@apps = Apps.find()
+	@apps = Apps.find
+		user: Meteor.userId()
 
 Template.myApps.helpers
 	apps: ->

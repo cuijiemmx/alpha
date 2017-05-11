@@ -1,4 +1,4 @@
-html,
+  html,
 body {
   height: 100%;
   color: #475669;
@@ -20,8 +20,33 @@ body {
   section {
     background: @light-blue;
     padding: 20px;
-    &:first-child {
+    &:not(:last-child) {
       margin-bottom: 40px;
+    }
+  }
+}
+
+.modal-dialog {
+  .modal-content {
+    border-radius: 0;
+    .modal-header {
+      background: @light-blue;
+      padding: 0;
+      .modal-title {
+        font-size: 14px;
+        height: 38px;
+        line-height: 38px;
+        color: #475669;
+        padding-left: 12px;
+      }
+      button {
+        vertical-align: middle;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 38px;
+        height: 38px;
+        float: right;
+      }
     }
   }
 }

@@ -2,14 +2,48 @@
   <div class="sysSettings">
 	  <div class="container me-nav-container">
 	    <div class="row">
-	      <div class="col-sm-3 col-sm-offset-1">
+	      <!-- <div class="col-sm-3 col-sm-offset-1">
 	        {{> meNav active='sysSettings'}}
-	      </div>
-	      <div class="col-sm-7">
+	      </div> -->
+	      <div class="col-sm-8 col-sm-offset-2">
 	      	<section>
 		        {{#autoForm id="sysSettingsForm" collection="SysSettings" type=formType doc=sysSettings}}
 		        	{{>afQuickField name="schoolName"}}
+
+		        	<div class="form-group g-wallpapers">
+								<label>壁纸库</label>
+								<div class="container-fluid">
+									<div class="row">
+										{{#each wallpapers}}
+										<div class="col-md-4">
+											<div class="m-wallpaper">
+												<img src="{{imageSrc image}}">
+												<div class="g-box">
+													{{#afModal class="btn btn-sm btn-danger u-delete" collection="Wallpapers" operation="remove" doc=_id prompt="确定删除吗？" buttonContent="删除"}}
+														删除
+													{{/afModal}}
+													<div class="u-title">
+														{{label}}
+													</div>
+												</div>
+											</div>
+										</div>
+										{{/each}}
+										<div class="col-md-4">
+											<div class="m-wallpaper">
+												{{#afModal collection="Wallpapers" operation="insert" title="添加壁纸" buttonContent="保存"}}
+												  <div class="u-plus">
+														<i class="ion-plus"></i>
+													</div>
+												{{/afModal}}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							{{>afQuickField name="signInBackground"}}
+							{{>afQuickField name="defaultDesktopBackground"}}
+
 							<button type="submit" class="btn btn-primary">保存</button>
 						{{/autoForm}}
 					</section>
@@ -27,6 +61,7 @@
 					</section>
 
 					{{> sAlert}}
+					{{> autoformModals}}
 	      </div>
 	    </div>
     </div>

@@ -11,3 +11,10 @@ Template.appItem.events
 		,
 			$set:
 				'profile.mruApps': mruApps
+
+Template.appItem.helpers
+	openTarget: ->
+		if Template.instance().data.openInNewTab
+			'_blank'
+		else
+			null

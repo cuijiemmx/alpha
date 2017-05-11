@@ -67,8 +67,8 @@ Seed 'links',
 		thumbnail: '/images/wuchang.png'
 	]
 
-Seed 'wallpapers',
-	data: [
-		label: '无 '
-		image: ''
-	]
+# Seed 'wallpapers',
+# 	data: [
+# 		label: '无 '
+# 		image: ''
+# 	]

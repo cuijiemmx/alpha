@@ -16,10 +16,6 @@ Template.registerHelper 'headImageSrc', (id) ->
 	id ?= '/images/default_user_head.png'
 	Blaze._globalHelpers._imageSrc id, HeadImages, 'headImages'
 
-Template.registerHelper 'signInBackground', ->
-	url = Blaze._globalHelpers.imageSrc SysSettings.findOne()?.signInBackground
-	"url(#{url})"
-
 Template.registerHelper 'isAdmin', ->
 	Roles.userIsInRole Meteor.user()?._id, ['admin']
 
@@ -39,21 +35,20 @@ Template.registerHelper 'Schemas', ->
 	Schemas
 
 Template.registerHelper 'Utils', ->
-  Utils
+	Utils
 
 Template.registerHelper 'socialMedia', ->
-  _.map Config.socialMedia, (obj)->
-    obj
+	_.map Config.socialMedia, (obj)->
+		obj
 
 Template.registerHelper 'currentRoute', ->
-  if Router and Router.current and Router.current()
-    Router.current()
+	if Router and Router.current and Router.current()
+		Router.current()
 
 Template.registerHelper 'isRouteReady', ->
-  Router and Router.current and Router.current() and Router.current()._waitlist._notReadyCount == 0
+	Router and Router.current and Router.current() and Router.current()._waitlist._notReadyCount == 0
 
-Template.registerHelper 'desktopImage', ->
-	wid = Meteor.user()?.profile?.wallpaper
+Template.registerHelper 'wallpaperSrc', (wid) ->
 	if wid
 		wallpaper = Wallpapers.findOne wid
 		unless wallpaper?.image
@@ -63,6 +58,14 @@ Template.registerHelper 'desktopImage', ->
 			path = picture?.url
 				store: 'images'
 			"url(#{path})"
+
+Template.registerHelper 'signInBackground', ->
+	wid = SysSettings.findOne()?.signInBackground
+	Blaze._globalHelpers.wallpaperSrc wid
+
+Template.registerHelper 'desktopImage', ->
+	wid = Meteor.user()?.profile?.wallpaper
+	Blaze._globalHelpers.wallpaperSrc wid
 
 Template.registerHelper 'displayUsername', (username) ->
 	username?.replace /^tid_|^aid_|^sid_|^pid_/, ''

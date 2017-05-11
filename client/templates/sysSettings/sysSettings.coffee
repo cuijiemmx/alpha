@@ -6,6 +6,9 @@ Template.sysSettings.helpers
 			'insert'
 	sysSettings: ->
 		SysSettings.findOne()
+	wallpapers: ->
+		console.log Wallpapers.find()
+		Wallpapers.find()
 
 AutoForm.hooks
 	sysSettingsForm:
