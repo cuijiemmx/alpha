@@ -46,7 +46,7 @@ Schemas.UserProfile = new SimpleSchema(
 			afFieldInput:
 				type: "bootstrap-datetimepicker"
 				dateTimePickerOptions:
-					format: 'YYYY.MM.DD'
+					format: 'YYYY-MM-DD'
 					pickTime: false
 
 	mobile:
