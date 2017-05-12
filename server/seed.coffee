@@ -10,6 +10,7 @@ preinstalledApps = [
 	type: 'system'
 	userTypes: ['teacher']
 	userRoles: ['admin']
+	openInNewTab: true
 	clientId: 'admin'
 	label: '平台管理'
 	icon: '/appicons/manage.png'
@@ -19,6 +20,7 @@ preinstalledApps = [
 	type: 'system'
 	userTypes: ['teacher']
 	userRoles: ['admin']
+	openInNewTab: false
 	clientId: 'sysSettings'
 	label: '平台个性化'
 	icon: '/appicons/sys_settings.png'
@@ -27,6 +29,7 @@ preinstalledApps = [
 	online: true
 	type: 'system'
 	userTypes: ['teacher', 'student', 'parent', 'app']
+	openInNewTab: false
 	clientId: 'profile'
 	label: '个人设置'
 	icon: '/appicons/profile.png'
@@ -35,6 +38,7 @@ preinstalledApps = [
 	online: true
 	type: 'system'
 	userTypes: ['app']
+	openInNewTab: false
 	clientId: 'myApps'
 	label: '应用管理'
 	icon: '/appicons/apps.png'
@@ -43,6 +47,7 @@ preinstalledApps = [
 	online: true
 	type: '3rd-party'
 	userTypes: ['teacher']
+	openInNewTab: true
 	clientId: 'testApp'
 	clientSecret: 'hMwuYNz2YYSGhwRh_lX0k3QWFQv3Sv5VmBNxgNMZo92'
 	label: '示例应用'
