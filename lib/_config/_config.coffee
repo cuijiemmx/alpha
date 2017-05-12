@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: '首页'
+	name: '智慧校园'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->
@@ -36,9 +36,6 @@
 		address: 'Jessnerstrasse 18, 12047 Berlin'
 		name: 'Meteor Factory'
 		url: 'http://benjaminpeterjones.com'
-
-	about: 'http://meteorfactory.io'
-	blog: 'http://learn.meteorfactory.io'
 
 	# socialMedia:
 	# 	facebook:
