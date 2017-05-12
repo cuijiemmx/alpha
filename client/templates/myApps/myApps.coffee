@@ -48,7 +48,7 @@ Template.myApps.helpers
 		else
 			'创建'
 	schema: ->
-		Apps.simpleSchema().pick ['label', 'icon', 'userType', 'userRoles', 'userRoles.$', 'clientId', 'clientSecret', 'startupUri', 'redirectUri']
+		Apps.simpleSchema().pick ['label', 'icon', 'userTypes', 'userTypes.$', 'userRoles', 'userRoles.$', 'clientId', 'clientSecret', 'startupUri', 'redirectUri']
 
 Template.myApps.events
 	'click .my-app-add': (e, instance) ->

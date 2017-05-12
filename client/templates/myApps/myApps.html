@@ -34,8 +34,8 @@
            		{{#autoForm id="myAppForm" schema=schema doc=editingApp}}
 								{{>afQuickField name="label"}}
 								{{>afQuickField name="icon"}}
-								{{>afQuickField name="userType"}}
-								{{#if afFieldValueIs name="userType" value="teacher"}}
+								{{>afQuickField name="userTypes"}}
+								{{#if afFieldValueContains name="userTypes" value="teacher"}}
 								{{>afQuickField name="userRoles"}}
 								{{/if}}
 								{{>afQuickField name="clientId"}}
