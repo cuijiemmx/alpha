@@ -25,6 +25,10 @@ Schemas.SysSettings = new SimpleSchema
 					label: w.label
 					value: w._id
 			firstOption: '无'
+	showLabsFeature:
+		type: Boolean
+		label: '显示实验功能'
+		defaultValue: false
 
 
 SysSettings.attachSchema Schemas.SysSettings

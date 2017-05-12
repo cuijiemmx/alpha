@@ -5,3 +5,6 @@ Template.desktop.helpers
 			Apps.findOne id
 		.filter (app) ->
 			app
+
+	showLabsFeature: () ->
+		SysSettings.findOne()?.showLabsFeature

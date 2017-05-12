@@ -2,141 +2,143 @@
   <div class="desktop">
     <div class="container-fluid">
       <div class="row">
-      	<!-- {{#if isTeacher}}
-        <div class="col-md-6 col-lg-4 m-widget">
-          <div class="g-header">
-            <div class="u-title">
-              提醒
-            </div>
-            <div class="u-dropdown">
-              全部
-              <i class="caret"></i>
-            </div>
-          </div>
-          <div class="g-content">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <i class="ion-ios-checkmark s-check-checked"></i>
-                  </td>
-                  <td>
-                    <div>政治学习<span class="label label-danger">公告</span></div>
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		10:00
-                  	</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i class="ion-ios-checkmark-outline s-check-unchecked"></i>
-                  </td>
-                  <td>
-                    政治学习
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		10:00
-                  	</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <i class="ion-ios-checkmark-outline s-check-unchecked"></i>
-                  </td>
-                  <td>
-                    政治学习
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		10:00
-                  	</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 m-widget">
-          <div class="g-header">
-            <div class="u-title">
-              我的课表
-            </div>
-            <div class="u-dropdown">
-              今天
-              <i class="caret"></i>
-            </div>
-          </div>
-          <div class="g-content">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="s-grey">
-                    	10:00
-                    </span>
-                  </td>
-                  <td>
-                    数学
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		初一3班
-                  	</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="s-grey">
-                    	10:00
-                    </span>
-                  </td>
-                  <td>
-                    数学
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		初一3班
-                  	</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="s-grey">
-                    	10:00
-                    </span>
-                  </td>
-                  <td>
-                    数学
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		初一3班
-                  	</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="s-grey">
-                    	10:00
-                    </span>
-                  </td>
-                  <td>
-                    数学
-                  </td>
-                  <td>
-                    <span class="pull-right s-grey">
-                  		初一3班
-                  	</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        {{/if}} -->
+      	{{#if showLabsFeature}}
+	      	{{#if isTeacher}}
+	        <div class="col-md-6 col-lg-4 m-widget">
+	          <div class="g-header">
+	            <div class="u-title">
+	              提醒
+	            </div>
+	            <div class="u-dropdown">
+	              全部
+	              <i class="caret"></i>
+	            </div>
+	          </div>
+	          <div class="g-content">
+	            <table class="table">
+	              <tbody>
+	                <tr>
+	                  <td>
+	                    <i class="ion-ios-checkmark s-check-checked"></i>
+	                  </td>
+	                  <td>
+	                    <div>政治学习<span class="label label-danger">公告</span></div>
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		10:00
+	                  	</span>
+	                  </td>
+	                </tr>
+	                <tr>
+	                  <td>
+	                    <i class="ion-ios-checkmark-outline s-check-unchecked"></i>
+	                  </td>
+	                  <td>
+	                    政治学习
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		10:00
+	                  	</span>
+	                  </td>
+	                </tr>
+	                <tr>
+	                  <td>
+	                    <i class="ion-ios-checkmark-outline s-check-unchecked"></i>
+	                  </td>
+	                  <td>
+	                    政治学习
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		10:00
+	                  	</span>
+	                  </td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	        </div>
+	        <div class="col-md-6 col-lg-4 m-widget">
+	          <div class="g-header">
+	            <div class="u-title">
+	              我的课表
+	            </div>
+	            <div class="u-dropdown">
+	              今天
+	              <i class="caret"></i>
+	            </div>
+	          </div>
+	          <div class="g-content">
+	            <table class="table">
+	              <tbody>
+	                <tr>
+	                  <td>
+	                    <span class="s-grey">
+	                    	10:00
+	                    </span>
+	                  </td>
+	                  <td>
+	                    数学
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		初一3班
+	                  	</span>
+	                  </td>
+	                </tr>
+	                <tr>
+	                  <td>
+	                    <span class="s-grey">
+	                    	10:00
+	                    </span>
+	                  </td>
+	                  <td>
+	                    数学
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		初一3班
+	                  	</span>
+	                  </td>
+	                </tr>
+	                <tr>
+	                  <td>
+	                    <span class="s-grey">
+	                    	10:00
+	                    </span>
+	                  </td>
+	                  <td>
+	                    数学
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		初一3班
+	                  	</span>
+	                  </td>
+	                </tr>
+	                <tr>
+	                  <td>
+	                    <span class="s-grey">
+	                    	10:00
+	                    </span>
+	                  </td>
+	                  <td>
+	                    数学
+	                  </td>
+	                  <td>
+	                    <span class="pull-right s-grey">
+	                  		初一3班
+	                  	</span>
+	                  </td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+	        </div>
+	        {{/if}}
+        {{/if}}
         <div class="col-md-6 col-lg-4 m-widget g-apps">
           <div class="g-header">
             <div class="u-title">
