@@ -11,6 +11,7 @@ Schemas.Wallpapers = new SimpleSchema
       afFieldInput:
         label: '选择图片'
         type: 'fileUpload'
+        removeLabel: '删除'
         collection: 'Pictures'
 
 Wallpapers.attachSchema Schemas.Wallpapers
