@@ -55,6 +55,7 @@ importTeachers = (content) =>
 				type: 'teacher'
 				roles: ''
 				profile:
+					name: name
 					mobile: mobile
 					gender: gender
 					birthday: birthday
