@@ -40,6 +40,11 @@ importTeachers = (content) =>
 		email = arr[1].trim()
 		mobile = arr[2].trim()
 		gender = arr[3].trim()
+		if gender == '男'
+			gender = 'male'
+		else
+			gender = 'female'
+
 		birthday = arr[4].trim()
 		# console.log name, email, mobile, gender, birthday
 		try
@@ -68,6 +73,11 @@ importStudentsAndParents = (content) =>
 		id = arr[1].trim()
 		mobile = arr[2].trim()
 		gender = arr[3].trim()
+		if gender == '男'
+			gender = 'male'
+		else
+			gender = 'female'
+
 		birthday = arr[4].trim()
 		# console.log name, id, gender, birthday, mobile
 		# import students
