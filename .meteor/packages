@@ -69,3 +69,5 @@ cfs:gridfs
 gwendall:autoform-i18n
 mdg:validated-method
 gwendall:simple-schema-i18n
+tsega:bootstrap3-datetimepicker@=3.1.3_3
+aldeed:autoform-bs-datetimepicker
