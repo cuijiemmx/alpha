@@ -1,0 +1,24 @@
+{
+  "appName": "smartedu",
+  "appLocation": {
+    "local": "../"
+  },
+  "meteorSettingsLocation": "",
+  "meteorSettingsInRepo": false,
+  "prebuildScript": "",
+  "meteorBuildFlags": "--server-only --architecture os.linux.x86_64",
+  "env": {
+    "ROOT_URL": "http://10.0.0.234",
+    "PORT": 7700,
+    "MONGO_URL": "mongodb://localhost:27017/smartedu"
+  },
+  "server": {
+    "host": "10.0.0.234",
+    "username": "deploy",
+    "pem": "~/.ssh/id_rsa",
+    "deploymentDir": "/home/deploy",
+    "loadProfile": "",
+    "exec_mode": "fork_mode",
+    "instances": 1
+  }
+}
