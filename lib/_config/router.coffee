@@ -17,10 +17,6 @@ Router.configure
 	  if Meteor.isClient
 	    window.scrollTo(0,0)
 
-	    if Router.current().route.path() and Router.current().route.path().split('/')[1] == 'admin'
-	      SEO.set
-	        title: '平台管理'
-
 	    # Remove modal
 	    $bd = $('.modal-backdrop')
 	    $bd.removeClass('in')
