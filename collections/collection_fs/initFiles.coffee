@@ -50,7 +50,7 @@ importTeachers = (content) =>
 		try
 			Accounts.createUser(
 				email: email
-				username: name
+				username: mobile
 				password: '12345678'
 				type: 'teacher'
 				roles: ''
