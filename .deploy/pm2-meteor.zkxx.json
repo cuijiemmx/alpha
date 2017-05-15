@@ -8,12 +8,12 @@
   "prebuildScript": "",
   "meteorBuildFlags": "--server-only --architecture os.linux.x86_64",
   "env": {
-    "ROOT_URL": "http://10.0.0.234",
+    "ROOT_URL": "http://10.150.96.5",
     "PORT": 7700,
     "MONGO_URL": "mongodb://localhost:27017/smartedu"
   },
   "server": {
-    "host": "10.0.0.234",
+    "host": "10.150.96.5",
     "username": "deploy",
     "pem": "~/.ssh/id_rsa",
     "deploymentDir": "/home/deploy",
