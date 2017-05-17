@@ -19,6 +19,10 @@
     "deploymentDir": "/home/deploy",
     "loadProfile": "",
     "exec_mode": "fork_mode",
-    "instances": 1
+    "instances": 1,
+    "nvm": {
+      "bin": "~/.nvm/nvm.sh",
+      "use": "6.7.0"
+    }
   }
 }
