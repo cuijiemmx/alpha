@@ -27,21 +27,21 @@
 				edit:
 					name: 'adminApps'
 			# insert: false
-		# AppCategories:
-		# 	color: 'blue'
-		# 	icon: ''
-		# 	label: '应用分类'
-		# 	extraFields: ['apps']
-		# 	tableColumns: [
-		# 		label: '名称'
-		# 		name: 'name'
-		# 	,
-		# 		label: '标题'
-		# 		name: 'label'
-		# 	,
-		# 		label: '应用'
-		# 		name: 'appNames()'
-		# 	]
+		AppCategories:
+			color: 'blue'
+			icon: ''
+			label: '应用分类'
+			extraFields: ['apps']
+			tableColumns: [
+				label: '名称'
+				name: 'name'
+			,
+				label: '标题'
+				name: 'label'
+			,
+				label: '应用'
+				name: 'appNames()'
+			]
 		Links:
 			color: 'blue'
 			icon: ''

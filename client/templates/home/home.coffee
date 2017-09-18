@@ -75,13 +75,13 @@ Template.home.onCreated ->
 		contentTemplate: 'links'
 	]
 
-	# categoriedAppsNavs = AppCategories.find().map (appCategory) ->
-	# 	icon: appCategory.icon
-	# 	label: appCategory.label
-	# 	contentTemplate: 'appsGrid'
-	# 	templateData: Apps.find({clientId: {$in: appCategory.apps or []}}).fetch()
+	categoriedAppsNavs = AppCategories.find().map (appCategory) ->
+		icon: appCategory.icon
+		label: appCategory.label
+		contentTemplate: 'appsGrid'
+		templateData: Apps.find({clientId: {$in: appCategory.apps or []}}).fetch()
 
-	# Array.prototype.splice.apply navs, [1, 0].concat categoriedAppsNavs
+	Array.prototype.splice.apply navs, [1, 0].concat categoriedAppsNavs
 
 	@navs = navs.filter (nav) ->
 		nav.contentTemplate != 'appsGrid' or nav.templateData.length > 0
